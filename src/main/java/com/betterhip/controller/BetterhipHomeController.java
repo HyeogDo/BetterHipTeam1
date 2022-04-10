@@ -77,6 +77,8 @@ public class BetterhipHomeController extends HttpServlet {
 		String uri = request.getRequestURI();
 		String conPath = request.getContextPath();		
 		String com = uri.substring(conPath.length());
+		System.out.println("actionDo");
+		System.out.println("com : " + com);
 		
 		switch(com) {
 		case("/main.do") :
@@ -254,7 +256,7 @@ public class BetterhipHomeController extends HttpServlet {
 		case("/login.do") :
 			command = new LoginCommand();
 			command.excute(request, response);
-			viewPage = "main.do";
+			viewPage = request.getAttribute("viewPage").toString();
 			break;
 		
 		case("/findIdPage.do") :
