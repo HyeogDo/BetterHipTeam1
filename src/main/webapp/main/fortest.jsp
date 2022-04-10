@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>성공!</h1>
+	<form action="cakeListView.do?start=0&len=4">
+	<% session.setAttribute("page", 1); %>
+		<input type="submit" value="go">
+	</form>
 </body>
 </html>
