@@ -1,7 +1,7 @@
-package com.betterhip.dto.signupCheckIdDto;
+package com.betterhip.dto.signup;
 
 public class SignupCheckIdDto {
-	String user_id;
+String user_id;
 	
 	public SignupCheckIdDto() {
 		// TODO Auto-generated constructor stub
