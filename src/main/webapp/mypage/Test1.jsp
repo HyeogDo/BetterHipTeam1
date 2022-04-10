@@ -7,9 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-			<form action="signup.do" name="signupForm" method="get">
-			<input type="text" name="user_id" >
-			<input type="submit" name="btnSubmit">
-		</form>
+
+아이디 입력하세요 : 
+
+<form action="purchaseList.do">
+
+<input type="text" name="user_id">
+<input type="submit" value="확인">
+
+</form>
 </body>
 </html>

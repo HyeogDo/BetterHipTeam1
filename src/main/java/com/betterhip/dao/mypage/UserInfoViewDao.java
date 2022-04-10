@@ -3,6 +3,8 @@ package com.betterhip.dao.mypage;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -39,7 +41,6 @@ public class UserInfoViewDao {
 	
 	//회원정보 불러오기 
 	public UserInfoDto userInfoView(String USER_ID){
-		
 		UserInfoDto dto = null;
 		
 		Connection connection = null; 
@@ -48,10 +49,13 @@ public class UserInfoViewDao {
 
 		try {
 			connection = dataSource.getConnection();
-			String query = "select user_id, user_pw, user_name, user_phone, user_email, user_postcode, user_address, user_address_detail from user where user_id = ?";
+			String query = "select user_id, user_pw, user_name, user_phone, user_email, user_postcode, user_address, user_address_detail, user_joindate from user where user_id = ?";
 			preparedStatement = connection.prepareStatement(query); 
 			preparedStatement.setString(1, USER_ID);
 			resultSet = preparedStatement.executeQuery();
+			
+			
+			
 			
 			if(resultSet.next()) {
 				String user_id = resultSet.getString("user_id");
@@ -62,9 +66,11 @@ public class UserInfoViewDao {
 				String user_postcode = resultSet.getString("user_postcode"); 
 				String user_address = resultSet.getString("user_address"); 
 				String user_address_detail = resultSet.getString("user_address_detail");
+				String user_joindate = new SimpleDateFormat("yyyy-MM-dd").format(resultSet.getTimestamp("user_joindate"));
 				
 				
-				dto = new UserInfoDto(user_id, user_pw, user_name, user_phone, user_email, user_postcode, user_address, user_address_detail);
+				dto = new UserInfoDto(user_id, user_pw, user_name, user_phone, user_email, user_postcode, user_address, user_address_detail, user_joindate);
+						
 			}
 			
 			

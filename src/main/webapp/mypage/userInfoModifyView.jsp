@@ -24,23 +24,23 @@
 	display: block;
 }
 
-.buttonsignup {
+.buttonUserInfoModify {
 	width: 200px
 }
 
-.buttonsignup {
+.buttonUserInfoModify {
 	border-radius: 5px
 }
 
-.buttonsignup {
+.buttonUserInfoModify {
 	background-color: #535353;
 }
 
-.buttonsignup {
+.buttonUserInfoModify {
 	align-self: center;
 }
 
-.buttonsignup:hover {
+.buttonUserInfoModify:hover {
 	background-color: #A9A9A9;
 }
 }
@@ -131,7 +131,7 @@ const autoHyphen2 = (target) => {
 		if(new_user_pw == "") {
 			alert("비밀번호를 입력해주세요")
 			return
-		}else {
+		}else { 
 			if (!regExpPasswd.test(new_user_pw)) {
 				alert("사용할 수 없는 비밀번호 입니다.")
 				form.new_user_pw.select()
@@ -183,11 +183,11 @@ const autoHyphen2 = (target) => {
 			return
 		}
 		
-/* 		// 핸드폰 번호 중복체크 확인 여부
+ 		/* // 핸드폰 번호 중복체크 확인 여부
 		if(isCheckedPhone == false) {
 			alert("핸드폰 번호 중복체크를 해주세요")
 			return
-		} */
+		}  */
 		
 		/* 위 유효성 검사 모두 통과 수정 완료 ALERT */
 		if(confirm("수정이 완료 되었습니다.")){
