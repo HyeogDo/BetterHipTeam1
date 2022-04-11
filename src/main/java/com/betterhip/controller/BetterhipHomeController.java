@@ -86,7 +86,7 @@ public class BetterhipHomeController extends HttpServlet {
 		
 		
 		switch(com) {
-		
+		case("/main/main.do") :
 		//테스트용 
 		case("/test.do") :
 			viewPage = "mypage/Test1.jsp";
@@ -95,7 +95,7 @@ public class BetterhipHomeController extends HttpServlet {
 		case("/main.do") :
 			command = new CakeAdCommand();
 			command.excute(request, response);
-			viewPage = "main/main.jsp";
+			viewPage = "main.jsp";
 			break;
 			
 		case("/guideCake.do") :
