@@ -159,5 +159,86 @@ public ArrayList<CakeReviewListDto> reviewList(String user_id, int cake_id) {
 		return dtos;
 	}
 	
+public ArrayList<String> reviewPermission(String user_id, int cake_id) {
+	String result = "RESULT_OK";
+	Connection connection = null;
+	PreparedStatement preparedStatement = null;
+	ResultSet resultSet = null;
+	ArrayList<String> resultArr = new ArrayList<String>();
+	
+	try {
+		connection = dataSource.getConnection();
+		String query = "select count(*), purchase_id from purchase where purchase_cake_id = ? && purchase_user_id = ?";
+		preparedStatement = connection.prepareStatement(query);
+		
+		preparedStatement.setInt(1, cake_id);
+		preparedStatement.setString(2, user_id);
+		
+		preparedStatement.executeUpdate();
+		
+		resultSet = preparedStatement.executeQuery();
+		while(resultSet.next()) {
+			String purchase_id = resultSet.getString("purchase_id");
+			
+			int count = resultSet.getInt("count(*)");
+			if (count == 0) {
+				result = "RESULT_NOT_OK";
+			}
+			resultArr.add(result);
+			resultArr.add(purchase_id);
+		}
+	} catch (Exception e) {
+		// TODO: handle exception
+		e.printStackTrace();
+	}finally {
+		try {
+			if(resultSet != null) resultSet.close();
+			if(preparedStatement != null) preparedStatement.close();
+			if(connection != null) connection.close();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+	}
+	return resultArr;
+}
+
+//데이터베이스에 입력하는 함수
+public String reviewInput(int purchase_id, int cake_id, String review_content, int review_star) {
+	String result = "WRITE_OK";
+	Connection connection = null;
+	PreparedStatement preparedStatement = null;
+	try {
+		connection = dataSource.getConnection();
+		
+		//데이터베이스 입력문
+		String query = "insert into review(review_content, review_date, review_star, review_purchase_id) values(?, now(), ?, ?)";
+		preparedStatement = connection.prepareStatement(query);
+		
+		//입력문 안에 들어갈 변수 설정
+		preparedStatement.setString(1, review_content);
+		preparedStatement.setInt(2, review_star);
+		preparedStatement.setInt(3, purchase_id);
+		
+		//입력 업데이트
+		preparedStatement.executeUpdate();
+		
+		
+	} catch (Exception e) {
+		// TODO: handle exception
+		e.printStackTrace();
+	}finally {
+		// 닫아주기
+		try {
+			if (preparedStatement != null) preparedStatement.close();
+			if (connection != null) connection.close();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+	return result;
+}
 	
 }

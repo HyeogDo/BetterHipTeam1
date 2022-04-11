@@ -121,7 +121,11 @@
 
     </script>
     
-
+	<script type="text/javascript">
+		function openReview() {
+			window.open("cakeReview.do","","width=800, height=300, left=500, top=150")
+		}
+	</script>
     
 <head>
 <meta charset="UTF-8">
@@ -159,14 +163,18 @@
 		    <img alt="none" src="order/pic03_1.jpg" width="60%"><br>
 	    </div>
 	    <div id="Menu4">
+	    <b>리뷰 조회</b><br>
 	    	<c:forEach items="${REVIEWLIST }" var="dto" varStatus="status">
 				구매자 ID : ${dto.purchase_user_id }<br>
 				리뷰 날짜 : ${dto.review_date }<br>
 				별점 : ${dto.review_star }<br>
 				내용 : ${dto.review_content }<br>
-				
-				 
 	    	</c:forEach>
+	    <b>리뷰 작성</b><br>
+	    	<form action="#">
+	    		<textarea rows="10" cols="100" name="review_content" onclick="openReview()" readonly="readonly" placeholder="리뷰를 작성해 주세요"></textarea>
+	    		<input type="button" value="리뷰 입력" onclick="openReview()">
+	    	</form>
 	    </div>
     </div>
     

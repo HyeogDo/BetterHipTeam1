@@ -162,7 +162,7 @@ public class BetterhipHomeController extends HttpServlet {
 			
 		case("/cakeChoice.do") :
 			session.setAttribute("CAKE_ID", request.getParameter("cake_id"));
-			session.setAttribute("USER_ID", "peterhd");
+			session.setAttribute("USER_ID", "hong");
 			command = new CakeChoiceCommand();
 			command.excute(request, response);
 			viewPage = "/order/cakeInfo.jsp";
@@ -183,13 +183,13 @@ public class BetterhipHomeController extends HttpServlet {
 		case("/cakeReview.do") :
 			command = new CakeReviewCommand();
 			command.excute(request, response);
-			viewPage = "order/cakeInfo.jsp";
+			viewPage = "order/cakeReviewWrite.jsp";
 			break;
 			
 		case("/cakeReviewWrite.do") :
 			command = new CakeReviewWriteCommand();
 			command.excute(request, response);
-			viewPage = "cakeReview.do";
+			viewPage = "order/cakeReviewResult.jsp";
 			break;
 			
 		case("/cartList.do") :
