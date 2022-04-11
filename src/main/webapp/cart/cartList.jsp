@@ -1,5 +1,5 @@
 <%@page import="javax.swing.RepaintManager"%>
-<%@page import="com.mysql.cj.x.protobuf.MysqlxConnection.CapabilitiesGetOrBuilder"%>
+
 <%@page import="java.io.OutputStream"%>
 <%@page import="java.sql.Blob"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"

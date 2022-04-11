@@ -26,7 +26,7 @@ public class CartListDao {
 		}
 	}
 	
-	// Method - 실패시 메세지 처리 확인필요
+    
 	public ArrayList<CartListDto> cartList(String user_id) {
 		ArrayList<CartListDto> dtos = new ArrayList<CartListDto>();
 		
@@ -42,7 +42,7 @@ public class CartListDao {
 					+ " and p.purchase_status = 1"
 					+ " and p.purchase_user_id = ?";
 		
-			System.out.println("query : " + query);
+			//System.out.println("query : " + query);
 			connection = dataSource.getConnection();
 			preparedStatement = connection.prepareStatement(query);
 			preparedStatement.setString(1, user_id);
