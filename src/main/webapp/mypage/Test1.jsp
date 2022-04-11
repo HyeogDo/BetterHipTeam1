@@ -8,11 +8,14 @@
 </head>
 <body>
 
-아이디 입력하세요 : 
+
+<%
+session = request.getSession();
+session.setAttribute("USER_ID", "jinyoung"); 
+%>
 
 <form action="purchaseList.do">
 
-<input type="text" name="user_id">
 <input type="submit" value="확인">
 
 </form>

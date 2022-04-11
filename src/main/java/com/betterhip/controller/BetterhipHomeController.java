@@ -119,20 +119,19 @@ public class BetterhipHomeController extends HttpServlet {
 		case("/purchaseCancel.do") :
 			command = new PurchaseCancelCommand();
 			command.excute(request, response);
-			viewPage = "purcrchaseList.do";
+			viewPage = "purchaseList.do";
 			break;
 			
-		case("/refundList,do") :
+		case("/refundList.do") :
 			command = new PurchaseCancelListCommand();
 			command.excute(request, response);
 			viewPage = "mypage/purchaseList.jsp";
 			break;
 		
-			
 		case("/userInfoModifyView.do") :
 			command = new UserInfoViewCommand();
 			command.excute(request, response);
-			viewPage = "userInfoModifyView.do";
+			viewPage = "mypage/userInfoModifyView.jsp";
 			break;
 			
 		case("/userInfoModify.do") :

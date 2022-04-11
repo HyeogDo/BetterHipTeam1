@@ -73,9 +73,6 @@
 
 </head>
 
-
-
-<!--주문조회 메인-->
 <body>
 
 <!--오늘 날짜 가져오는 자바 스크립트립-->
@@ -85,38 +82,70 @@ Date date = new Date();
 String currentDate = format.format(date);
 %>
 
-<div style="position: absolute; left: 40%">
-
-	<h2 align="center">나의 쇼핑 내역</h2>
-	<h3 align="center">주문 조회</h3>
-
-	<table border="2" class="puchase_state_count">
+<!--주문조회 메인-->
+	<div style="position: absolute; align-items: center;">
 	
+		<h2 align="center">나의 쇼핑 내역</h2>
+		<h3 align="center">주문 조회</h3>
 	
-		<tr>
-			<th>결제완료</th>
-			<th>상품준비중</th>
-			<th>픽업완료</th>
-		</tr>
-		<tr>
-			<td>count_3 </td>
-			<td>count_101</td>
-			<td>count_103</td>
-		</tr>
+		<table border="2" class="puchase_state_count">
+			<tr>
+				<th>주문접수</th>
+				<th>상품준비중</th>
+				<th>픽업완료</th>
+			</tr>
+			<tr>
+				<td>${purchase_status_count_3 } </td>
+				<td>${purchase_status_count_101 }</td>
+				<td>${purchase_status_count_103 }</td>
+			</tr>
+		</table>
 		
-	</table>
+		<form action="쿼리.do">
+			<table class="purchase_list_query">
+				<tr>
+					<td colspan="2">
+					<input type="text" id="startDate" value="${userInfo.user_joindate }"> ~ <input type="text" id="endDate" value=<%=currentDate %>>
+					<input type="button" value="조회">
+					</td>
+				</tr>
+			</table>
+		</form>
+		
+		
+		<table border="2" class="purchase_list">
+			<tr>
+				<th>주문일자</th>
+				<th colspan="2">상품정보</th>
+				<th>수량</th>
+				<th>주문금액</th>
+				<th>주문상태</th>
+				<th>픽업일자</th>
+				<th>주문취소</th>
+			</tr>
+			
+			<c:forEach items="${purchaseList }" var="dto">
+			
+				<tr>
+					<td rowspan="2">${dto.purchase_date }</td>
+					<td rowspan="2"><img src="data:cake_img/png;base64, ${dto.cake_img_base64Image }" width = "100" height="100"></td>
+					<td>${dto.cake_name }</td>
+					<td rowspan="2">${dto.purchase_quantity }</td>
+					<td rowspan="2">${dto.purchase_price }</td>
+					<td rowspan="2">${dto.purchase_status }</td>
+					<td rowspan="2">${dto.purchase_pickup_date }</td>
+					<td rowspan="2"><input type="button" value="주문취소"></td>
+				</tr>
+				<tr>
+					<td>옵션: ${dto.cake_option }<br> 
+						레터링: ${dto.purchase_text }</td>
+				</tr>
+			
+			</c:forEach>
+			
+		</table>
 	
-	<form action=""></form>
-	<table class="purchase_list_lookup">
-		<tr>
-			<td colspan="3">
-			<input type="text" id="startDate" value="${userInfo.user_joindate }"> ~ <input type="text" id="endDate" value=<%=currentDate %>>
-			<input type="button" value="조회">
-			</td>
-		</tr>
-	
-	</table>
-</div>
+	</div>
 
 </body>
 </html>

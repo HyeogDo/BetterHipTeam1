@@ -17,15 +17,15 @@ public class UserInfoViewCommand implements BetterhipCommand {
 		// TODO Auto-generated method stub
 		
 		//겟파라미터로 받을 때 
-		String USER_ID = request.getParameter("user_id");
+//		String USER_ID = request.getParameter("user_id");
 		
 		//세션에 넣기 
-		HttpSession session = request.getSession();
-		session.setAttribute("USER_ID", USER_ID);
+//		HttpSession session = request.getSession();
+//		session.setAttribute("USER_ID", USER_ID);
 		
 		//세션으로 받을 때 
-//		HttpSession session = request.getSession();
-//		String USER_ID = (String) session.getAttribute("USER_ID"); 
+		HttpSession session = request.getSession();
+		String USER_ID = (String) session.getAttribute("USER_ID"); 
 		
 		//회원정보 View 
 		UserInfoViewDao dao = new UserInfoViewDao();
