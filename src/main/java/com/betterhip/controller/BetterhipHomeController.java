@@ -74,10 +74,10 @@ public class BetterhipHomeController extends HttpServlet {
 		String com = uri.substring(conPath.length());
 		
 		switch(com) {
-		case("/main.do") :
+		case("/main/main.do") :
 			command = new CakeAdCommand();
 			command.excute(request, response);
-			viewPage = "main/main.jsp";
+			viewPage = "main.jsp";
 			break;
 			
 		case("/guideCake.do") :
