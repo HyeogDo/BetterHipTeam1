@@ -83,7 +83,6 @@
 SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 Date date = new Date();
 String currentDate = format.format(date);
-
 %>
 
 <div style="position: absolute; left: 40%">
@@ -112,7 +111,7 @@ String currentDate = format.format(date);
 		<tr>
 			<td colspan="3">
 			<input type="text" id="startDate" value="${userInfo.user_joindate }"> ~ <input type="text" id="endDate" value=<%=currentDate %>>
-			<input type="button" value="조회" on>
+			<input type="button" value="조회">
 			</td>
 		</tr>
 	
@@ -121,5 +120,4 @@ String currentDate = format.format(date);
 
 </body>
 </html>
-
 
