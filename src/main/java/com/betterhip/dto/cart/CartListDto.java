@@ -1,6 +1,5 @@
 package com.betterhip.dto.cart;
 
-import java.sql.Blob;
 
 public class CartListDto {
 	
@@ -15,13 +14,15 @@ public class CartListDto {
 	String purchase_text;
 	String purchase_cake_name;
 	String purchase_cake_img;
+	String purchase_pickup_date;
+	
 	
 	
 	// Constructor
 	
 	public CartListDto(int purchase_id, int purchase_quantity, int purchase_price, String purchase_custom_size,
 			String purchase_custom_taste, String purchase_custom_cream_type, String purchase_custom_cream_color,
-			String purchase_text, String purchase_cake_name, String purchase_cake_img) {
+			String purchase_text, String purchase_cake_name, String purchase_cake_img, String purchase_pickup_date) {
 		super();
 		this.purchase_id = purchase_id;
 		this.purchase_quantity = purchase_quantity;
@@ -33,6 +34,8 @@ public class CartListDto {
 		this.purchase_text = purchase_text;
 		this.purchase_cake_name = purchase_cake_name;
 		this.purchase_cake_img = purchase_cake_img;
+		this.purchase_pickup_date = purchase_pickup_date;
+		
 	}
 
 
@@ -136,5 +139,16 @@ public class CartListDto {
 	public void setPurchase_cake_img(String purchase_cake_img) {
 		this.purchase_cake_img = purchase_cake_img;
 	}
+	
+
+	public String getPurchase_pickup_date() {
+		return purchase_pickup_date;
+	}
+
+
+	public void setPurchase_cake_pickup_date(String purchase_pickup_date) {
+		this.purchase_cake_img = purchase_pickup_date;
+	}
+
 	
 }

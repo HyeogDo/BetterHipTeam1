@@ -1,5 +1,4 @@
 <%@page import="javax.swing.RepaintManager"%>
-
 <%@page import="java.io.OutputStream"%>
 <%@page import="java.sql.Blob"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -67,10 +66,10 @@
 			<c:forEach var="item" items="${CartList}">
 				<tr>
 					<td><input type="checkbox" name="chk" value="${item.purchase_id}">
-				    <td><img src="data:cake_img/png;base64, ${item.purchase_cake_img }" width="200" height="200"></td>
+				    <td><img src="data:cake_img/png;base64, ${item.purchase_cake_img }" width="150" height="150"></td>
 				    <td><h3><c:out value = "${item.purchase_cake_name }"/></h3><br>
 				    	옵션 : ${item.purchase_custom_size}&nbsp;${item.purchase_custom_taste}&nbsp;${item.purchase_custom_cream_type}
-						&nbsp;${item.purchase_custom_cream_color}
+						&nbsp;${item.purchase_custom_cream_color}&nbsp;${item.purchase_pickup_date}
 				   </td>
 					
 				</tr>
