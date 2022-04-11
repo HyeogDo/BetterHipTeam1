@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+성공
+<%=session.getAttribute("CAKE_ID") %>
 </body>
 </html>

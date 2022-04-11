@@ -11,5 +11,6 @@
 	<% session.setAttribute("page", 1); %>
 		<input type="submit" value="go">
 	</form>
+
 </body>
 </html>
