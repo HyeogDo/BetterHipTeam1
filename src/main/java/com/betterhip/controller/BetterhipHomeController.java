@@ -86,7 +86,7 @@ public class BetterhipHomeController extends HttpServlet {
 		
 		
 		switch(com) {
-		case("/main/main.do") :
+		
 		//테스트용 
 		case("/test.do") :
 			viewPage = "mypage/Test1.jsp";
@@ -95,7 +95,7 @@ public class BetterhipHomeController extends HttpServlet {
 		case("/main.do") :
 			command = new CakeAdCommand();
 			command.excute(request, response);
-			viewPage = "main.jsp";
+			viewPage = "main/main.jsp";
 			break;
 			
 		case("/guideCake.do") :
@@ -153,19 +153,19 @@ public class BetterhipHomeController extends HttpServlet {
 			viewPage = "mypage/goodbye.jsp";
 			break;
 			
-		case("/main/cakeListView.do") :
+		case("/cakeListView.do") :
 			command = new CakeListViewCommand();
 			command.excute(request, response);
-			viewPage = "../order/cakeList.jsp";
+			viewPage = "/order/cakeList.jsp";
 			break;
 			
 			
-		case("/order/cakeChoice.do") :
+		case("/cakeChoice.do") :
 			session.setAttribute("CAKE_ID", request.getParameter("cake_id"));
 			session.setAttribute("USER_ID", "peterhd");
 			command = new CakeChoiceCommand();
 			command.excute(request, response);
-			viewPage = "cakeInfo.jsp";
+			viewPage = "/order/cakeInfo.jsp";
 			break;
 			
 		case("/cakeOrderCart.do") :

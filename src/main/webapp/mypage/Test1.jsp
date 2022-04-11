@@ -10,7 +10,7 @@
 
 아이디 입력하세요 : 
 
-<form action="purchaseList.do">
+<form action="userInfoModifyView.do">
 
 <input type="text" name="user_id">
 <input type="submit" value="확인">
