@@ -61,8 +61,7 @@ public class CartListDao {
 				String purchase_cake_name = resultSet.getString("cake_name");
 				String purchase_pickup_date = resultSet.getDate("purchase_pickup_date").toString();
 				Blob purchase_cake_img_blob = resultSet.getBlob("cake_img");
-				
-				
+						
 				// Blob to String
 				InputStream inputStream = purchase_cake_img_blob.getBinaryStream();
 				ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
