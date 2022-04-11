@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<<<<<<< HEAD
 	<table>
 	<tr>
 	<c:forEach items="${list}" var="dto" varStatus="status">
@@ -21,5 +22,8 @@
 		</c:if>
 	</c:forEach>
 	</table>
+=======
+성공111s
+>>>>>>> b2565e729f625ea8e6413f521eb0a22113800e03
 </body>
 </html>

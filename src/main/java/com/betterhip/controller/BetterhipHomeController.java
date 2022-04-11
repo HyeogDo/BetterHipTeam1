@@ -30,11 +30,15 @@ import com.betterhip.command.order.CakeOrderPaymentCommand;
 import com.betterhip.command.order.CakeReviewCommand;
 import com.betterhip.command.order.CakeReviewWriteCommand;
 import com.betterhip.command.payment.PaymentCommand;
+import com.betterhip.command.payment.PaymentFailureCommand;
 import com.betterhip.command.payment.PaymentListCommand;
 import com.betterhip.command.payment.PaymentSuccessCommand;
+import com.betterhip.command.signup.SignUpCheckIdCommand;
+import com.betterhip.command.signup.SignUpCheckPhoneCommand;
 //import com.betterhip.command.signup.SignUpCheckIdCommand;
 //import com.betterhip.command.signup.SignUpCheckPhoneCommand;
 //import com.betterhip.command.signup.SignUpCommand;
+import com.betterhip.command.signup.SignUpCommand;
 
 /**
  * Servlet implementation class BetterhipHomeController
@@ -77,6 +81,7 @@ public class BetterhipHomeController extends HttpServlet {
 		String uri = request.getRequestURI();
 		String conPath = request.getContextPath();		
 		String com = uri.substring(conPath.length());
+		
 		
 		switch(com) {
 <<<<<<< HEAD
@@ -157,10 +162,12 @@ public class BetterhipHomeController extends HttpServlet {
 			break;
 			
 			
-		case("/cakeChoice.do") :
+		case("/order/cakeChoice.do") :
+			session.setAttribute("CAKE_ID", request.getParameter("cake_id"));
+			session.setAttribute("USER_ID", "peterhd");
 			command = new CakeChoiceCommand();
 			command.excute(request, response);
-			viewPage = "order/cakeInfo.jsp";
+			viewPage = "cakeInfo.jsp";
 			break;
 			
 		case("/cakeOrderCart.do") :
@@ -224,6 +231,8 @@ public class BetterhipHomeController extends HttpServlet {
 			break;
 			
 		case("/payFailure.do") :
+			command = new PaymentFailureCommand();
+			command.excute(request, response);
 			viewPage = "payment/payFailure.jsp";
 			break;
 		
@@ -291,7 +300,6 @@ public class BetterhipHomeController extends HttpServlet {
 			viewPage = "login/printPw.jsp";
 			break;
 		}
-		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);
 				

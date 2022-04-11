@@ -58,7 +58,6 @@
 		endPage = totalPages;
 	}
 	
-	
 %>
 <!DOCTYPE html>
 <html>
@@ -93,9 +92,9 @@
 							<tr>
 							<c:forEach items="${list}" var="dto" varStatus="status">
 									
-								<td><img src="data:cake_img/png;base64, ${dto.base64Image }" width = "200" height="200"><br>
+								<td><a href="../order/cakeChoice.do?cake_id=${dto.cake_id }" "><img src="data:cake_img/png;base64, ${dto.base64Image }" width = "200" height="200"><br>
 								${dto.cake_name }<br>
-								${dto.cake_saleprice }</td>
+								${dto.cake_saleprice }</a></td>
 								<c:if test="${status.index % 4 == 3 }">
 									</tr><tr>
 								</c:if>
