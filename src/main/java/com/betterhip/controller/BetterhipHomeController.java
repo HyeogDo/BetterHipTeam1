@@ -78,6 +78,7 @@ public class BetterhipHomeController extends HttpServlet {
 		String conPath = request.getContextPath();		
 		String com = uri.substring(conPath.length());
 		
+		
 		switch(com) {
 		case("/main.do") :
 			command = new CakeAdCommand();
@@ -147,10 +148,12 @@ public class BetterhipHomeController extends HttpServlet {
 			break;
 			
 			
-		case("/cakeChoice.do") :
+		case("/order/cakeChoice.do") :
+			session.setAttribute("CAKE_ID", request.getParameter("cake_id"));
+			session.setAttribute("USER_ID", "peterhd");
 			command = new CakeChoiceCommand();
 			command.excute(request, response);
-			viewPage = "order/cakeInfo.jsp";
+			viewPage = "cakeInfo.jsp";
 			break;
 			
 		case("/cakeOrderCart.do") :
@@ -281,7 +284,6 @@ public class BetterhipHomeController extends HttpServlet {
 			viewPage = "login/printPw.jsp";
 			break;
 		}
-		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);
 				
