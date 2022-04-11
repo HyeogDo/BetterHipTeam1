@@ -30,3 +30,4 @@ public class SignUpCheckIdCommand  implements BetterhipCommand {
 	}
 	
 }
+
