@@ -74,7 +74,7 @@ String currentDate = format.format(date);
 					<td rowspan="2">${dto.purchase_price }</td>
 					<td rowspan="2">${dto.purchase_status }</td>
 					<td rowspan="2">${dto.purchase_pickup_date }</td>
-					<td rowspan="2"><input type="button" value="주문취소"></td>
+					<td rowspan="2"><input type="button" value="주문취소" class="cancelBtn"></td>
 				</tr>
 				<tr>
 					<td>옵션: ${dto.cake_option }<br> 
