@@ -11,14 +11,13 @@
 <style>
 
 	h3 { text-align: center;}
-	div 
 </style>
 
 
 
 <body>
 
-<div style="position: absolute; left: 50%">
+<div style="position: absolute; left: 25%;">
 	
 		<form action="#" name="goodbye" method="post">
 		

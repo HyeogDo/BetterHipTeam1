@@ -21,8 +21,21 @@
 </script>
 
 
-<!--회원 탈퇴 메인-->
 <body>
+
+<!--사이드 마이페이지 메뉴-->
+
+<h3>나의 쇼핑 내역</h3>
+<p><a href="purchaseList.do">주문 조회</a></p>
+<p><a href="refundList.do">취소/환불 조회</a></p>
+
+<br>
+<h3>회원 정보</h3>
+<p><a href="userInfoModifyView.do">회원정보 변경</a></p>
+<p><a href="userInfoDeleteView.do">회원 탈퇴</a></p>
+
+
+<!--회원 탈퇴 메인-->
 	<div style="position: absolute; left: 40%">
 	
 		<form action="#" name="userInfoDeleteView" method="post">
