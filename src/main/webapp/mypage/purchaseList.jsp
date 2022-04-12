@@ -17,31 +17,13 @@
 
 <script type="text/javascript">
 
-	const button = document.querySelector(".cancelBtn");
-	const status = document.querySelector(".purchaseStatus").value;
-	const input = document.querySelector(".input");
-	
-	function activateBtn() {
-		
-		if(status.equals("주문접수")){
-			button.disabled = false;
-		}
-		
-		else{
-			button.disabled = true; 
-		}
+function check(purchase_id){
+	if(confirm("주문을 취소하시겠습니까?")){
+		location.href = "purchaseCancel.do?purchase_id="+purchase_id;
 	}
-	button.addEventListener('keyup', activateBtn);
+}
 </script>
 
-<script type="text/javascript">
-
-	function del() {
-		if(confirm("정말로 주문을 취소하시겠습니까?")) {
-			location.href = "purchaseCancel.do";
-		}		
-	}
-</script>
 
 
 <body>
@@ -53,12 +35,26 @@ Date date = new Date();
 String currentDate = format.format(date);
 %>
 
+
+<!--사이드 마이페이지 메뉴-->
+
+<h3>나의 쇼핑 내역</h3>
+<p><a href="purchaseList.do">주문 조회</a></p>
+<p><a href="refundList.do">취소/환불 조회</a></p>
+
+<br>
+<h3>회원 정보</h3>
+<p><a href="userInfoModifyView.do">회원정보 변경</a></p>
+<p><a href="userInfoDeleteView.do">회원 탈퇴</a></p>
+
+
 <!--주문조회 메인-->
 	<div class="purchaseList" style="position: absolute; left: 25%;">
 	
 		<h2 align="center">나의 쇼핑 내역</h2>
 		<h3 align="center">주문 조회</h3>
-	
+		
+		<!-- 주문접수 / 상품준비중 / 픽업완료 주문 수 count table  -->
 		<table border="2">
 			<tr>
 				<th>주문접수</th>
@@ -72,6 +68,7 @@ String currentDate = format.format(date);
 			</tr>
 		</table>
 		
+		<!-- 주문내역 날짜별 조회 -->
 		<form action="purchaseQueryList.do" method="post">
 			<table>
 				<tr>
@@ -83,7 +80,8 @@ String currentDate = format.format(date);
 			</table>
 		</form>
 
-		<table border="2" class="purchase_list">
+		<!-- 주문내역 리스트 테이블  -->
+		<table border="2" id="purchase_list">
 			<tr>
 				<th>주문번호</th>
 				<th colspan="2">상품정보</th>
@@ -102,9 +100,18 @@ String currentDate = format.format(date);
 					<td>${dto.cake_name }</td>
 					<td rowspan="2">${dto.purchase_quantity }</td>
 					<td rowspan="2">${dto.purchase_price }</td>
-					<td rowspan="2" class="purchaseStatus">${dto.purchase_status }</td>
+					<td rowspan="2">${dto.purchase_status }</td>
 					<td rowspan="2">${dto.purchase_pickup_date }</td>
-					<td rowspan="2"><input type="button" value="주문취소" class="cancelBtn" onclick="cancel()"></td>
+					<td rowspan="2">
+						<c:choose>
+							<c:when test="${dto.purchase_status eq '주문접수'}">
+								<input type="button" value="취소하기" onclick="check(${dto.purchase_id })">
+							</c:when>
+							<c:otherwise>
+								<input type="button" value="취소불가" readonly="readonly" style="background-color: darkgrey">
+							</c:otherwise>
+						</c:choose>
+					</td>
 				</tr>
 				<tr>
 					<td>옵션: ${dto.cake_option }<br> 
