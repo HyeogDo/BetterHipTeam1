@@ -10,7 +10,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>주문 조회</title>
+<title>취소/환불 조회</title>
 
 </head>
 
@@ -27,44 +27,32 @@ String currentDate = format.format(date);
 	<div style="position: absolute; left: 25%;">
 	
 		<h2 align="center">나의 쇼핑 내역</h2>
-		<h3 align="center">주문 조회</h3>
-	
-		<table border="2" class="puchase_state_count">
-			<tr>
-				<th>주문접수</th>
-				<th>상품준비중</th>
-				<th>픽업완료</th>
-			</tr>
-			<tr>
-				<td>${purchase_status_count_3 } </td>
-				<td>${purchase_status_count_101 }</td>
-				<td>${purchase_status_count_103 }</td>
-			</tr>
-		</table>
+		<h3 align="center">취소 / 환불 조회</h3>
 		
-		<form action="purchaseQueryList.do" method="post">
-			<table>
+		
+		<form action="refundQueryList.do" method="post">
+			<table class="refund_list_query">
 				<tr>
-					<td>
-					<input type="date" name="startDate" value="${userInfo.user_joindate }" > ~ <input type="date" name="endDate" value="<%=currentDate%>" >
+					<td colspan="2">
+					<input type="date" name="startDate" value="${userInfo.user_joindate }"> ~ <input type="date" name="endDate" value="<%=currentDate%>">
 					<input type="submit" value="조회">
 					</td>
 				</tr>
 			</table>
 		</form>
-
-		<table border="2" class="purchase_list">
+	
+		<h4>취소현황</h4>
+		<table border="2" class="cancel_list">
 			<tr>
 				<th>주문번호</th>
 				<th colspan="2">상품정보</th>
 				<th>수량</th>
 				<th>주문금액</th>
-				<th>주문상태</th>
 				<th>픽업일자</th>
-				<th>주문취소</th>
+				<th>처리상태</th>
 			</tr>
 			
-			<c:forEach items="${purchaseList }" var="dto">
+			<c:forEach items="${cancelList }" var="dto">
 			
 				<tr>
 					<td rowspan="2">${dto.purchase_date }${dto.purchase_id }</td>
@@ -72,9 +60,39 @@ String currentDate = format.format(date);
 					<td>${dto.cake_name }</td>
 					<td rowspan="2">${dto.purchase_quantity }</td>
 					<td rowspan="2">${dto.purchase_price }</td>
-					<td rowspan="2">${dto.purchase_status }</td>
 					<td rowspan="2">${dto.purchase_pickup_date }</td>
-					<td rowspan="2"><input type="button" value="주문취소"></td>
+					<td rowspan="2">취소완료</td>
+				</tr>
+				<tr>
+					<td>옵션: ${dto.cake_option }<br> 
+						레터링: ${dto.purchase_text }</td>
+				</tr>
+			
+			</c:forEach>
+			
+		</table>
+		
+		<h4>환불내역</h4>
+		<table border="2" class="cancel_list">
+			<tr>
+				<th>주문번호</th>
+				<th colspan="2">상품정보</th>
+				<th>수량</th>
+				<th>주문금액</th>
+				<th>픽업일자</th>
+				<th>처리상태</th>
+			</tr>
+			
+			<c:forEach items="${refundList }" var="dto">
+			
+				<tr>
+					<td rowspan="2">${dto.purchase_date }${dto.purchase_id }</td>
+					<td rowspan="2"><img src="data:cake_img/png;base64, ${dto.cake_img_base64Image }" width = "100" height="100"></td>
+					<td>${dto.cake_name }</td>
+					<td rowspan="2">${dto.purchase_quantity }</td>
+					<td rowspan="2">${dto.purchase_price }</td>
+					<td rowspan="2">${dto.purchase_pickup_date }</td>
+					<td rowspan="2">환불완료</td>
 				</tr>
 				<tr>
 					<td>옵션: ${dto.cake_option }<br> 

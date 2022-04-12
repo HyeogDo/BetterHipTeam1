@@ -2,6 +2,7 @@ package com.betterhip.command.mypage;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.betterhip.command.BetterhipCommand;
 import com.betterhip.dao.mypage.UserInfoDao;
@@ -13,11 +14,11 @@ public class UserInfoModifyCommand implements BetterhipCommand {
 		// TODO Auto-generated method stub
 		
 		//사용자 아이디 겟파라미터로 받을 때 
-		String USER_ID = request.getParameter("user_id");
+//		String USER_ID = request.getParameter("user_id");
 				
 		//사용자 아이디 세션으로 받을 때 
-//		HttpSession session = request.getSession();
-//		String USER_ID = (String) session.getAttribute("USER_ID"); 
+		HttpSession session = request.getSession();
+		String USER_ID = (String) session.getAttribute("USER_ID"); 
 
 		//사용자가 수정하고자 하는 데이터 받아오기 
 		String new_user_pw = request.getParameter("new_user_pw");
