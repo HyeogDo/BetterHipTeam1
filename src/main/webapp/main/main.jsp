@@ -9,15 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <title>Better hip</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../BetterHip/assets/img/favicon.ico">
 
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/templatemo.css">
-    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../BetterHip/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../BetterHip/assets/css/templatemo.css">
+    <link rel="stylesheet" href="../BetterHip/assets/css/custom.css">
 
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-    <link rel="stylesheet" href="../assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../BetterHip/assets/css/fontawesome.min.css">
 </head>
 
 <body>
@@ -28,46 +28,46 @@
             <div class="top-header">
                 <div class="container clearfix">
                 <div class="member-area">
-                    <a href="#!">로그인</a>
+                    <a href="loginForm.do">로그인</a>
                     <span class="bar">|</span>
-                    <a href="#!">회원가입</a>
+                    <a href="signupForm.do"">회원가입</a>
                     <span class="bar">|</span>
                     <a href="#!">장바구니</a>
                     <span class="bar">|</span>
-                    <a href="#!">My Page</a>
+                    <a href="purchaseList.do">My Page</a>
                 </div>
                 </div>
             </div>
             <div class="main-header">
                 <div class="container clearfix">
                 <h1 class="logo">
-                    <a href="#!">
-                    <img src="../assets/img/logo.png" alt="로고" width="120">
+                    <a href="main.do">
+                    <img src="../BetterHip/assets/img/logo.png" alt="로고" width="120">
                     </a>
                 </h1>
                 <h1 class="logo_text">
-                    <a href="#!">Better Hip</a>
+                    <a href="main.do">Better Hip</a>
                 </h1>
                 <div class="gnb">
                     <ul class="clearfix">
                         <li class="nav-item info">
-                            <a href="#!" class="nav-link">이용안내</a>
+                            <a href="guideCake.do" class="nav-link">이용안내</a>
                             <div class="dropdown">
                             <ul>
                                 <li>
-                                <a href="#!">케이크 안내</a>
+                                <a href="guideCake.do">케이크 안내</a>
                                 </li>
                                 <li>
-                                <a href="#!">픽업 방법</a>
+                                <a href="guidePickup.do">픽업 방법</a>
                                 </li>
                                 <li>
-                                <a href="#!">이용 안내</a>
+                                <a href="guideUse.do">이용 안내</a>
                                 </li>
                             </ul>
                             </div>
                         </li>
                         <li class="nav-item cake">
-                            <a href="#!" class="nav-link">케이크 주문</a>
+                            <a href="cakeListView.do" class="nav-link">케이크 주문</a>
                         </li>
                         <li class="nav-item intro">
                             <a href="#!" class="nav-link">소개</a>
@@ -100,7 +100,9 @@
     <!--banner-->
     <div class="wrap-banner">
         <div class="background">
-            <img src="../assets/img/back.jpg" alt="배경" width="100%">
+
+            <img src="../BetterHip/assets/img/background.jpg" alt="배경" width="100%">  <!-- 	배경이미지 가져오지 못함 -->
+
         </div>
         <div class="moving">
         </div>
@@ -129,7 +131,7 @@
             <div class="wrapitem">
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/category_img_02.jpg" >
+                        <img class="item_img" src="../BetterHip/assets/img/category_img_02.jpg" >
                         <div class="item_img_text">
                             <h6><a href="#">Crab Pool Security</a></h6>
                             <h5>$30.00</h5>
@@ -138,7 +140,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/category_img_02.jpg" >
+                        <img class="item_img" src="../BetterHip/assets/img/category_img_02.jpg" >
                         <div class="item_img_text">
                             <h6><a href="#">Crab Pool Security</a></h6>
                             <h5>$30.00</h5>
@@ -147,7 +149,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/category_img_02.jpg" >
+                        <img class="item_img" src="../BetterHip/assets/img/category_img_02.jpg" >
                         <div class="item_img_text">
                             <h6><a href="#">Crab Pool Security</a></h6>
                             <h5>$30.00</h5>
@@ -156,7 +158,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/category_img_02.jpg" >
+                        <img class="item_img" src="../BetterHip/assets/img/category_img_02.jpg" >
                         <div class="item_img_text">
                             <h6><a href="#">Crab Pool Security</a></h6>
                             <h5>$30.00</h5>
@@ -165,7 +167,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/category_img_02.jpg" >
+                        <img class="item_img" src="../BetterHip/assets/img/category_img_02.jpg" >
                         <div class="item_img_text">
                             <h6><a href="#">Crab Pool Security</a></h6>
                             <h5>$30.00</h5>
@@ -174,7 +176,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/category_img_02.jpg" >
+                        <img class="item_img" src="../BetterHip/assets/img/category_img_02.jpg" >
                         <div class="item_img_text">
                             <h6><a href="#">Crab Pool Security</a></h6>
                             <h5>$30.00</h5>
@@ -183,7 +185,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/category_img_02.jpg" >
+                        <img class="item_img" src="../BetterHip/assets/img/category_img_02.jpg" >
                         <div class="item_img_text">
                             <h6><a href="#">Crab Pool Security</a></h6>
                             <h5>$30.00</h5>
@@ -192,7 +194,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/category_img_02.jpg" >
+                        <img class="item_img" src="../BetterHip/assets/img/category_img_02.jpg" >
                         <div class="item_img_text">
                             <h6><a href="#">Crab Pool Security</a></h6>
                             <h5>$30.00</h5>
@@ -223,37 +225,37 @@
             <div class="wrap_container" style="padding-bottom:150px">
                 <div class="pop_container">
                     <div class="col-12 col-md-4 p-5 mt-3">
-                        <a href="#"><img src="../assets/img/category_img_01.jpg" class="img-fluid"></a>
+                        <a href="#"><img src="../BetterHip/assets/img/category_img_01.jpg" class="img-fluid"></a>
                         <h4 class="h5 text-center mt-3 mb-3">해피데이 곰돌이 케이크</h4>
                     </div>
                 </div>
                 <div class="pop_container">
                     <div class="col-12 col-md-4 p-5 mt-3">
-                        <a href="#"><img src="../assets/img/category_img_01.jpg" class="img-fluid"></a>
+                        <a href="#"><img src="../BetterHip/assets/img/category_img_01.jpg" class="img-fluid"></a>
                         <h4 class="h5 text-center mt-3 mb-3">해피데이 곰돌이 케이크</h4>
                     </div>
                 </div>
                 <div class="pop_container">
                     <div class="col-12 col-md-4 p-5 mt-3">
-                        <a href="#"><img src="../assets/img/category_img_01.jpg" class="img-fluid"></a>
+                        <a href="#"><img src="../BetterHip/assets/img/category_img_01.jpg" class="img-fluid"></a>
                         <h4 class="h5 text-center mt-3 mb-3">해피데이 곰돌이 케이크</h4>
                     </div>
                 </div>
                 <div class="pop_container">
                     <div class="col-12 col-md-4 p-5 mt-3">
-                        <a href="#"><img src="../assets/img/category_img_01.jpg" class="img-fluid"></a>
+                        <a href="#"><img src="../BetterHip/assets/img/category_img_01.jpg" class="img-fluid"></a>
                         <h4 class="h5 text-center mt-3 mb-3">해피데이 곰돌이 케이크</h4>
                     </div>
                 </div>
                 <div class="pop_container">
                     <div class="col-12 col-md-4 p-5 mt-3">
-                        <a href="#"><img src="../assets/img/category_img_01.jpg" class="img-fluid"></a>
+                        <a href="#"><img src="../BetterHip/assets/img/category_img_01.jpg" class="img-fluid"></a>
                         <h4 class="h5 text-center mt-3 mb-3">해피데이 곰돌이 케이크</h4>
                     </div>
                 </div>
                 <div class="pop_container">
                     <div class="col-12 col-md-4 p-5 mt-3">
-                        <a href="#"><img src="../assets/img/category_img_01.jpg" class="img-fluid"></a>
+                        <a href="#"><img src="../BetterHip/assets/img/category_img_01.jpg" class="img-fluid"></a>
                         <h4 class="h5 text-center mt-3 mb-3">해피데이 곰돌이 케이크</h4>
                     </div>
                 </div>
@@ -308,11 +310,11 @@
     <!-- End Footer -->
 
     <!-- Start Script -->
-    <script src="../assets/js/jquery-1.11.0.min.js"></script>
-    <script src="../assets/js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/templatemo.js"></script>
-    <script src="../assets/js/custom.js"></script>
+    <script src="../BetterHip/assets/js/jquery-1.11.0.min.js"></script>
+    <script src="../BetterHip/assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="../BetterHip/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../BetterHip/assets/js/templatemo.js"></script>
+    <script src="../BetterHip/assets/js/custom.js"></script>
     <!-- End Script -->
 <!-- Code injected by live-server -->
 <script type="text/javascript">

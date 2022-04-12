@@ -18,9 +18,10 @@ public class LoginCommand implements BetterhipCommand {
 		
 		String user_id = request.getParameter("user_id");
 		String user_pw = request.getParameter("user_pw");
+			
 		
 		String loginMethod = request.getParameter("loginMethod"); // 카카오, 일반 로그인 구별
-			
+					
 		HttpSession session = request.getSession();	
 	
 		LoginDao dao = new LoginDao();
@@ -31,9 +32,10 @@ public class LoginCommand implements BetterhipCommand {
 		request.setAttribute("viewPage", dto.getViewPage());
 		session.setAttribute("message", dto.getMeassage());;
 		
-		// 회원으로 확인되면 session에 user_id 저
+		// 회원으로 확인되면 session에 user_id 저장 
 		if(dto.getMeassage().equals("success")) {
 			session.setAttribute("USER_ID", user_id);
+			System.out.println("USER_ID Set : " + user_id);
 		}
 	
 			

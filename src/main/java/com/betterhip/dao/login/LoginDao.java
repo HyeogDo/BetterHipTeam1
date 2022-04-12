@@ -43,7 +43,6 @@ public class LoginDao {
 		String dbLeaveDate = "";    // 해당 아이디로 DB에서 받은 탈퇴일
 		String message = "";
 		String viewPage = "";
-		HttpSession session = request.getSession();
 		LoginDto  dto = null;
 
 
@@ -65,7 +64,6 @@ public class LoginDao {
 				// 이메일 동의 카카오 로그인 	
 					connection = dataSource.getConnection();		
 					String query = "select count(user_id) from user where user_id = '" + user_id + "'";
-					System.out.println("kakao login query : " + query);
 					preparedStatement = connection.prepareStatement(query);
 					resultSet = preparedStatement.executeQuery();
 					
@@ -78,7 +76,6 @@ public class LoginDao {
 				// 입력한 아이디로 비밀번호 조회	
 				connection = dataSource.getConnection();
 				String query = "select * from user where user_id = ?";
-				System.out.println("normal login query : " + query);
 				preparedStatement = connection.prepareStatement(query);
 				preparedStatement.setString(1, user_id);
 				resultSet = preparedStatement.executeQuery();
