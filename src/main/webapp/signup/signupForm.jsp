@@ -84,7 +84,7 @@
 	</header>
 	</div>
         
-	<div>
+	<div class="signupForm-wrap">
 		<!-- 회원 가입 form -->
 		<form action="signup.do" name="signupForm" method="get">
 			<table class="signup-form">
@@ -98,8 +98,10 @@
 					<td style="font-size:20px">아이디</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="user_id" size="30"> 
-					<input type="button" size="20" value="중복확인" onclick="checkId()"></td>
+					<div class="id-input-button">
+						<td><input type="text" name="user_id" size="30" style="width: 320px;"> 
+						<input type="button" size="20" value="중복확인" onclick="checkId()" style="width:120px;"></td>
+					</div>
 				</tr>
 				<tr>
 					<td style="font-size:20px">비밀번호</td>
@@ -136,15 +138,15 @@
 					<td style="font-size:20px">휴대폰 번호</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="user_phone" oninput="autoHyphen2(this)" maxlength="13"placeholder="ex) 010-6603-0058"> 
-					<input type="button" size="20" value="중복확인" onclick="checkPhone()"></td>
+					<td><input type="text" name="user_phone" oninput="autoHyphen2(this)" maxlength="13"placeholder="ex) 010-6603-0058"  style="width: 320px;"> 
+					<input type="button" size="20" value="중복확인" onclick="checkPhone()" style="width:120px;"></td>
 				</tr>
 				<tr>
 					<td style="font-size:20px">주소</td>
 				</tr>
 				<tr>
-					<td><input type="text" onclick="sample6_execDaumPostcode()" readonly="readonly" id="sample6_postcode" name="postcode">
-						<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호"><br>
+					<td><input type="text" onclick="sample6_execDaumPostcode()" readonly="readonly" id="sample6_postcode" name="postcode"  style="width: 320px;">
+						<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호"  style="width:120px;"><br>
 						<input type="text" onclick="sample6_execDaumPostcode()" readonly="readonly" id="sample6_address" size="41" placeholder="기본주소" name="address1"><br>
 						<input type="text" id="sample6_detailAddress" size="41" placeholder="상세주소 입력" name="address2"></td>
 				</tr>
@@ -152,41 +154,43 @@
 			</table>
 			<br>
 			<!-- 약관 동의 -->
-			<table>
+			<table style="width: 444px;">
 				<tr>
-					<td colspan="2" align="left" style="font-size:20px">서비스 약관 동의</td>
-					<td><input type="checkbox" name="selectall" value="selectall"
+					<td colspan="4" align="left" style="font-size:20px">서비스 약관 동의</td>
+				</tr>
+				<tr></tr>
+				<tr>
+					<td ><input type="checkbox" name="selectall" value="selectall"
 						onclick="selectAll(this)"><b>모두 동의합니다.</b><br></td>
 				</tr>
 				<tr>
-					<td colspan="3"><hr></td>
+					<td><hr></td>
 				</tr>
 				<tr>
-					<td colspan="2" align="left">이용약관(필수)</td>
+					<td colspan="4" align="left">이용약관(필수)</td>
 					<td align="right"><input type="checkbox" name="check"
 						value="option_1" onclick="checkSelectAll(this)">동의<br></td>
 				</tr>
 				<tr>
-					<td colspan="2" align="left">개인 정보 동의(필수)</td>
+					<td colspan="4" align="left">개인 정보 동의(필수)</td>
 					<td align="right"><input type="checkbox" name="check"
 						value="option_2" onclick="checkSelectAll(this)">동의<br></td>
 				</tr>
 				<tr>
-					<td colspan="2" align="left">마케팅 안내 동의(선택)</td>
+					<td colspan="4" align="left">마케팅 안내 동의(선택)</td>
 					<td align="right"><input type="checkbox" name="check"
 						value="option_3" onclick="checkSelectAll(this)">동의<br></td>
 				</tr>
 				<tr>
 					<!-- 이동하는 버튼  -->
-					<td align="center" colspan="2">
-
+				<!-- 	<td align="center" colspan="3">
 						<input type="button" value="회원 가입" name="btnSubmit" onclick="signup()" class="buttonsignup">
-
-					</td>
+					</td> -->
 				</tr>
 			</table>
 			<br>
 		</form>
+				<input type="button" value="회원 가입" name="btnSubmit" onclick="signup()" class="buttonsignup" style="width: 444px; margin: 50px 0 90px;">
 	</div>
 	
 	<!-- Start Footer -->

@@ -187,8 +187,10 @@ header .nav-item-search {
 }
 
 
-
-
+.signupForm-wrap{
+	padding-top: 108px;
+    padding-left: 40%;
+}
 
 .signup-title >td{
     color:#4F75D8;
@@ -223,23 +225,21 @@ header .nav-item-search {
 }
 
 .buttonsignup {
-	width: 200px
-}
-
-.buttonsignup {
-	border-radius: 5px
-}
-
-.buttonsignup {
-	background-color: #535353;
-}
-
-.buttonsignup {
+    width: 314px;
+    height: 59px;
+	border-radius: 5px;
+	background-color: #4F75D8;
 	align-self: center;
+	border:none;
+	color:#fff;
 }
 
 .buttonsignup:hover {
-	background-color: #A9A9A9;
+	border: 1px solid;
+	border-color: #4F75D8;
+	background-color:#fff;
+	color: #4F75D8;
+	transition: all .3s ease;
 }
 
 /* General */
