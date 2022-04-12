@@ -86,9 +86,12 @@ public class CartListDao {
 					
 					inputStream.close();
 					outputStream.close();
+					System.out.println("image in");
 					
 				}catch(Exception e) {
-					purchase_custom_img = "empty";
+					purchase_custom_img = "xxx";
+					System.out.println("custom_img : " + purchase_custom_img);
+					System.out.println("empty");
 				}
 				// Test end
 				
