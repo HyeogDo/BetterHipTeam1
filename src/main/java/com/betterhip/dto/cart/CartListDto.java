@@ -7,6 +7,7 @@ public class CartListDto {
 	int purchase_id;
 	int purchase_quantity;
 	int purchase_price;
+	int purchase_cake_id;
 	String purchase_custom_size; 
 	String purchase_custom_taste; 
 	String purchase_custom_cream_type; 
@@ -20,13 +21,15 @@ public class CartListDto {
 	
 	// Constructor
 	
-	public CartListDto(int purchase_id, int purchase_quantity, int purchase_price, String purchase_custom_size,
-			String purchase_custom_taste, String purchase_custom_cream_type, String purchase_custom_cream_color,
-			String purchase_text, String purchase_cake_name, String purchase_cake_img, String purchase_pickup_date) {
+	public CartListDto(int purchase_id, int purchase_quantity, int purchase_price, int purchase_cake_id,
+			String purchase_custom_size, String purchase_custom_taste, String purchase_custom_cream_type,
+			String purchase_custom_cream_color, String purchase_text, String purchase_cake_name,
+			String purchase_cake_img, String purchase_pickup_date) {
 		super();
 		this.purchase_id = purchase_id;
 		this.purchase_quantity = purchase_quantity;
 		this.purchase_price = purchase_price;
+		this.purchase_cake_id = purchase_cake_id;
 		this.purchase_custom_size = purchase_custom_size;
 		this.purchase_custom_taste = purchase_custom_taste;
 		this.purchase_custom_cream_type = purchase_custom_cream_type;
@@ -35,15 +38,16 @@ public class CartListDto {
 		this.purchase_cake_name = purchase_cake_name;
 		this.purchase_cake_img = purchase_cake_img;
 		this.purchase_pickup_date = purchase_pickup_date;
-		
 	}
-
+	
 
 	
 	// Method
 	public int getPurchase_id() {
 		return purchase_id;
 	}
+
+
 
 
 	public void setPurchase_id(int purchase_id) {
@@ -148,6 +152,24 @@ public class CartListDto {
 
 	public void setPurchase_cake_pickup_date(String purchase_pickup_date) {
 		this.purchase_cake_img = purchase_pickup_date;
+	}
+
+
+
+	public int getPurchase_cake_id() {
+		return purchase_cake_id;
+	}
+
+
+
+	public void setPurchase_cake_id(int purchase_cake_id) {
+		this.purchase_cake_id = purchase_cake_id;
+	}
+
+
+
+	public void setPurchase_pickup_date(String purchase_pickup_date) {
+		this.purchase_pickup_date = purchase_pickup_date;
 	}
 
 	

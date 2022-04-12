@@ -28,14 +28,12 @@
 		document.list.action="../BetterHip/cartDelete.do"
 		document.list.submit()
 		
-	
 	}
 	
 	function previousBack() {
 		
 		document.list.action=history.back(-1)
 		window.history.go(-1)
-		
 	
 	}
 </script>
@@ -87,7 +85,7 @@
 						<c:forEach var="item" items="${CartList}">
 							<tr>
 							   <td width="30"><input type="checkbox" name="chk" value="${item.purchase_id}">
-							   <td width="200" align="center"><img src="data:cake_img/png;base64, ${item.purchase_cake_img }" width="150" height="150"></td>
+							   <td width="200" align="center"><a href="cakeChoice.do?cake_id=${item.purchase_cake_id }"><img src="data:cake_img/png;base64, ${item.purchase_cake_img }" width="150" height="150"></a></td>
 							   <td width="950" align="left"><h3><c:out value = "${item.purchase_cake_name }"/></h3><br>
 							    	옵션 : ${item.purchase_custom_size}&nbsp;${item.purchase_custom_taste}&nbsp;${item.purchase_custom_cream_type}
 									&nbsp;${item.purchase_custom_cream_color}&nbsp;&nbsp;픽업일 : ${item.purchase_pickup_date}<br>

@@ -44,7 +44,7 @@ public class CartDeleteDao {
 				preparedStatement = connection.prepareStatement(query);
 				resultSet = preparedStatement.executeQuery();
 				deleteResult = "success";
-			    System.out.println("deletResult");
+	
 			}catch (Exception e) {
 				e.printStackTrace();
 				deleteResult = "fail";
