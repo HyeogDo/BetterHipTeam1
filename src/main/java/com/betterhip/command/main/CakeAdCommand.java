@@ -14,10 +14,10 @@ public class CakeAdCommand implements BetterhipCommand {
 	@Override
 	public void excute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
+
 		CakeAdDao dao = new CakeAdDao();
 		ArrayList<CakeAdDto> adDtos = dao.cakead();
 		request.setAttribute("list", adDtos);
-		
 
 	}
 

@@ -13,7 +13,7 @@ String user_id=request.getParameter("user_id");
 %>
 <script type="text/javascript">
 function goShopping() {
-	location.href="cakeListview.do";
+	location.href="cakeListView.do";
 }
 </script>
 <style type="text/css">

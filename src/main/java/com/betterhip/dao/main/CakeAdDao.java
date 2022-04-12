@@ -38,8 +38,9 @@ public class CakeAdDao {
 		try {
 			connection = dataSource.getConnection();
 			String query = "select curate.curate_title, cake.cake_id, cake.cake_img, cake.cake_name, cake.cake_saleprice from cake, curate where curate.curate_cake_id = cake.cake_id";
-			
+			preparedStatement = connection.prepareStatement(query);
 			resultSet = preparedStatement.executeQuery();
+			
 			while(resultSet.next()) {
 				String curate_title = resultSet.getString("curate.curate_title");
 				int cake_id = resultSet.getInt("cake.cake_id");
@@ -47,7 +48,7 @@ public class CakeAdDao {
 				String cake_name = resultSet.getString("cake_name");
 				int cake_saleprice = resultSet.getInt("cake_saleprice");
 				
-				// Bite ·Î ¹Ù²Ù±â 
+				// Bite ï¿½ï¿½ ï¿½Ù²Ù±ï¿½ 
 				InputStream inputStream = cake_img.getBinaryStream();
 				ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 				byte[] buffer = new byte[4096];
@@ -58,7 +59,7 @@ public class CakeAdDao {
 				}
 				byte[] imageBytes = outputStream.toByteArray();
 				
-				// ¹ÙÀÌÆ® > ¹®ÀÚ¿­
+				// ï¿½ï¿½ï¿½ï¿½Æ® > ï¿½ï¿½ï¿½Ú¿ï¿½
 				String base64Image = Base64.getEncoder().encodeToString(imageBytes);
 				
 				inputStream.close();
@@ -69,6 +70,7 @@ public class CakeAdDao {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+	
 		} finally {
 			try {
 				if(resultSet != null) resultSet.close();
@@ -76,6 +78,7 @@ public class CakeAdDao {
 				if(connection != null) connection.close();
 			} catch (Exception e) {
 				e.printStackTrace();
+				
 			}
 		}
 		return dtos;

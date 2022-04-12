@@ -19,14 +19,15 @@ public class CakeOrderCartCommand implements BetterhipCommand {
 	public void excute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-//		String purchase_user_id = session.getAttribute("USER_ID").toString();
-//		int purchase_cake_id = Integer.parseInt(session.getAttribute("CAKE_ID").toString());
-		String purchase_user_id = "test11";
-		int purchase_cake_id = 1;
+		String purchase_user_id = session.getAttribute("USER_ID").toString();
+		int purchase_cake_id = Integer.parseInt(session.getAttribute("CAKE_ID").toString());
+
 		
+
 		String savePath = "C:\\Users\\khdo\\eclipse-workspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\BetterHip\\assets\\img";
 		System.out.println(savePath);
 		int sizeLimit = 1024*1024*15;
+
 		int purchase_status = 1;
 		try {
 			MultipartRequest multi = new MultipartRequest(request, savePath, sizeLimit, "utf-8", new DefaultFileRenamePolicy());
@@ -46,6 +47,7 @@ public class CakeOrderCartCommand implements BetterhipCommand {
 		}
 		
 		
+
 	}
 
 }
