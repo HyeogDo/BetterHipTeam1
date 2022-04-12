@@ -161,7 +161,6 @@ public class BetterhipHomeController extends HttpServlet {
 			break;			
 			
 
-
 		case("/purchaseQueryList.do") :
 			command = new PurchaseQueryListCommand();
 			command.excute(request, response);
