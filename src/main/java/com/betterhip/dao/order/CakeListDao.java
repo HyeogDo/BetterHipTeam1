@@ -150,11 +150,11 @@ public class CakeListDao {
 				
 				//데이터베이스 입력문
 				String query = "insert into purchase(purchase_user_id, purchase_cake_id, purchase_customize_id, purchase_quantity, purchase_price, purchase_text, purchase_status, purchase_img) values(?,?,?,?,?,?,?,?)";
+				File file = new File(purchase_img);
+				FileInputStream inputStream = new FileInputStream(file);
 				preparedStatement = connection.prepareStatement(query);
 				
-				File file = new File("image/" + purchase_img);
-				FileInputStream inputStream = new FileInputStream(file);
-			
+				
 				
 				//입력문 안에 들어갈 변수 설정
 				preparedStatement.setString(1, purchase_user_id);
@@ -164,7 +164,7 @@ public class CakeListDao {
 				preparedStatement.setInt(5, purchase_price);
 				preparedStatement.setString(6, purchase_text);
 				preparedStatement.setInt(7, purchase_status);
-			
+				preparedStatement.setBinaryStream(8, (InputStream)inputStream, (int)file.length());
 				
 				//입력 업데이트
 				preparedStatement.executeUpdate();
