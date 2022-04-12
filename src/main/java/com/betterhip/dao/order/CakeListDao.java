@@ -16,6 +16,7 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 import com.betterhip.dto.order.CakeListDto;
+import com.oreilly.servlet.MultipartRequest;
 
 public class CakeListDao {
 	//datasource 불러오기
@@ -140,7 +141,7 @@ public class CakeListDao {
 			
 		}
 		
-		public String purchase(String purchase_user_id, int purchase_cake_id, int purchase_customize_id, int purchase_quantity, int purchase_price, String purchase_text, int purchase_status, String purchase_img) {
+		public String purchase(String purchase_user_id, int purchase_cake_id, int purchase_customize_id, int purchase_quantity, int purchase_price, String purchase_text, int purchase_status, String img_fileFullPath) {
 			String result = "RESULT_NOT_OK";
 			Connection connection = null;
 			PreparedStatement preparedStatement = null;
@@ -150,7 +151,7 @@ public class CakeListDao {
 				
 				//데이터베이스 입력문
 				String query = "insert into purchase(purchase_user_id, purchase_cake_id, purchase_customize_id, purchase_quantity, purchase_price, purchase_text, purchase_status, purchase_img) values(?,?,?,?,?,?,?,?)";
-				File file = new File(purchase_img);
+				File file = new File(img_fileFullPath);
 				FileInputStream inputStream = new FileInputStream(file);
 				preparedStatement = connection.prepareStatement(query);
 				
@@ -165,7 +166,6 @@ public class CakeListDao {
 				preparedStatement.setString(6, purchase_text);
 				preparedStatement.setInt(7, purchase_status);
 				preparedStatement.setBinaryStream(8, (InputStream)inputStream, (int)file.length());
-				
 				//입력 업데이트
 				preparedStatement.executeUpdate();
 				
