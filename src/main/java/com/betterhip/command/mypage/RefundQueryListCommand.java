@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.betterhip.command.BetterhipCommand;
-import com.betterhip.dao.mypage.PurchaseQueryListDao;
 import com.betterhip.dao.mypage.RefundQueryListDao;
 import com.betterhip.dao.mypage.UserInfoViewDao;
 import com.betterhip.dto.mypage.PurchaseListDto;

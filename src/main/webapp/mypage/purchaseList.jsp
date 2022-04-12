@@ -14,6 +14,36 @@
 
 </head>
 
+
+<script type="text/javascript">
+
+	const button = document.querySelector(".cancelBtn");
+	const status = document.querySelector(".purchaseStatus").value;
+	const input = document.querySelector(".input");
+	
+	function activateBtn() {
+		
+		if(status.equals("주문접수")){
+			button.disabled = false;
+		}
+		
+		else{
+			button.disabled = true; 
+		}
+	}
+	button.addEventListener('keyup', activateBtn);
+</script>
+
+<script type="text/javascript">
+
+	function del() {
+		if(confirm("정말로 주문을 취소하시겠습니까?")) {
+			location.href = "purchaseCancel.do";
+		}		
+	}
+</script>
+
+
 <body>
 
 <!--오늘 날짜 가져오는 자바 스크립트립-->
@@ -24,12 +54,12 @@ String currentDate = format.format(date);
 %>
 
 <!--주문조회 메인-->
-	<div style="position: absolute; left: 25%;">
+	<div class="purchaseList" style="position: absolute; left: 25%;">
 	
 		<h2 align="center">나의 쇼핑 내역</h2>
 		<h3 align="center">주문 조회</h3>
 	
-		<table border="2" class="puchase_state_count">
+		<table border="2">
 			<tr>
 				<th>주문접수</th>
 				<th>상품준비중</th>
@@ -72,9 +102,9 @@ String currentDate = format.format(date);
 					<td>${dto.cake_name }</td>
 					<td rowspan="2">${dto.purchase_quantity }</td>
 					<td rowspan="2">${dto.purchase_price }</td>
-					<td rowspan="2">${dto.purchase_status }</td>
+					<td rowspan="2" class="purchaseStatus">${dto.purchase_status }</td>
 					<td rowspan="2">${dto.purchase_pickup_date }</td>
-					<td rowspan="2"><input type="button" value="주문취소"></td>
+					<td rowspan="2"><input type="button" value="주문취소" class="cancelBtn" onclick="cancel()"></td>
 				</tr>
 				<tr>
 					<td>옵션: ${dto.cake_option }<br> 
