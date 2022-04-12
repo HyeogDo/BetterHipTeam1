@@ -23,6 +23,9 @@ import com.betterhip.command.mypage.PurchaseListCommand;
 import com.betterhip.command.mypage.UserInfoDeleteCommand;
 import com.betterhip.command.mypage.UserInfoModifyCommand;
 import com.betterhip.command.mypage.UserInfoViewCommand;
+import com.betterhip.command.notice.NoticeContentCommand;
+import com.betterhip.command.notice.NoticeFormCommand;
+import com.betterhip.command.notice.NoticeListCommand;
 import com.betterhip.command.order.CakeChoiceCommand;
 import com.betterhip.command.order.CakeListViewCommand;
 import com.betterhip.command.order.CakeOrderCartCommand;
@@ -39,6 +42,7 @@ import com.betterhip.command.signup.SignUpCheckPhoneCommand;
 //import com.betterhip.command.signup.SignUpCheckPhoneCommand;
 //import com.betterhip.command.signup.SignUpCommand;
 import com.betterhip.command.signup.SignUpCommand;
+
 
 /**
  * Servlet implementation class BetterhipHomeController
@@ -110,19 +114,56 @@ public class BetterhipHomeController extends HttpServlet {
 			viewPage = "guide/guideUse.jsp";
 			break;
 			
+		case("/write_view.do"): 	
+			viewPage = "write_view.jsp";
+			break;
+		
+			// 공지사항
+		case("/main/noticeList.do"):
+			command = new NoticeListCommand();
+			command.excute(request, response);
+			viewPage = "../notice/noticeList.jsp";
+			break;
+			
+		case("/noticeForm.do"):
+			command = new NoticeFormCommand();
+			command.excute(request,response);
+			viewPage = "/notice/noticeForm.jsp";
+			break;
+		
+		case("/noticeContent.do"):
+			command = new NoticeContentCommand();
+			command.excute(request, response);
+			viewPage = "../notice/noticeContent.jsp"; 
+			break; 
+		
+		case("/noticeUpdate.do"): 
+			command = new NoticeContentCommand();
+			command.excute(request, response);
+			viewPage = "noticeList.do";
+			break; 
+			
+		case("/noticeDelete.do") :
+			command = new PurchaseListCommand();
+			command.excute(request, response);
+			viewPage = "noticeList.do";
+			break;
+			
+			
+		// 	
 		case("/purchaseList.do") :
 			command = new PurchaseListCommand();
 			command.excute(request, response);
-			viewPage = "mypage/purchaseList.jsp";
-			break;
+			viewPage = "purcrchaseList.do";
+			break;			
 			
 		case("/purchaseCancel.do") :
 			command = new PurchaseCancelCommand();
 			command.excute(request, response);
-			viewPage = "purcrchaseList.do";
+			viewPage = "mypage/purcrchaseList.do";
 			break;
 			
-		case("/refundList,do") :
+		case("/refundList.do") :
 			command = new PurchaseCancelListCommand();
 			command.excute(request, response);
 			viewPage = "mypage/purchaseList.jsp";
