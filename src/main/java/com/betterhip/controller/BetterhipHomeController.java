@@ -159,7 +159,7 @@ public class BetterhipHomeController extends HttpServlet {
 			command.excute(request, response);
 			viewPage = "purcrchaseList.do";
 			break;			
-			
+
 
 		case("/purchaseQueryList.do") :
 			command = new PurchaseQueryListCommand();

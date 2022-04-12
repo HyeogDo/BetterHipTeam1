@@ -126,6 +126,7 @@
 			window.open("cakeReview.do","","width=800, height=300, left=500, top=150")
 		}
 	</script>
+	
     
 <head>
 <meta charset="UTF-8">
@@ -179,9 +180,9 @@
     </div>
     
 <div id="orderBox" style="height: 200px">
-	<form action="#">
+	<form action="#" enctype="multipart/form-data" method="post">
 	<b>옵션 선택</b><br>
-	<select name="customize_id">
+	<select name="customize_id" >
 		<c:forEach items="${LIST }" var="dto" varStatus="status">
 		<option value="${dto.customize_id }" >
 			옵션 ${dto.customize_id }. 
@@ -194,9 +195,9 @@
 	<b>구매 수량</b><br>
 	<input type="number" name="purchase_quantity" id="purchase_quantity" value="1" min="1"><br>
 	<b>레터링 문구 입력</b><br>
-	<input type="text" name="puchase_text" placeholder="레터링 문구 없을 시 '없음'이라고 적어주세요" width="80%"><br>
+	<input type="text" name="purchase_text" placeholder="레터링 문구 없을 시 '없음'이라고 적어주세요" width="80%"><br>
 	<b>사진 첨부(선택)</b><br>
-	<input type="file" name="purchase_img" placeholder="첨부하기"><br>
+	<input type="file"  name="purchase_img" placeholder="첨부하기" accept="image/png"><br>
     <input type="hidden" value="${LIST[0].cake_saleprice }" id="cake_saleprice" name="cake_saleprice">
     총 구매금액 = <span id="ab"></span>
 	<br><input type="button" value="바로구매" onclick="paymentSubmit(this.form)"> <input type="button" value="장바구니" onclick="cartSubmit(this.form)"><br>

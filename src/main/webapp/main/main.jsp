@@ -100,7 +100,7 @@
     <!--banner-->
     <div class="wrap-banner">
         <div class="background">
-            <img src="/BetterHip/assets/img/back.jpg" alt="배경" width="100%">
+            <img src="../assets/img/back.jpg" alt="배경" width="100%">
         </div>
         <div class="moving">
         </div>
