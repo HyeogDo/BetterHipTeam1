@@ -38,8 +38,9 @@ public class CakeAdDao {
 		try {
 			connection = dataSource.getConnection();
 			String query = "select curate.curate_title, cake.cake_id, cake.cake_img, cake.cake_name, cake.cake_saleprice from cake, curate where curate.curate_cake_id = cake.cake_id";
-			
+			preparedStatement = connection.prepareStatement(query);
 			resultSet = preparedStatement.executeQuery();
+			
 			while(resultSet.next()) {
 				String curate_title = resultSet.getString("curate.curate_title");
 				int cake_id = resultSet.getInt("cake.cake_id");
