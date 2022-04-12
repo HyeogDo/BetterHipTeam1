@@ -6,17 +6,17 @@
 <meta charset="UTF-8">
 <title>Better Hip 회원가입</title>
 <link rel="stylesheet" href="css/aos.css">
-<link rel="stylesheet" href="../assets/css/signupForm.css">
-<link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
+<link rel="stylesheet" href="../BetterHip/assets/css/signupForm.css">
+<link rel="shortcut icon" type="image/x-icon" href="../BetterHip/assets/img/favicon.ico">
 
 
-<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="../assets/css/templatemo.css">
-<link rel="stylesheet" href="../assets/css/custom.css">
+<link rel="stylesheet" href="../BetterHip//assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="../BetterHip//assets/css/templatemo.css">
+<link rel="stylesheet" href="../BetterHip//assets/css/custom.css">
 
 <!-- Load fonts style after rendering the layout styles -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-<link rel="stylesheet" href="../assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="../BetterHip//assets/css/fontawesome.min.css">
 
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 		<div class="top-header">
 			<div class="container clearfix">
 			<div class="member-area">
-				<a href="#!">로그인</a>
+				<a href="loginForm.do">로그인</a>
 				<span class="bar">|</span>
-				<a href="../BetterHip/signup.do">회원가입</a>
+				<a href="#!">회원가입</a>
 				<span class="bar">|</span>
 				<a href="#!">장바구니</a>
 				<span class="bar">|</span>
@@ -44,7 +44,7 @@
 			<div class="container clearfix">
 			<h1 class="logo">
 				<a href="#!">
-				<img src="../assets/img/logo.png" alt="로고" width="120">
+				<img src="../BetterHip/assets/img/logo.png" alt="로고" width="120">
 				</a>
 			</h1>
 			<h1 class="logo_text">
