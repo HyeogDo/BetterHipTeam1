@@ -1,9 +1,35 @@
+@charset "UTF-8";
+@import url('https://font.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Angkor&family=Fredoka+One&family=Modak&family=Nanum+Gothic:wght@800&display=swap');
+
+body{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-family: 'Fredoka One', cursive;
+	height: 100vh;
+	background: #fff;
+}
+
+header{
+    z-index: 3;
+}
+
+.form-wrapper{
+    z-index: 1;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Angkor&family=Fredoka+One&family=Modak&family=Nanum+Gothic:wght@800&display=swap');
 /* font-family: 'Noto Sans KR', sans-serif;
 font-family: 'Nanum Gothic', sans-serif; */
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700;800&family=Walter+Turncoat&display=swap');
 
-* { 
+* {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -23,7 +49,7 @@ img {
     margin: 0 auto;
 }
 header{
-    position: sticky; 
+    position: relative;
     top:0;
 }
 header .top-header {
@@ -55,7 +81,16 @@ header .top-header .member-area span.bar {
     font-size: 15px;
     font-weight: 700;
 }
-
+/* 로그인 ~마이페이지 칸나누기*/
+header .top-header .search-area i {
+    position: absolute;
+    top: 10px;
+    right: -30px;
+    border: 1px solid #999;
+    padding: 5px;
+    background: #fff;
+    font-size: 20px;
+}
 /*이용안내 ~ 공지사항 네비영역*/
 header .main-header {
     background: #D5E3EE;
@@ -103,7 +138,7 @@ header .main-header {
     position: relative;
 }
 /*파란색 띠 영역*/
-li.nav-item .dropdown{
+header .main-header .gnb ul li.nav-item .dropdown{
     position: absolute;
     background: #4F75D8;
     left: 0;
@@ -111,7 +146,7 @@ li.nav-item .dropdown{
     display: none;
     z-index: 1000;
 }
-li.nav-item:hover .dropdown {
+header .main-header .gnb ul li.nav-item:hover .dropdown {
     display: block;
     transition: all .3s ease;
 }
@@ -129,7 +164,7 @@ header .main-header .gnb ul li.nav-item .dropdown > ul > li{
     text-align: center;
 }
 
-/*주황색 텍스트 영역*/
+/*파란색 텍스트 영역*/
 header .main-header .gnb ul li.nav-item .dropdown > ul > li > a {
     color: #fff;
     font-size: 17px;
@@ -142,35 +177,37 @@ header .main-header .gnb ul li.nav-item .dropdown > ul > li > ul li a {
     color: #999;
     font-size: 20px;
 }
+a:link { color:#4F75D8; text-decoration: none; font-family: 'Walter Turncoat', cursive;}  
 
+a:visited { color:#4F75D8; text-decoration: none;} 
 
-header .nav-item-search {
-    border-color: #D5E3EE;
+a:hover { color:#4F75D8; text-decoration: none;}
+
+a:active { color:#4F75D8; text-decoration: none;}
+/* Typography */
+body, ul, li, p, a, label, input, div {
+    font-family:'Nanum Gothic', sans-serif;
 }
 
 
-/*form*/
-.signupResult-content >img{
-	margin-top: 138px;
-    width: 59px;
-    margin-left: 48.5%;
-}
-.signupResult-content >h1{
+.form-wrapper{
+    padding: 5%;
     text-align: center;
-    width: 100%;
-
 }
-
-.form-wrap {
-    position: relative;
-    /* left: 40%; */
-    margin: 100px;
+.login-form{position: relative; z-index: 2;}
+.login-form h1{
+	font-family: 'Fredoka One', cursive;
+	font-size: 65px; color: #4F75D8;
+	font-weight:ExtraBold 800;
+	text-align: center;
+	padding:0px;
+	padding-top: 0px;
 }
-
-.signup-title >td{
-    color:#4F75D8;
-}
-.signupForm input{
+.form_wrapper{
+	width:600px; position: relative;
+	margin: -1px auto 0;
+	}
+.form_wrapper input{
 	font-family: 'Nanum Gothic', sans-serif;
 	width: 100%;
 	padding: 20px 10px 20px;
@@ -181,63 +218,120 @@ header .nav-item-search {
 	margin: 1rem 0;
 }
 
+.findId-button button{
+	font-family: 'Nanum Gothic', sans-serif;
+	width: 100%;
+	padding: 20px 10px 20px;
+	background-color: #4F75D8;
+	border-radius:5px;
+	font-size: 20px; color: #fff;
+	font-weight:700;
+	border:none;
+	outline: none;
+	margin: 2rem 0;
+	margin-bottom: 60px;
+}
+.int-area label{
+	font-family: 'Nanum Gothic', sans-serif;
+	position: absolute; left: 15px; top:25px;
+	font-size: 17px; color:#CCCCCC;
+	transition: all .1s ease;
+}
+.int-area input:focus{
+	border: 1px solid #4F75D8;
+	transition: all .1s ease;
+	
+}
+.error{
+	display:none;
+	font-family: 'Nanum Gothic', sans-serif;
+	text-align: left;
+	margin: 0.5rem;
+	font-size: 0.9rem;
+	color:red;
+}
+.error.block{
+	display:block;
+}
+.int-area input:focus + label,
+.int-area input:valid + label{
+	top:0;
+	font-size: 13px; color: #CCCCCC;
+}
 
 
-.button {
-	background-color: blue;
+.btn-area{
+	overflow: hidden;
+}
+.btn-area > div{
+	float:left;
+	width: 300px;
+}
+
+.title h2{
+	padding:50px;
+	text-align:center;
+	color: #4F75D8;
+	font-weight:700;
+}
+
+.btn-area .id-btn-area button{
+	width: 100%; height:60px;
+	background: #4F75D8;
+	color: #fff;
+	font-size: 20px;
+	font-weight:bold;
 	border: none;
-	color: white;
-	padding: 15px 30px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	cursor: pointer;
-	-webkit-transition-duration: 0.4s;
-	transition-duration: 0.4s;
-	display: block;
+	border-radius: 5px;
+	cursor:pointer;
+	transition:.5s;
+}
+.btn-area .pw-btn-area button{
+	width: 100%; height:60px;
+	background: #fff;
+	color: #4F75D8;
+	font-size: 20px;
+	font-weight:bold;
+	border: 1px solid;
+	border-radius: 5px;
+	cursor:pointer;
+	transition:.5s;
 }
 
-.buttonsignup {
-	width: 200px
+.signupForm-btn-area {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 14px;
+	text-align: left;
+    display: flex;
+    justify-content: space-between;
+	margin-top: 15px;
+    width: 100%;
+}
+.signupForm-btn-area .login__check--right>a {
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 14px;
+	font-weight:bold;
+	border: none;
+    color: #939393;
+}
+.findId-btn-area {margin-top: 15px;}
+.findId-btn-area >a{font-family: 'Nanum Gothic', sans-serif;}
+.findId-btn-area button {
+	color: #CCCCCC;
+	font-size: 20px;
+	font-weight:bold;
+	border: none;
+}
+.findPw-btn-area {margin-top: 15px;}
+.findPw-btn-area >a{font-family: 'Nanum Gothic', sans-serif;}
+.findPw-btn-area button {
+	color: #CCCCCC;
+	font-size: 20px;
+	font-weight:bold;
+	border: none;
+    
 }
 
-.buttonsignup {
-	border-radius: 5px
-}
-
-.buttonsignup {
-	background-color: #535353;
-}
-
-.buttonsignup {
-	align-self: center;
-}
-
-.buttonsignup:hover {
-	background-color: #A9A9A9;
-}
-
-/* General */
-
-.text-warning {  color: #ede861 !important;}
-.text-muted { color: #bcbcbc !important;}
-.text-success { color: #59ab6e !important;}
-.text-light { color: #cfd6e1 !important;}
-.bg-dark { color : #fff !important;}
-.bg-light { background-color: #e9eef5 !important;}
-.bg-black { background-color: #98bbd6 !important;}
-.bg-success { background-color: #59ab6e !important;}
-.btn-success {
-    background-color: #59ab6e !important;
-    border-color: #56ae6c !important;
-}
-.pagination .page-link:hover {color: #000;}
-.pagination .page-link:hover, .pagination .page-link.active {
-    background-color: #69bb7e;
-    color: #fff;
-}
 
 /* Footer */
 #tempaltemo_footer a { 
