@@ -18,8 +18,10 @@ import com.betterhip.command.login.FindPwCommand;
 import com.betterhip.command.login.LoginCommand;
 import com.betterhip.command.main.CakeAdCommand;
 import com.betterhip.command.mypage.PurchaseCancelCommand;
-import com.betterhip.command.mypage.PurchaseCancelListCommand;
 import com.betterhip.command.mypage.PurchaseListCommand;
+import com.betterhip.command.mypage.PurchaseQueryListCommand;
+import com.betterhip.command.mypage.RefundListCommand;
+import com.betterhip.command.mypage.RefundQueryListCommand;
 import com.betterhip.command.mypage.UserInfoDeleteCommand;
 import com.betterhip.command.mypage.UserInfoModifyCommand;
 import com.betterhip.command.mypage.UserInfoViewCommand;
@@ -32,6 +34,7 @@ import com.betterhip.command.order.CakeReviewWriteCommand;
 import com.betterhip.command.payment.PaymentCommand;
 import com.betterhip.command.payment.PaymentFailureCommand;
 import com.betterhip.command.payment.PaymentListCommand;
+import com.betterhip.command.payment.PaymentListPopupCommand;
 import com.betterhip.command.payment.PaymentSuccessCommand;
 import com.betterhip.command.signup.SignUpCheckIdCommand;
 import com.betterhip.command.signup.SignUpCheckPhoneCommand;
@@ -86,7 +89,7 @@ public class BetterhipHomeController extends HttpServlet {
 		
 		
 		switch(com) {
-		case("/main/main.do") :
+		
 		//테스트용 
 		case("/test.do") :
 			viewPage = "mypage/Test1.jsp";
@@ -95,7 +98,7 @@ public class BetterhipHomeController extends HttpServlet {
 		case("/main.do") :
 			command = new CakeAdCommand();
 			command.excute(request, response);
-			viewPage = "main.jsp";
+			viewPage = "main/main.jsp";
 			break;
 			
 		case("/guideCake.do") :
@@ -116,23 +119,34 @@ public class BetterhipHomeController extends HttpServlet {
 			viewPage = "mypage/purchaseList.jsp";
 			break;
 			
-		case("/purchaseCancel.do") :
-			command = new PurchaseCancelCommand();
-			command.excute(request, response);
-			viewPage = "purcrchaseList.do";
-			break;
-			
-		case("/refundList,do") :
-			command = new PurchaseCancelListCommand();
+		case("/purchaseQueryList.do") :
+			command = new PurchaseQueryListCommand();
 			command.excute(request, response);
 			viewPage = "mypage/purchaseList.jsp";
 			break;
-		
 			
+		case("/purchaseCancel.do") :
+			command = new PurchaseCancelCommand();
+			command.excute(request, response);
+			viewPage = "purchaseList.do";
+			break;
+			
+		case("/refundList.do") :
+			command = new RefundListCommand();
+			command.excute(request, response);
+			viewPage = "mypage/refundList.jsp";
+			break;
+			
+		case("/refundQueryList.do") :
+			command = new RefundQueryListCommand();
+			command.excute(request, response);
+			viewPage = "mypage/refundList.jsp";
+			break;
+		
 		case("/userInfoModifyView.do") :
 			command = new UserInfoViewCommand();
 			command.excute(request, response);
-			viewPage = "userInfoModifyView.do";
+			viewPage = "mypage/userInfoModifyView.jsp";
 			break;
 			
 		case("/userInfoModify.do") :
@@ -153,19 +167,19 @@ public class BetterhipHomeController extends HttpServlet {
 			viewPage = "mypage/goodbye.jsp";
 			break;
 			
-		case("/main/cakeListView.do") :
+		case("/cakeListView.do") :
 			command = new CakeListViewCommand();
 			command.excute(request, response);
-			viewPage = "../order/cakeList.jsp";
+			viewPage = "/order/cakeList.jsp";
 			break;
 			
 			
-		case("/order/cakeChoice.do") :
+		case("/cakeChoice.do") :
 			session.setAttribute("CAKE_ID", request.getParameter("cake_id"));
-			session.setAttribute("USER_ID", "peterhd");
+			session.setAttribute("USER_ID", "hong");
 			command = new CakeChoiceCommand();
 			command.excute(request, response);
-			viewPage = "cakeInfo.jsp";
+			viewPage = "/order/cakeInfo.jsp";
 			break;
 			
 		case("/cakeOrderCart.do") :
@@ -183,13 +197,13 @@ public class BetterhipHomeController extends HttpServlet {
 		case("/cakeReview.do") :
 			command = new CakeReviewCommand();
 			command.excute(request, response);
-			viewPage = "order/cakeInfo.jsp";
+			viewPage = "order/cakeReviewWrite.jsp";
 			break;
 			
 		case("/cakeReviewWrite.do") :
 			command = new CakeReviewWriteCommand();
 			command.excute(request, response);
-			viewPage = "cakeReview.do";
+			viewPage = "order/cakeReviewResult.jsp";
 			break;
 			
 		case("/cartList.do") :
@@ -216,6 +230,12 @@ public class BetterhipHomeController extends HttpServlet {
 			viewPage = "payment/paymentList.jsp";
 			break;
 			
+		case("/paymentListPopup.do") :
+			command = new PaymentListPopupCommand();
+			command.excute(request, response);
+			viewPage = "payment/paymentListPopup.jsp";
+			break;
+			
 		case("/payment.do") :
 			command = new PaymentCommand();
 			command.excute(request, response);
@@ -232,14 +252,6 @@ public class BetterhipHomeController extends HttpServlet {
 			command = new PaymentFailureCommand();
 			command.excute(request, response);
 			viewPage = "payment/payFailure.jsp";
-			break;
-		
-		case("/goShopping.do") :
-			viewPage = "cakeListView.do";
-			break;
-		
-		case("/payView.do") :
-			viewPage = "purchaseList.do";
 			break;
 		
 		case("/signupForm.do") :
@@ -281,7 +293,7 @@ public class BetterhipHomeController extends HttpServlet {
 		case("/findId.do") :
 			command = new FindIdCommand();
 			command.excute(request, response);
-			viewPage = "login/printID.jsp";
+			viewPage = "login/printId.jsp";
 			break;
 			
 		case("/gotoLogin.do") :

@@ -61,6 +61,12 @@
 %>
 <!DOCTYPE html>
 <html>
+<script type="text/javascript">
+	function sorting() {
+		var sort = document.getElementById('sorting').value
+		
+	}
+</script>
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
@@ -74,9 +80,9 @@
 			<br>
 			<div  style="position: absolute; left: 10%; right: 10%">
 				<div align="left">
-					<select>
-						<option>높은 가격순</option>
-						<option>낮은 가격순</option>
+					<select onselect="sorting()" id="sorting">
+						<option value="dec">높은 가격순</option>
+						<option value="inc">낮은 가격순</option>
 						<option>인기 상품순</option>
 					</select>
 					<select>
@@ -92,7 +98,7 @@
 							<tr>
 							<c:forEach items="${list}" var="dto" varStatus="status">
 									
-								<td><a href="../order/cakeChoice.do?cake_id=${dto.cake_id }" "><img src="data:cake_img/png;base64, ${dto.base64Image }" width = "200" height="200"><br>
+								<td><a href="cakeChoice.do?cake_id=${dto.cake_id }" ><img src="data:cake_img/png;base64, ${dto.base64Image }" width = "200" height="200"><br>
 								${dto.cake_name }<br>
 								${dto.cake_saleprice }</a></td>
 								<c:if test="${status.index % 4 == 3 }">
@@ -103,7 +109,7 @@
 				</div>
 				<% for (int i = 0; i < totalPages; i++) {
 						start = len*i;
-					%><a href="../main/cakeListView.do?start=<%=start %>"><%=i + 1 %></a> <%
+					%><a href="../cakeListView.do?start=<%=start %>"><%=i + 1 %></a> <%
 					}	
 				%>
 				

@@ -119,6 +119,8 @@ function kakaoLogout() {
 	    </form>
 	</div>
 	<a href="../BetterHip/signupForm.do" >회원가입</a>
+	<a href="../findIdPage.do" >아이디 찾기</a>
+	<a href="../findPwPage.do" >비밀번호 찾기</a>
 
 
 </body>

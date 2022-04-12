@@ -124,25 +124,6 @@ const autoHyphen2 = (target) => {
 		var regExpEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i
 		
 		var form = document.userInfoModifyForm
-
-		// 비밀번호 확인
-		var new_user_pw = form.new_user_pw.value
-		var new_user_pw_re = form.new_user_pw_re.value
-		if(new_user_pw == "") {
-			alert("비밀번호를 입력해주세요")
-			return
-		}else { 
-			if (!regExpPasswd.test(new_user_pw)) {
-				alert("사용할 수 없는 비밀번호 입니다.")
-				form.new_user_pw.select()
-				return
-			}
-			
-		}
-		if(new_user_pw != new_user_pw_re) {
-			alert("비밀번호 재확인이 잘못되었습니다.")
-			return
-		}
 		
 		// 이름 확인
 		var user_name = form.user_name.value
@@ -157,6 +138,26 @@ const autoHyphen2 = (target) => {
 			}
 		}
 		
+		
+		// 비밀번호 확인(정보수정은 필수 아님 - 주석처리) 
+/* 		var new_user_pw = form.new_user_pw.value
+		var new_user_pw_re = form.new_user_pw_re.value
+		 if(new_user_pw == "") {
+			alert("비밀번호를 입력해주세요")
+			return
+		}else { 
+		if (!regExpPasswd.test(new_user_pw)) {
+				alert("사용할 수 없는 비밀번호 입니다.")
+				form.new_user_pw.select()
+				return
+			}
+			
+		} 
+		if(new_user_pw != new_user_pw_re) {
+			alert("비밀번호 재확인이 잘못되었습니다.")
+			return
+		}
+ */		
 		//이메일 확인
 		var user_email = form.user_email.value
 		if(user_email == "") {
@@ -189,12 +190,14 @@ const autoHyphen2 = (target) => {
 			return
 		}  */
 		
-		/* 위 유효성 검사 모두 통과 수정 완료 ALERT */
+		
+		/* 위 유효성 검사 모두 통과 후 수정 완료 ALERT */
 		if(confirm("수정이 완료 되었습니다.")){
 			location.href = "userInfoModifyView.do";
 		}
 		
 		document.userInfoModifyForm.submit();
+
 	}
 	
 </script>

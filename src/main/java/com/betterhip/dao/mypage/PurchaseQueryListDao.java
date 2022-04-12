@@ -16,7 +16,7 @@ import javax.sql.DataSource;
 
 import com.betterhip.dto.mypage.PurchaseListDto;
 
-public class PurchaseListDao {
+public class PurchaseQueryListDao {
 
 	
 //-------------------field--------------------- 
@@ -25,7 +25,7 @@ public class PurchaseListDao {
 		
 //-------------------constructor----------------
 			
-	public PurchaseListDao() {
+	public PurchaseQueryListDao() {
 				
 		try {
 					
@@ -41,7 +41,7 @@ public class PurchaseListDao {
 //------------------method---------------------
 	
 	//주문 정보 가져오는 method 
-	public ArrayList<PurchaseListDto> purchaseList(String USER_ID){
+	public ArrayList<PurchaseListDto> purchaseList(String USER_ID, String queryStartDate, String queryEndDate){
 		
 		ArrayList<PurchaseListDto> dtos = new ArrayList<PurchaseListDto>();
 		
@@ -55,12 +55,14 @@ public class PurchaseListDao {
 			//주문 정보 가져오는 쿼리문 
 			String queryA = "select p.purchase_id, p.purchase_date, p.purchase_quantity, p.purchase_price, p.purchase_status, p.purchase_text, p.purchase_pickup_date,";
 			String queryB = " c.cake_name, c.cake_img, cust.customize_taste, cust.customize_size, cust.customize_cream_type, cust.customize_cream_color";
-			String queryC = " from purchase p, cake c, customize cust where p.purchase_user_id = ? and p.purchase_status in('3', '101', '102', '103') and";
+			String queryC = " from purchase p, cake c, customize cust where p.purchase_user_id = ? and p.purchase_date between ? and ? and p.purchase_status in('3', '101', '102', '103') and";
 			String queryD = " p.purchase_cake_id = c.cake_id and p.purchase_customize_id = cust.customize_id order by p.purchase_date";
 
 			//주문 정보 가져오는 쿼리 실행 
 			preparedStatement = connection.prepareStatement(queryA+queryB+queryC+queryD); 
 			preparedStatement.setString(1, USER_ID);
+			preparedStatement.setString(2, queryStartDate);
+			preparedStatement.setString(3, queryEndDate);
 			resultSet = preparedStatement.executeQuery();
 			
 			//주문 정보 resultSet 받기   
@@ -112,7 +114,6 @@ public class PurchaseListDao {
 					break; 
 				}
 				
-				//어레이리스트에 담기
 				PurchaseListDto dto = new PurchaseListDto(purchase_id, purchase_date, cake_name, cake_img_base64Image, cake_option, purchase_text, purchase_quantity, purchase_price, purchase_status, puchase_pickup_date);
 				dtos.add(dto);
 			}//while() 
@@ -140,7 +141,7 @@ public class PurchaseListDao {
 	
 	
 	//주문 상태가 3('주문접수')인 개수 가져오는 method 
-	public int purchase_status_count_3(String USER_ID) {
+	public int purchase_status_count_3(String USER_ID, String queryStartDate, String queryEndDate) {
 		
 		int purchase_status_count_3 = 0;
 		Connection connection = null; 
@@ -150,11 +151,13 @@ public class PurchaseListDao {
 		try {
 			connection = dataSource.getConnection();
 		
-			String query = "select count(*) as purchase_status_count_3 from purchase where purchase_user_id = ? and purchase_status = '3'";
+			String query = "select count(*) as purchase_status_count_3 from purchase where purchase_user_id = ? and purchase_date between ? and ? and purchase_status = '3'";
 			
 			//쿼리 실행 
 			preparedStatement = connection.prepareStatement(query); 
 			preparedStatement.setString(1, USER_ID);
+			preparedStatement.setString(2, queryStartDate);
+			preparedStatement.setString(3, queryEndDate);
 			resultSet = preparedStatement.executeQuery();
 		 
 			if(resultSet.next()) {
@@ -182,7 +185,7 @@ public class PurchaseListDao {
 	
 	
 	//주문 상태가 101('상품준비중')인 개수 가져오는 method 
-	public int purchase_status_count_101(String USER_ID) {
+	public int purchase_status_count_101(String USER_ID, String queryStartDate, String queryEndDate) {
 			
 			int purchase_status_count_101 = 0;
 			Connection connection = null; 
@@ -192,11 +195,13 @@ public class PurchaseListDao {
 			try {
 				connection = dataSource.getConnection();
 			
-				String query = "select count(*) as purchase_status_count_101 from purchase where purchase_user_id = ? and purchase_status = '101'";
+				String query = "select count(*) as purchase_status_count_101 from purchase where purchase_user_id = ? and purchase_date between ? and ? and purchase_status = '101'";
 				
 				//쿼리 실행 
 				preparedStatement = connection.prepareStatement(query); 
 				preparedStatement.setString(1, USER_ID);
+				preparedStatement.setString(2, queryStartDate);
+				preparedStatement.setString(3, queryEndDate);
 				resultSet = preparedStatement.executeQuery();
 			 
 				if(resultSet.next()) {
@@ -224,7 +229,7 @@ public class PurchaseListDao {
 		
 		
 	//주문 상태가 103('픽업완료')인 개수 가져오는 method 
-	public int purchase_status_count_103(String USER_ID) {
+	public int purchase_status_count_103(String USER_ID, String queryStartDate, String queryEndDate) {
 			
 			int purchase_status_count_103 = 0;
 			Connection connection = null; 
@@ -234,11 +239,13 @@ public class PurchaseListDao {
 			try {
 				connection = dataSource.getConnection();
 			
-				String query = "select count(*) as purchase_status_count_103 from purchase where purchase_user_id = ? and purchase_status = '103'";
+				String query = "select count(*) as purchase_status_count_103 from purchase where purchase_user_id = ? and purchase_date between ? and ? and purchase_status = '103'";
 				
 				//쿼리 실행 
 				preparedStatement = connection.prepareStatement(query); 
 				preparedStatement.setString(1, USER_ID);
+				preparedStatement.setString(2, queryStartDate);
+				preparedStatement.setString(3, queryEndDate);
 				resultSet = preparedStatement.executeQuery();
 			 
 				if(resultSet.next()) {

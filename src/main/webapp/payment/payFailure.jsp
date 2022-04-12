@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>배러힙 결제 실패</title>
 </head>
 <%
 request.setCharacterEncoding("utf-8");
