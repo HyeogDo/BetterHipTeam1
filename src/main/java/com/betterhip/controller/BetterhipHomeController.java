@@ -281,7 +281,7 @@ public class BetterhipHomeController extends HttpServlet {
 		case("/findId.do") :
 			command = new FindIdCommand();
 			command.excute(request, response);
-			viewPage = "login/printID.jsp";
+			viewPage = "login/printId.jsp";
 			break;
 			
 		case("/gotoLogin.do") :
