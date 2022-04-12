@@ -23,6 +23,7 @@ public class CakeOrderCartCommand implements BetterhipCommand {
 		int purchase_price = Integer.parseInt(request.getParameter("cake_saleprice"));
 		String puchase_text = request.getParameter("purchase_text");
 		
+		
 		int purchase_status = 1;
 		
 		CakeListDao dao = new CakeListDao();
