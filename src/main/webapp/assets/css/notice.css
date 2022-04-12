@@ -1,0 +1,268 @@
+@charset "UTF-8";
+@import url('https://font.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Angkor&family=Fredoka+One&family=Modak&family=Nanum+Gothic:wght@800&display=swap');
+
+body{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-family: 'Fredoka One', cursive;
+	height: 100vh;
+	background: #fff;
+}
+
+header{
+    z-index: 3;
+}
+
+.form-wrapper{
+    z-index: 1;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Angkor&family=Fredoka+One&family=Modak&family=Nanum+Gothic:wght@800&display=swap');
+/* font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Nanum Gothic', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700;800&family=Walter+Turncoat&display=swap');
+
+
+* {    
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    text-align: center;
+    }
+#editor {
+    /* border : 1px solid; */
+    width : 50%;
+    margin : 0 auto;
+}
+    /* !!여기!! 새로운 div태그 스타일 추가해줫습니다. */
+#contents {
+    width:50%;
+    height: 100px;
+    margin : 30px auto;
+    border : 1px solid;
+}
+
+#wrap {
+    min-width: 700px;
+}
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+.container {
+    width: 1920px;
+    margin: 0 auto;
+}
+header{
+    position: relative;
+    top:0;
+}
+header .top-header {
+    background: #D5E3EE;
+    height: 50px;
+
+}
+header .top-header .member-area {
+    float: right;
+}
+/* 로그인 ~마이페이지 텍스트*/
+header .top-header .member-area a {
+    color: #4F75D8;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 50px;
+    padding: 16px;
+    font-weight:700;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+header .top-header .member-area a:hover{
+    color: #4F75D8;
+    transition: all .3s ease;
+}
+
+/* 로그인 ~마이페이지 칸나누기*/
+header .top-header .member-area span.bar {
+    color: #4F75D8;
+    font-size: 15px;
+    font-weight: 700;
+}
+/* 로그인 ~마이페이지 칸나누기*/
+header .top-header .search-area i {
+    position: absolute;
+    top: 10px;
+    right: -30px;
+    border: 1px solid #999;
+    padding: 5px;
+    background: #fff;
+    font-size: 20px;
+}
+/*이용안내 ~ 공지사항 네비영역*/
+header .main-header {
+    background: #D5E3EE;
+    height: 80px;
+    border-bottom: 1px solid #4F75D8;
+}
+/*로고*/
+header .main-header h1.logo {
+    font-style: none;
+    position: absolute;
+    padding-top: -50px;
+    margin-top: -45px;
+}
+header .main-header h1.logo_text {
+    position: absolute;
+    padding-top: 30px;
+    padding-left: 120px;
+    margin-top: -37px;
+}
+header .main-header .gnb {
+    float: right;
+}
+header .main-header .gnb > ul {
+    float: left;
+}
+header .main-header .gnb ul li.nav-item {
+    float: left;
+}
+/* 네비게이션 의 v파란색 박스의 글씨 영역 */
+header .main-header .gnb ul li.nav-item a.nav-link {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #4F75D8;
+    padding: 28px;
+    display: block;
+    transition: all .3s ease;
+}
+/* 파란색 박스 영역 */
+header .main-header .gnb ul li.nav-item:hover a.nav-link {
+    color: #f6f5ef;
+    background: #4F75D8;
+}
+header .main-header {
+    position: relative;
+}
+/*파란색 띠 영역*/
+header .main-header .gnb ul li.nav-item .dropdown{
+    position: absolute;
+    background: #4F75D8;
+    left: 0;
+    right: 0;
+    display: none;
+    z-index: 1000;
+}
+header .main-header .gnb ul li.nav-item:hover .dropdown {
+    display: block;
+    transition: all .3s ease;
+}
+/* 드롭다운 파란색 글씨 영역 */
+header .main-header .gnb ul li.nav-item .dropdown > ul{
+    width: 700px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+
+header .main-header .gnb ul li.nav-item .dropdown > ul > li{
+    width: 30%;
+    float: left;
+    text-align: center;
+}
+
+/*파란색 텍스트 영역*/
+header .main-header .gnb ul li.nav-item .dropdown > ul > li > a {
+    color: #fff;
+    font-size: 17px;
+    font-family:'Nanum Gothic', sans-serif;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    display: block;
+}
+header .main-header .gnb ul li.nav-item .dropdown > ul > li > ul li a {
+    color: #999;
+    font-size: 20px;
+}
+a:link { color:#4F75D8; text-decoration: none; font-family: 'Walter Turncoat', cursive;}  
+
+a:visited { color:#4F75D8; text-decoration: none;} 
+
+a:hover { color:#4F75D8; text-decoration: none;}
+
+a:active { color:#4F75D8; text-decoration: none;}
+/* Typography */
+body, ul, li, p, a, label, input, div {
+    font-family:'Nanum Gothic', sans-serif;
+}
+
+
+.notice {
+
+}
+
+.notice >P{
+    width:100%
+}
+
+
+
+
+/* Footer */
+#tempaltemo_footer a { 
+    color: #dcdde1;    
+    font-family:'Nanum Gothic', sans-serif;
+    font-size: 13px;
+}
+#tempaltemo_footer ul.footer-link-list { padding:5px;}
+#tempaltemo_footer ul.footer-link-list li { padding-top: 0px;}
+#tempaltemo_footer ul.footer-link-list li a.text-decoration-none{
+    float: left;
+}
+#tempaltemo_footer ul.footer-link-list li span.bar{
+    float:left;
+}
+#tempaltemo_footer ul.footer-icons li {
+    width: 2.6em;
+    height: 2.6em;
+    line-height: 2.6em;
+}
+
+.product-wap .h3, .product-wap li, .product-wap i, .product-wap p {
+    font-size: 9px !important;
+}
+.product-wap .product-color-dot {
+    width: 6px;
+    height: 6px;
+}
+
+@media (min-width: 576px) {
+    .tempaltemo-carousel .h1 { font-size: 1em !important;}
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+#templatemo_main_nav .navbar-nav {max-width: 450px;}
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+#templatemo_main_nav .navbar-nav {max-width: 550px;}
+#template-mo-zay-hero-carousel .carousel-item {min-height: 30rem !important;}
+.product-wap .h3, .product-wap li, .product-wap i, .product-wap p {font-size: 18px !important;}
+.product-wap .product-color-dot {
+    width: 12px;
+    height: 12px;
+}
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1700px) {}
