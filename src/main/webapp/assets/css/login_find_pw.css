@@ -217,6 +217,30 @@ body, ul, li, p, a, label, input, div {
 	outline: none;
 	margin: 1rem 0;
 }
+.form_wrapper-printPw {
+    text-align: center;
+    width: 600px;
+    position: relative;
+    margin: -1px auto 0;
+}
+
+.printPw-content{
+	padding:10%;
+}
+
+/* 아이디를 찾고 로그인페이지로 가는 버튼 */
+.login-btn-area button{
+	width: 100%; height:60px;
+	background: #4F75D8;
+	color: #fff;
+	font-size: 20px;
+	font-weight:bold;
+	border: none;
+	border-radius: 5px;
+	cursor:pointer;
+	transition:.5s;
+	margin-bottom:90px;
+}
 
 .findId-button button{
 	font-family: 'Nanum Gothic', sans-serif;
@@ -261,6 +285,7 @@ body, ul, li, p, a, label, input, div {
 
 
 .btn-area{
+	
 	overflow: hidden;
 }
 .btn-area > div{
