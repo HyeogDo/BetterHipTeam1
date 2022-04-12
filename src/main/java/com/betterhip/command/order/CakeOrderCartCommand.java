@@ -13,20 +13,24 @@ public class CakeOrderCartCommand implements BetterhipCommand {
 	public void excute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-//		String purchase_user_id = session.getAttribute("USER_ID").toString();
-//		int purchase_cake_id = Integer.parseInt(session.getAttribute("CAKE_ID").toString());
-		String purchase_user_id = "test11";
-		int purchase_cake_id = 1;
+		String purchase_user_id = session.getAttribute("USER_ID").toString();
+		int purchase_cake_id = Integer.parseInt(session.getAttribute("CAKE_ID").toString());
+
 		
-		int pucahse_customize_id = Integer.parseInt(request.getParameter("customize_id"));
+		int purchase_customize_id = Integer.parseInt(request.getParameter("customize_id"));
 		int purchase_quantity = Integer.parseInt(request.getParameter("purchase_quantity"));
 		int purchase_price = Integer.parseInt(request.getParameter("cake_saleprice"));
-		String puchase_text = request.getParameter("purchase_text");
+		String purchase_text = request.getParameter("purchase_text");
+		
+		System.out.println("user id : " + purchase_user_id);
+		System.out.println("cake_id : " + purchase_cake_id);
+		System.out.println("customize id : " + purchase_customize_id);
+		System.out.println("text : " + purchase_text);
 		
 		int purchase_status = 1;
 		
 		CakeListDao dao = new CakeListDao();
-		String result = dao.purchase(purchase_user_id, purchase_cake_id, pucahse_customize_id, purchase_quantity, purchase_price, puchase_text, purchase_status);
+		String result = dao.purchase(purchase_user_id, purchase_cake_id, purchase_customize_id, purchase_quantity, purchase_price, purchase_text, purchase_status);
 		System.out.println(result);
 	}
 
