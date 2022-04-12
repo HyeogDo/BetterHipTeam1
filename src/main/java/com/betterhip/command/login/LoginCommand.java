@@ -31,7 +31,7 @@ public class LoginCommand implements BetterhipCommand {
 		request.setAttribute("viewPage", dto.getViewPage());
 		session.setAttribute("message", dto.getMeassage());;
 		
-		// 회원으로 확인되면 session에 user_id 저
+		// 회원으로 확인되면 session에 user_id 저장 
 		if(dto.getMeassage().equals("success")) {
 			session.setAttribute("USER_ID", user_id);
 		}
