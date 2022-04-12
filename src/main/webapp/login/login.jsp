@@ -35,7 +35,7 @@ function kakaoLogin() {
           url: '/v2/user/me',
           success: function (response) {
 			// response.kakao_account.email = 이메일
-			  location.href='kakao_return.jsp?email='+response.kakao_account.email+''
+			  location.href='login.do?user_id='+response.kakao_account.email+'&loginMethod=kakao'
         	  
         	  if (response.kakao_account.email === 'undefined') {
         		  alert('이메일정보 동의좀')
@@ -92,11 +92,15 @@ function kakaoLogout() {
 	}
 	
 	// DB 접속후 재진입시 메세지출력
-	window.onload=function(){		
-		if("${message}" != "") {
+	window.onload=function(){	
+		if("${message}" != "" && "${message}" != "init") {
 			
 			alert("${message}")
+			<%
+			session.setAttribute("message", "init");
+			%>
 		}
+
 	}
 	
 </script>

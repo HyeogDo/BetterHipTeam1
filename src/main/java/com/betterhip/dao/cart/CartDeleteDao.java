@@ -44,7 +44,7 @@ public class CartDeleteDao {
 				preparedStatement = connection.prepareStatement(query);
 				resultSet = preparedStatement.executeQuery();
 				deleteResult = "success";
-			
+	
 			}catch (Exception e) {
 				e.printStackTrace();
 				deleteResult = "fail";
@@ -59,7 +59,7 @@ public class CartDeleteDao {
 					deleteResult = "fail";
 				}
 			}
-			
+			System.out.println("deleteResult : " + deleteResult);
 			return deleteResult;
 		} // cartDelete
 
