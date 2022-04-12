@@ -68,7 +68,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
-<link rel="stylesheet" href="../assets/css/login_find.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/login_find.css">
 <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
 
 
@@ -153,11 +153,11 @@
 <!-- 	레터링 케이크 리스트 -->
 		<div align="center">
 			<div align="center">
-				<h1><b>레터링 케이크</b></h1>
-				<h3>선물하고 싶은 메세지를 알려주세요. 다해줄게요.</h3>
+				<h2 style="padding-top: 3%;"><b>레터링 케이크</b></h2>
+				<h4 style="padding: 1%;">선물하고 싶은 메세지를 알려주세요. 다해줄게요.</h4>
 			</div>
 			<br>
-			<div  style="position: absolute; left: 10%; right: 10%">
+			<div  style="position: relative; width:1260px">
 				<div align="left">
 					<select onselect="sorting()" id="sorting">
 						<option value="dec">높은 가격순</option>

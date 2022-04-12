@@ -357,6 +357,20 @@ body, ul, li, p, a, label, input, div {
     
 }
 
+.option {
+	color: #444;
+ 	background-color: #fff;
+
+ 	padding: 0.6em 1.4em 0.5em 0.8em;
+ 	margin: 0;
+
+ 	border: 1px solid #4F75D8;
+ 	border-radius: 0.5em;
+ 	box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+}
+
+
+
 
 /* Footer */
 #tempaltemo_footer a { 
