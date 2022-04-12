@@ -14,6 +14,36 @@
 
 </head>
 
+
+<script type="text/javascript">
+
+	const button = document.querySelector(".cancelBtn");
+	const status = document.querySelector(".purchaseStatus");
+	const input = document.querySelector(".input");
+	
+	function changeColor() {
+		
+		if(status.value == "주문접수"){
+			button.disabled = false;
+		}
+		
+		else{
+			button.disabled = true; 
+		}
+	}
+
+     input.addEventListener('keyup', changeColor);
+</script>
+
+<style type="text/css">
+
+	.cancelBtn:disabled {
+		background-color: rgb(168,202,244);
+	}
+</style>
+
+
+
 <body>
 
 <!--오늘 날짜 가져오는 자바 스크립트립-->
@@ -72,7 +102,7 @@ String currentDate = format.format(date);
 					<td>${dto.cake_name }</td>
 					<td rowspan="2">${dto.purchase_quantity }</td>
 					<td rowspan="2">${dto.purchase_price }</td>
-					<td rowspan="2">${dto.purchase_status }</td>
+					<td rowspan="2" class="purchaseStatus">${dto.purchase_status }</td>
 					<td rowspan="2">${dto.purchase_pickup_date }</td>
 					<td rowspan="2"><input type="button" value="주문취소" class="cancelBtn"></td>
 				</tr>
