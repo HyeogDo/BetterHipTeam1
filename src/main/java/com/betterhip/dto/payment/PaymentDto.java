@@ -12,18 +12,19 @@ public class PaymentDto {
 	Timestamp purchase_date;
 	int purchase_price;
 	String purchase_text;
-	Image purchase_img;
+	String purchase_img;
 	String purchase_status;
 	int purchase_quantity;
 	String purchase_kakao_id;
+	String purchase_pickup_date;
 	
 	int cake_id;
 	String cake_name;
 	int cake_saleprice;
 	int cake_cost;
 	String cake_status;
-	Image cake_info;
-	Image cake_img;
+	String cake_info;
+	String cake_img;
 	
 	String user_id;
 	String user_pw;
@@ -46,7 +47,6 @@ public class PaymentDto {
 	
 	// Constructor
 	public PaymentDto() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	
@@ -57,13 +57,21 @@ public class PaymentDto {
 		this.user_email = user_email;
 	}	
 	
+	
 
-	public PaymentDto(int purchase_price, int purchase_quantity, String cake_name, String customize_taste,
-			String customize_size, String customize_cream_type, String customize_cream_color) {
+
+// 주문하기 주문 리스트
+	public PaymentDto(int purchase_id, int purchase_price, String purchase_text, int purchase_quantity, String purchase_pickup_date,
+			String cake_name, String cake_img, String customize_taste, String customize_size,
+			String customize_cream_type, String customize_cream_color) {
 		super();
+		this.purchase_id = purchase_id;
 		this.purchase_price = purchase_price;
+		this.purchase_text = purchase_text;
 		this.purchase_quantity = purchase_quantity;
+		this.purchase_pickup_date = purchase_pickup_date;
 		this.cake_name = cake_name;
+		this.cake_img = cake_img;
 		this.customize_taste = customize_taste;
 		this.customize_size = customize_size;
 		this.customize_cream_type = customize_cream_type;
@@ -187,11 +195,11 @@ public class PaymentDto {
 		this.purchase_text = purchase_text;
 	}
 
-	public Image getPurchase_img() {
+	public String getPurchase_img() {
 		return purchase_img;
 	}
 
-	public void setPurchase_img(Image purchase_img) {
+	public void setPurchase_img(String purchase_img) {
 		this.purchase_img = purchase_img;
 	}
 
@@ -259,19 +267,19 @@ public class PaymentDto {
 		this.cake_status = cake_status;
 	}
 
-	public Image getCake_info() {
+	public String getCake_info() {
 		return cake_info;
 	}
 
-	public void setCake_info(Image cake_info) {
+	public void setCake_info(String cake_info) {
 		this.cake_info = cake_info;
 	}
 
-	public Image getCake_img() {
+	public String getCake_img() {
 		return cake_img;
 	}
 
-	public void setCake_img(Image cake_img) {
+	public void setCake_img(String cake_img) {
 		this.cake_img = cake_img;
 	}
 
@@ -409,6 +417,16 @@ public class PaymentDto {
 
 	public void setUser_postcode(String user_postcode) {
 		this.user_postcode = user_postcode;
+	}
+
+
+	public String getPurchase_pickup_date() {
+		return purchase_pickup_date;
+	}
+
+
+	public void setPurchase_pickup_date(String purchase_pickup_date) {
+		this.purchase_pickup_date = purchase_pickup_date;
 	}
 	
 	

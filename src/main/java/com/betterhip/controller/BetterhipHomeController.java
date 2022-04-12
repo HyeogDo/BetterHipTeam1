@@ -32,6 +32,7 @@ import com.betterhip.command.order.CakeReviewWriteCommand;
 import com.betterhip.command.payment.PaymentCommand;
 import com.betterhip.command.payment.PaymentFailureCommand;
 import com.betterhip.command.payment.PaymentListCommand;
+import com.betterhip.command.payment.PaymentListPopupCommand;
 import com.betterhip.command.payment.PaymentSuccessCommand;
 import com.betterhip.command.signup.SignUpCheckIdCommand;
 import com.betterhip.command.signup.SignUpCheckPhoneCommand;
@@ -216,6 +217,12 @@ public class BetterhipHomeController extends HttpServlet {
 			viewPage = "payment/paymentList.jsp";
 			break;
 			
+		case("/paymentListPopup.do") :
+			command = new PaymentListPopupCommand();
+			command.excute(request, response);
+			viewPage = "payment/paymentListPopup.jsp";
+			break;
+			
 		case("/payment.do") :
 			command = new PaymentCommand();
 			command.excute(request, response);
@@ -232,14 +239,6 @@ public class BetterhipHomeController extends HttpServlet {
 			command = new PaymentFailureCommand();
 			command.excute(request, response);
 			viewPage = "payment/payFailure.jsp";
-			break;
-		
-		case("/goShopping.do") :
-			viewPage = "cakeListView.do";
-			break;
-		
-		case("/payView.do") :
-			viewPage = "purchaseList.do";
 			break;
 		
 		case("/signupForm.do") :
