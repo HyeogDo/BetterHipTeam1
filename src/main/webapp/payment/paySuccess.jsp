@@ -9,7 +9,7 @@
 
 <script type="text/javascript">
 function goShopping() {
-	location.href="cakeListview.do";
+	location.href="cakeListView.do";
 }
 function payView() {
 	location.href="purchaseList.do";

@@ -93,7 +93,7 @@ function kakaoLogout() {
 	
 	// DB 접속후 재진입시 메세지출력
 	window.onload=function(){	
-		if("${message}" != "" && "${message}" != "init") {
+		if("${message}" != "" && "${message}" != "init" && "${message}" != "success") {
 			
 			alert("${message}")
 			<%

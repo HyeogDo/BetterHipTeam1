@@ -37,34 +37,34 @@
                         <span class="position-relative top-20 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
                     </a>
                     <span class="bar">|</span>
-                    <a href="#!">My Page</a>
+                    <a href="purchaseList.do">My Page</a>
                 </div>
                 </div>
             </div>
             <div class="main-header">
                 <div class="container clearfix">
                 <h1 class="logo">
-                    <a href="#!">
+                    <a href="main.do">
                     <img src="../BetterHip/assets/img/logo.png" alt="로고" width="120">
                     </a>
                 </h1>
                 <h1 class="logo_text">
-                    <a href="#!">Better Hip</a>
+                    <a href="main.do">Better Hip</a>
                 </h1>
                 <div class="gnb">
                     <ul class="clearfix">
                         <li class="nav-item info">
-                            <a href="#!" class="nav-link">이용안내</a>
+                            <a href="guideCake.do" class="nav-link">이용안내</a>
                             <div class="dropdown">
                             <ul>
                                 <li>
-                                <a href="#!">케이크 안내</a>
+                                <a href="guideCake.do">케이크 안내</a>
                                 </li>
                                 <li>
-                                <a href="#!">픽업 방법</a>
+                                <a href="guidePickup.do">픽업 방법</a>
                                 </li>
                                 <li>
-                                <a href="#!">이용 안내</a>
+                                <a href="guideUse.do">이용 안내</a>
                                 </li>
                             </ul>
                             </div>
