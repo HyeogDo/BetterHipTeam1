@@ -1,9 +1,20 @@
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.betterhip.dto.order.CakeInfoDto"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
+
+<%
+
+SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+Date date = new Date();
+String currentDate = format.format(date);
+ 
+
+%>
 <html>
    <style>
       #orderBox {
@@ -197,7 +208,8 @@
 	<input type="text" name="puchase_text" placeholder="레터링 문구 없을 시 '없음'이라고 적어주세요" width="80%"><br>
 	<b>사진 첨부(선택)</b><br>
 	<input type="file" name="purchase_img" placeholder="첨부하기"><br>
-    <input type="hidden" value="${LIST[0].cake_saleprice }" id="cake_saleprice" name="cake_saleprice">
+    <input type="hidden" value="${LIST[0].cake_saleprice }" id="cake_saleprice" name="cake_saleprice"><br>
+    <input type="date" name="cake_pickupDate" min="<%=currentDate %>"><br>
     총 구매금액 = <span id="ab"></span>
 	<br><input type="button" value="바로구매" onclick="paymentSubmit(this.form)"> <input type="button" value="장바구니" onclick="cartSubmit(this.form)"><br>
 	</form>
