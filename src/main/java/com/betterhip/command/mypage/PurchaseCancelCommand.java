@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.betterhip.command.BetterhipCommand;
+import com.betterhip.dao.mypage.PurchaseCancelDao;
 
 public class PurchaseCancelCommand implements BetterhipCommand {
 
@@ -11,6 +12,15 @@ public class PurchaseCancelCommand implements BetterhipCommand {
 	public void excute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 
+		
+		//purchase_id 받기 
+		String purchase_id = request.getParameter("purchase_id"); 
+		
+		PurchaseCancelDao dao = new PurchaseCancelDao();
+		dao.purchaseCancel(purchase_id); 
+		
+		
+		
 	}
 
 }
