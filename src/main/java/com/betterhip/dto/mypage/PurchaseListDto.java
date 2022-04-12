@@ -3,7 +3,11 @@ package com.betterhip.dto.mypage;
 public class PurchaseListDto {
 	
 	
+	
+
+
 	//field 
+	int purchase_id;
 	String purchase_date; 
 	String cake_name; 
 	String cake_img_base64Image;
@@ -16,11 +20,11 @@ public class PurchaseListDto {
 
 
 	//constructor 
-	
-	public PurchaseListDto(String purchase_date, String cake_name, String cake_img_base64Image, String cake_option,
-			String purchase_text, int purchase_quantity, int purchase_price,
-			String purchase_status, String purchase_pickup_date) {
+	public PurchaseListDto(int purchase_id, String purchase_date, String cake_name, String cake_img_base64Image,
+			String cake_option, String purchase_text, int purchase_quantity, int purchase_price, String purchase_status,
+			String purchase_pickup_date) {
 		super();
+		this.purchase_id = purchase_id;
 		this.purchase_date = purchase_date;
 		this.cake_name = cake_name;
 		this.cake_img_base64Image = cake_img_base64Image;
@@ -33,8 +37,18 @@ public class PurchaseListDto {
 	}
 
 
+
 	//getters and setters 
-	
+	public int getPurchase_id() {
+		return purchase_id;
+	}
+
+
+	public void setPurchase_id(int purchase_id) {
+		this.purchase_id = purchase_id;
+	}
+
+
 	public String getPurchase_date() {
 		return purchase_date;
 	}
@@ -84,7 +98,7 @@ public class PurchaseListDto {
 		this.purchase_text = purchase_text;
 	}
 
-	
+
 	public int getPurchase_quantity() {
 		return purchase_quantity;
 	}
@@ -123,5 +137,8 @@ public class PurchaseListDto {
 	public void setPurchase_pickup_date(String purchase_pickup_date) {
 		this.purchase_pickup_date = purchase_pickup_date;
 	}
+	
+
+	
 	
 }//PurchaseListDto

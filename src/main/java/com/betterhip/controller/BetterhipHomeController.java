@@ -18,8 +18,10 @@ import com.betterhip.command.login.FindPwCommand;
 import com.betterhip.command.login.LoginCommand;
 import com.betterhip.command.main.CakeAdCommand;
 import com.betterhip.command.mypage.PurchaseCancelCommand;
-import com.betterhip.command.mypage.PurchaseCancelListCommand;
 import com.betterhip.command.mypage.PurchaseListCommand;
+import com.betterhip.command.mypage.PurchaseQueryListCommand;
+import com.betterhip.command.mypage.RefundListCommand;
+import com.betterhip.command.mypage.RefundQueryListCommand;
 import com.betterhip.command.mypage.UserInfoDeleteCommand;
 import com.betterhip.command.mypage.UserInfoModifyCommand;
 import com.betterhip.command.mypage.UserInfoViewCommand;
@@ -116,6 +118,12 @@ public class BetterhipHomeController extends HttpServlet {
 			viewPage = "mypage/purchaseList.jsp";
 			break;
 			
+		case("/purchaseQueryList.do") :
+			command = new PurchaseQueryListCommand();
+			command.excute(request, response);
+			viewPage = "mypage/purchaseList.jsp";
+			break;
+			
 		case("/purchaseCancel.do") :
 			command = new PurchaseCancelCommand();
 			command.excute(request, response);
@@ -123,9 +131,15 @@ public class BetterhipHomeController extends HttpServlet {
 			break;
 			
 		case("/refundList.do") :
-			command = new PurchaseCancelListCommand();
+			command = new RefundListCommand();
 			command.excute(request, response);
-			viewPage = "mypage/purchaseList.jsp";
+			viewPage = "mypage/refundList.jsp";
+			break;
+			
+		case("/refundQueryList.do") :
+			command = new RefundQueryListCommand();
+			command.excute(request, response);
+			viewPage = "mypage/refundList.jsp";
 			break;
 		
 		case("/userInfoModifyView.do") :

@@ -14,7 +14,7 @@ session = request.getSession();
 session.setAttribute("USER_ID", "jinyoung"); 
 %>
 
-<form action="purchaseList.do">
+<form action="refundList.do">
 
 <input type="submit" value="확인">
 
