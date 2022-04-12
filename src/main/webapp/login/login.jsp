@@ -9,17 +9,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>Better Hip 로그인</title>
 <link rel="stylesheet" href="css/aos.css">
-<link rel="stylesheet" href="../assets/css/login.css">
-<link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
+<link rel="stylesheet" href="../BetterHip/assets/css/login.css">
+<link rel="shortcut icon" type="image/x-icon" href="../BetterHip/assets/img/favicon.ico">
 
 
-<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="../assets/css/templatemo.css">
-<link rel="stylesheet" href="../assets/css/custom.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/templatemo.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/custom.css">
 
 <!-- Load fonts style after rendering the layout styles -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-<link rel="stylesheet" href="../assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/fontawesome.min.css">
 
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -172,7 +172,7 @@ function kakaoLogout() {
 			<div class="container clearfix">
 			<h1 class="logo">
 				<a href="#!">
-				<img src="../assets/img/logo.png" alt="로고" width="120">
+				<img src="../BetterHip/assets/img/logo.png" alt="로고" width="120">
 				</a>
 			</h1>
 			<h1 class="logo_text">
@@ -220,15 +220,15 @@ function kakaoLogout() {
 		<div class="logo" style="text-align:center">
 		</div>
 		<h1>Login</h1>
-		<form name="frm" method="post" action="" onsubmit="return false;">
+		<form name="frm" method="get" action="login.do?" onsubmit="return false;">
 			<div class ="int-area">
-				<input type="text" name="id" id="id"
+				<input type="text" name="user_id" id="id"
 				autocomplete="off" required>
 				<label for ="id">아이디</label>
 			<p class="error" id="id-error"></p>
 			</div>
 			<div class ="int-area">
-				<input type="password" name="pw" id="pw"
+				<input type="password" name="user_pw" id="pw"
 				autocomplete="off" required>
 				<label for ="pw">비밀번호</label>
 			<p class="error" id="pw-error">* 비밀번호를 확인해주세요!</p>
@@ -238,11 +238,13 @@ function kakaoLogout() {
 					<input type="checkbox" id="info10_1" name="idsave" value="saveOK">
 					<span>아이디저장</span>
 				</div>
-				<button type="button" id="btn" value="로그인" onclick="checkOnclick()" name="loginMethod">로그인</button>
+				<input type="hidden" name="loginMethod" value="normal">
+				<button type="button" id="btn" value="로그인" onclick="fn_action()" name="loginMethod">로그인</button>
 			</div>
 		</form>
 			<div class="kakao-btn-area">
 				<button type="button" onclick="kakaoLogin()" value="카카오 로그인">카카오 로그인</button>
+				<button type="button" onclick="kakaoLogout()" value="카카오 로그아웃">카카오 로그아웃</button>
 			</div>
 			<div class="signupForm-btn-area">
 				<div class="login__check--left mr-3">

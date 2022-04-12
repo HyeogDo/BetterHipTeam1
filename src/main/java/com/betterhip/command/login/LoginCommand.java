@@ -18,9 +18,10 @@ public class LoginCommand implements BetterhipCommand {
 		
 		String user_id = request.getParameter("user_id");
 		String user_pw = request.getParameter("user_pw");
+			
 		
 		String loginMethod = request.getParameter("loginMethod"); // 카카오, 일반 로그인 구별
-			
+					
 		HttpSession session = request.getSession();	
 	
 		LoginDao dao = new LoginDao();
