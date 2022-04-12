@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <title>Better hip</title>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
 
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/templatemo.css">
@@ -102,7 +102,7 @@
     <!--banner-->
     <div class="wrap-banner">
         <div class="background">
-            <img src="../assets/img/back.jpg" alt="배경" width="100%">
+            <img src="/BetterHip/assets/img/back.jpg" alt="배경" width="100%">
         </div>
         <div class="moving">
         </div>
@@ -120,10 +120,9 @@
                     <div class="featured__controls">
                         <ul>
                             <li class="active" data-filter="*">All</li>
-                            <li data-filter=".oranges">Oranges</li>
-                            <li data-filter=".fresh-meat">Fresh Meat</li>
-                            <li data-filter=".vegetables">Vegetables</li>
-                            <li data-filter=".fastfood">Fastfood</li>
+                            <li data-filter=".oranges">레터링</li>
+                            <li data-filter=".fresh-meat">캐릭터</li>
+                            <li data-filter=".vegetables">어버이날</li>
                         </ul>
                     </div>
                 </div>

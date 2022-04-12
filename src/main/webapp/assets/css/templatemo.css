@@ -189,7 +189,7 @@ body, ul, li, p, a, label, input, div {
 .wrap-banner .moving {
   position:absolute;
   width:100%;height:1920px;
-  background:url('/BetterHip_Front/assets/img/moving_table.png') 0 center / 1920px repeat-x;
+  background:url('/BetterHip/assets/img/moving_table.png') 0 center / 1920px repeat-x;
   animation: movebg 6s linear infinite;
   top:48%;left:50%;
   transform:translate(-50%,-50%);
