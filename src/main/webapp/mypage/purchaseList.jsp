@@ -14,7 +14,7 @@
 
 </head>
 
-
+<!--주문취소 버튼 클릭시 alert  -->
 <script type="text/javascript">
 
 function check(purchase_id){
@@ -99,7 +99,7 @@ String currentDate = format.format(date);
 					<td rowspan="2"><img src="data:cake_img/png;base64, ${dto.cake_img_base64Image }" width = "100" height="100"></td>
 					<td>${dto.cake_name }</td>
 					<td rowspan="2">${dto.purchase_quantity }</td>
-					<td rowspan="2">${dto.purchase_price }</td>
+					<td rowspan="2">${dto.purchase_price }원</td>
 					<td rowspan="2">${dto.purchase_status }</td>
 					<td rowspan="2">${dto.purchase_pickup_date }</td>
 					<td rowspan="2">
