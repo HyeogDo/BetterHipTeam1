@@ -83,62 +83,64 @@
 		</div>
 	</header>
 	</div>
-        </header>
-        </div>
         
-	<div style="position: absolute; left: 40%">
+	<div>
 		<!-- 회원 가입 form -->
 		<form action="signup.do" name="signupForm" method="get">
-			<table>
+			<table class="signup-form">
 				<tr>
-					<td align="center" colspan="2"><b>BETTER HIP</b></td>
+					<td class="main-title" align="center" colspan="2"><b>BETTER HIP</b></td>
 				</tr>
 				<tr>
-					<td align="center" colspan="2"><b>회원 가입</b></td>
+					<td class="main-title" align="center" colspan="2"><b>회원 가입</b></td>
 				</tr>
 				<tr>
-					<td>아이디</td>
+					<td style="font-size:20px">아이디</td>
 				</tr>
 				<tr>
 					<td><input type="text" name="user_id" size="30"> 
 					<input type="button" size="20" value="중복확인" onclick="checkId()"></td>
 				</tr>
 				<tr>
-					<td>비밀번호</td>
+					<td style="font-size:20px">비밀번호</td>
 				</tr>
 				<tr>
-					<td colspan="2"><input placeholder="비밀번호는 숫자로 5~10자만 입력해주세요!!" 
+					<td colspan="3"><input placeholder="비밀번호는 숫자로 5~10자만 입력해주세요!!" 
 					type="password" name="user_pw" size="41" id="pw" onkeyup="checkPw()" onchange="checkPwRe()" maxlength="10"></td>
-					<td><span id="checking"></span></td>
 				</tr>
 				<tr>
-					<td>비밀번호 재확인</td>
+					<td colspan="3"><span id="checking"></span></td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="password" name="user_pw_re" size="41" id="pw2" onkeyup="checkPwRe()"></td>
-					<td><span id="check"></span></td>
+					<td style="font-size:20px">비밀번호 재확인</td>
 				</tr>
 				<tr>
-					<td>이름</td>
+					<td colspan="3"><input type="password" name="user_pw_re" size="41" id="pw2" onkeyup="checkPwRe()"></td>
+				</tr>
+				<tr>
+					<td colspan="3"><span id="check"></span></td>
+				</tr>
+				<tr>
+					<td style="font-size:20px">이름</td>
 				</tr>
 				<tr>
 					<td colspan="2"><input type="text" name="user_name" size="41"></td>
 				</tr>
 				<tr>
-					<td>이메일</td>
+					<td style="font-size:20px">이메일</td>
 				</tr>
 				<tr>
 					<td colspan="2"><input type="text" name="user_email" size="41"></td>
 				</tr>
 				<tr>
-					<td>휴대폰 번호</td>
+					<td style="font-size:20px">휴대폰 번호</td>
 				</tr>
 				<tr>
 					<td><input type="text" name="user_phone" oninput="autoHyphen2(this)" maxlength="13"placeholder="ex) 010-6603-0058"> 
 					<input type="button" size="20" value="중복확인" onclick="checkPhone()"></td>
 				</tr>
 				<tr>
-					<td>주소</td>
+					<td style="font-size:20px">주소</td>
 				</tr>
 				<tr>
 					<td><input type="text" onclick="sample6_execDaumPostcode()" readonly="readonly" id="sample6_postcode" name="postcode">
@@ -152,7 +154,7 @@
 			<!-- 약관 동의 -->
 			<table>
 				<tr>
-					<td colspan="2" align="left">서비스 약관 동의</td>
+					<td colspan="2" align="left" style="font-size:20px">서비스 약관 동의</td>
 					<td><input type="checkbox" name="selectall" value="selectall"
 						onclick="selectAll(this)"><b>모두 동의합니다.</b><br></td>
 				</tr>
