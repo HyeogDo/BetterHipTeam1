@@ -15,10 +15,11 @@ public class CartListCommand implements BetterhipCommand {
 
 	@Override
 	public void excute(HttpServletRequest request, HttpServletResponse response) {
-		
+			
 		HttpSession session = request.getSession();
 		CartListDao dao = new CartListDao();
 		String  user_id = session.getAttribute("USER_ID").toString();
+		
 		ArrayList<CartListDto> dtos = dao.cartList(user_id);
 		
 		request.setAttribute("CartList", dtos);	

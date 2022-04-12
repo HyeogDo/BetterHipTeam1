@@ -36,6 +36,12 @@
 		window.history.go(-1)
 	
 	}
+	
+	function imagePopup(){
+		var = document.list.test.value
+		alert("XXX")
+		
+	}
 </script>
 
 <body>
@@ -89,7 +95,11 @@
 							   <td width="950" align="left"><h3><c:out value = "${item.purchase_cake_name }"/></h3><br>
 							    	옵션 : ${item.purchase_custom_size}&nbsp;${item.purchase_custom_taste}&nbsp;${item.purchase_custom_cream_type}
 									&nbsp;${item.purchase_custom_cream_color}&nbsp;&nbsp;픽업일 : ${item.purchase_pickup_date}<br>
-									문구 : ${item.purchase_text}
+									문구 : ${item.purchase_text}<br><br>
+									<input type="hidden" name="test" value="${item.purchase_custom_img }">
+									<input type="button"  value="입력이미지" onclick="imagePopup()">
+									
+									
 							   </td>
 							   <td align="center" width="100">${item.purchase_quantity }</td>
 							   <td align="center" width="100">${item.purchase_price }</td>				   					
