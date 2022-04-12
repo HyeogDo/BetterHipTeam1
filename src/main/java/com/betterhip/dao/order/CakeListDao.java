@@ -1,6 +1,8 @@
 package com.betterhip.dao.order;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.Blob;
 import java.sql.Connection;
@@ -138,16 +140,21 @@ public class CakeListDao {
 			
 		}
 		
-		public String purchase(String purchase_user_id, int purchase_cake_id, int purchase_customize_id, int purchase_quantity, int purchase_price, String purchase_text, int purchase_status) {
+		public String purchase(String purchase_user_id, int purchase_cake_id, int purchase_customize_id, int purchase_quantity, int purchase_price, String purchase_text, int purchase_status, String purchase_img) {
 			String result = "RESULT_NOT_OK";
 			Connection connection = null;
 			PreparedStatement preparedStatement = null;
+			FileInputStream fis;
 			try {
 				connection = dataSource.getConnection();
 				
 				//데이터베이스 입력문
-				String query = "insert into purchase(purchase_user_id, purchase_cake_id, purchase_customize_id, purchase_quantity, purchase_price, purchase_text, purchase_status) values(?,?,?,?,?,?,?)";
+				String query = "insert into purchase(purchase_user_id, purchase_cake_id, purchase_customize_id, purchase_quantity, purchase_price, purchase_text, purchase_status, purchase_img) values(?,?,?,?,?,?,?,?)";
 				preparedStatement = connection.prepareStatement(query);
+				
+				File file = new File("image/" + purchase_img);
+				FileInputStream inputStream = new FileInputStream(file);
+			
 				
 				//입력문 안에 들어갈 변수 설정
 				preparedStatement.setString(1, purchase_user_id);

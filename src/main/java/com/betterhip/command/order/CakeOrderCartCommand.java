@@ -1,5 +1,7 @@
 package com.betterhip.command.order;
 
+import java.io.File;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -22,12 +24,12 @@ public class CakeOrderCartCommand implements BetterhipCommand {
 		int purchase_quantity = Integer.parseInt(request.getParameter("purchase_quantity"));
 		int purchase_price = Integer.parseInt(request.getParameter("cake_saleprice"));
 		String puchase_text = request.getParameter("purchase_text");
-		
+		String purchase_img = request.getParameter("purchase_img");
 		
 		int purchase_status = 1;
 		
 		CakeListDao dao = new CakeListDao();
-		String result = dao.purchase(purchase_user_id, purchase_cake_id, pucahse_customize_id, purchase_quantity, purchase_price, puchase_text, purchase_status);
+		String result = dao.purchase(purchase_user_id, purchase_cake_id, pucahse_customize_id, purchase_quantity, purchase_price, puchase_text, purchase_status, purchase_img);
 		System.out.println(result);
 	}
 
