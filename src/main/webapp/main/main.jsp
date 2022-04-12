@@ -30,7 +30,7 @@
                 <div class="member-area">
                     <a href="loginForm.do">로그인</a>
                     <span class="bar">|</span>
-                    <a href="signupForm.do"">회원가입</a>
+                    <a href="signupForm.do">회원가입</a>
                     <span class="bar">|</span>
                     <a href="#!">장바구니</a>
                     <span class="bar">|</span>
@@ -70,7 +70,7 @@
                             <a href="cakeListView.do" class="nav-link">케이크 주문</a>
                         </li>
                         <li class="nav-item intro">
-                            <a href="#!" class="nav-link">소개</a>
+                            <a href="introduce.do" class="nav-link">소개</a>
                         </li>
                         <li class="nav-item notice">
                             <a href="noticeList.do?" class="nav-link">공지사항</a>
