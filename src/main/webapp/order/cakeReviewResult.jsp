@@ -7,10 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="../cakeListView.do?start=0&len=4">
-	<% session.setAttribute("page", 1); %>
-		<input type="submit" value="go">
-	</form>
-
+<script type="text/javascript">
+			alert('리뷰 작성을 완료하였습니다.')
+			opener.parent.location.reload();
+			window.close()</script> 
 </body>
 </html>

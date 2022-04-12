@@ -2,15 +2,27 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<%
-request.setCharacterEncoding("utf-8");
-String user_id=request.getParameter("user_id");
-%>
 
 
 
 <html>
 	<script type="text/javascript">
+	
+	
+function imagePopup(){
+	var pop_title = "popupOpener" ; 
+	window.open("", pop_title, "width=400, height=300, left=600, top=300") ; 
+	var imageForm = document.imageForm ;
+	imageForm.target = pop_title ;
+	imageForm.action = "paymentListPopup.do" ; 
+	imageForm.submit() ; 
+	
+	
+}
+
+
+
+
 function check_form(){
 
 var form = document.regiform;
@@ -20,7 +32,7 @@ alert("약관에 동의하셔야 다음단계로 이동합니다.");
 return false;
   }
 
-	location.href="payment.do?user_id=<%=user_id%>";
+	location.href="payment.do";
 }
 </script>
 <style type="text/css">
@@ -77,7 +89,7 @@ float: left;
 </style>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>배러힙 주문하기</title>
 </head>
 <body>
 	<div id="top" style="text-align: center;"></div>
@@ -95,7 +107,7 @@ float: left;
 				<div>
 					<table border="1">
 						<tr>
-							<th width="700">상품정보</th>
+							<th width="800">상품정보</th>
 							<th width="100">수량</th>
 							<th width="100">주문금액</th>
 							<th width="100">상태</th>
@@ -113,31 +125,41 @@ float: left;
 					
 					<!-- 두번째 줄 -->
 						<c:forEach items="${paymentList }" var="dto_purchase_list">
+
+						
+						
 						<table border="1">
 							<tr>
-								<td width="700" height="100" style="text-align: center;">
-									[이미지]
-									${dto_purchase_list.cake_name}
+								<td width="150" height="200">
+									<img src="data:cake_img/png;base64, ${dto_purchase_list.cake_img}" width = "150" height="200">
+								</td>
+								<td width="600" height="200" style="text-align: center;">
+									<h3>${dto_purchase_list.cake_name}</h3>
 									맛: ${dto_purchase_list.customize_taste}, 
 									사이즈: ${dto_purchase_list.customize_size}, 
 									크림 종류: ${dto_purchase_list.customize_cream_type}, 
-									크림 색상: ${dto_purchase_list.customize_cream_color}
+									크림 색상: ${dto_purchase_list.customize_cream_color}<br>
+									문구 : ${dto_purchase_list.purchase_text}<br>
+ 									픽업 날짜 : ${dto_purchase_list.purchase_pickup_date}
+									<form name="imageForm" method="get">
+ 										<input type="hidden" name="purchase_id" value="${dto_purchase_list.purchase_id}">
+ 										<input type="button" value="이미지 보기" onclick="imagePopup()">
+									</form>
+ 									
+ 									
 								</td>
-								<td width="100" style="text-align: center;">
+								<td width="100" height="200" style="text-align: center;">
 									${dto_purchase_list.purchase_quantity}
 								</td>
-								<td width="100" style="text-align: center;">
+								<td width="100" height="200" style="text-align: center;">
 									${dto_purchase_list.purchase_price}
 								</td>
-								<td width="100" style="text-align: center;">
+								<td width="100" height="200" style="text-align: center;">
 									방문수령
 								</td>
 								
 							</tr>
 						</table>
-						
-						
-			
 						</c:forEach>
 			
 				
@@ -161,16 +183,18 @@ float: left;
 				-----------------------------------------------------------------------------
 				
 				
-				<h3>${total_price } 원</h3>
 				<h3>총 주문금액</h3>
-				
+				<h3>${total_price } 원</h3>
+				<br><br>
 				
 				
 			
 			<!-- -------- 약관 동의 ------------- -->
 				<form name="regiform">
-					<input type="checkbox" name="agree_chk" value="1">약관 동의
+				<h3>약관 동의</h3>
+					<input type="checkbox" name="agree_chk" value="1">이 케이크가 먹고싶다면 순순히 약관 동의를 누르시는 게 좋을 겁니다. 동의 안하면 안 팔아요.<br><br><br>
 					<input type="button" onclick="check_form()" value="결제하기">
+					<!-- <img alt="kakaopay" src="./images/kakaopay.png" onclick="check_form()"/> -->
 			
 				</form>
 		</div>

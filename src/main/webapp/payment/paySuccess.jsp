@@ -4,13 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>배러힙 결제 성공</title>
 </head>
-<%
-request.setCharacterEncoding("utf-8");
-String user_id=request.getParameter("user_id");
 
-%>
 <script type="text/javascript">
 function goShopping() {
 	location.href="cakeListview.do";

@@ -1,9 +1,14 @@
 package com.betterhip.dao.payment;
 
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Base64;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -97,7 +102,7 @@ public class PaymentDao {
 		
 		try {
 			connection = dateSource.getConnection();
-			String query = "select cake_name, purchase_price, purchase_quantity, customize_taste, customize_size, customize_cream_type, customize_cream_color from cake, purchase, customize where purchase_cake_id=cake_id and purchase_customize_id=customize_id and purchase_status='2' and purchase_user_id=?;";
+			String query = "select cake_name, cake_img, purchase_id, purchase_text,purchase_pickup_date, purchase_price, purchase_quantity, customize_taste, customize_size, customize_cream_type, customize_cream_color from cake, purchase, customize where purchase_cake_id=cake_id and purchase_customize_id=customize_id and purchase_status='2' and purchase_user_id=?;";
 			preparedStatement = connection.prepareStatement(query);
 			preparedStatement.setString(1, user_id);
 			resultSet = preparedStatement.executeQuery();
@@ -105,15 +110,40 @@ public class PaymentDao {
 			System.out.println("dao");
 			
 			while(resultSet.next()) {
+				int purchase_id = resultSet.getInt("purchase_id");
 				int purchase_price = resultSet.getInt("purchase_price");
 				int purchase_quantity = resultSet.getInt("purchase_quantity");
+				String purchase_text = resultSet.getString("purchase_text");
+				String purchase_pickup_date = resultSet.getString("purchase_pickup_date");
 				String cake_name = resultSet.getString("cake_name");
 				String customize_taste = resultSet.getString("customize_taste");
 				String customize_size = resultSet.getString("customize_size");
 				String customize_cream_type = resultSet.getString("customize_cream_type");
 				String customize_cream_color = resultSet.getString("customize_cream_color");
 				
-				PaymentDto dto = new PaymentDto(purchase_price, purchase_quantity, cake_name, customize_taste, customize_size, customize_cream_type, customize_cream_color);
+				purchase_pickup_date= purchase_pickup_date.substring(0, 10);
+				
+				Blob blob = resultSet.getBlob("cake_img"); 
+				
+				//blob 파일 내용 -> binary bytes 
+				InputStream inputStream = blob.getBinaryStream();
+				ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+				byte [] buffer = new byte[4096]; 
+				int bytesRead = -1; 
+				
+				while((bytesRead = inputStream.read(buffer)) != -1) {
+					outputStream.write(buffer, 0, bytesRead);
+				}
+				
+				byte [] imageBytes = outputStream.toByteArray();
+				
+				//바이트 -> 문자열 
+				String cake_img = Base64.getEncoder().encodeToString(imageBytes);
+				System.out.println(cake_img);
+				inputStream.close();
+				outputStream.close();
+				
+				PaymentDto dto = new PaymentDto(purchase_id, purchase_price, purchase_text, purchase_quantity, purchase_pickup_date, cake_name, cake_img, customize_taste, customize_size, customize_cream_type, customize_cream_color);
 				dtos.add(dto);
 				System.out.println(dtos);
 			}
@@ -291,7 +321,7 @@ public class PaymentDao {
 			}
 		}
 		return dto;	
-	}// PaymentUser()	
+	}// PaymentCake()	
 		
 	
 	// 매서드 내용 user_id에 해당하는 주문 건수를 가져오는 매서드
@@ -331,7 +361,59 @@ public class PaymentDao {
 		return purchase_count;
 	}//paymentCount
 		
-
+	
+	//-------------------------paymentListPopup-------------
+	
+	
+	public String paymentListPopup(int purchase_id) {
+		String purchase_img =null;
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		
+		try {
+			connection = dateSource.getConnection();
+			String query = "select purchase_img from purchase where purchase_id=?";
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setInt(1, purchase_id);
+			resultSet = preparedStatement.executeQuery();
+			
+			System.out.println("dao");
+			
+			while(resultSet.next()) {
+				Blob blob = resultSet.getBlob("purchase_img");
+				
+				//blob 파일 내용 -> binary bytes 
+				InputStream inputStream = blob.getBinaryStream();
+				ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+				byte [] buffer = new byte[4096]; 
+				int bytesRead = -1; 
+				
+				while((bytesRead = inputStream.read(buffer)) != -1) {
+					outputStream.write(buffer, 0, bytesRead);
+				}
+				
+				byte [] imageBytes = outputStream.toByteArray();
+				//바이트 -> 문자열 
+				purchase_img = Base64.getEncoder().encodeToString(imageBytes);
+				System.out.println("purchase_img"+purchase_img);
+				
+				inputStream.close();
+				outputStream.close();
+			}
+		
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(preparedStatement != null) preparedStatement.close();
+				if(connection != null) connection.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return purchase_img;
+	}
 		
 		
 	
@@ -339,3 +421,4 @@ public class PaymentDao {
 	
 
 }
+
