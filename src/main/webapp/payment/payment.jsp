@@ -6,16 +6,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>배러힙 결제</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 </head>
 <body>
-<%
-request.setCharacterEncoding("utf-8");
-String user_id=request.getParameter("user_id");
 
-%>
 	<div class="test" id="test11" data-idx="12"></div>
     <script>
     var purchase_count_msg="" // 주문 수에 따른 문구
@@ -81,12 +77,12 @@ String user_id=request.getParameter("user_id");
                     }
                 });
                 //성공시 이동할 페이지
-                location.href='paySuccess.do?user_id=<%=user_id%>&purchase_kakao_id='+rsp.merchant_uid+''
+                location.href='paySuccess.do?purchase_kakao_id='+rsp.merchant_uid+''
             } else {
                 msg = '결제에 실패하였습니다.';
                 msg += '에러내용 : ' + rsp.error_msg;
                 //실패시 이동할 페이지
-                location.href='payFailure.do?user_id=<%=user_id%>';
+                location.href='payFailure.do';
             }
         });
         

@@ -101,7 +101,7 @@ const autoHyphen2 = (target) => {
 		} else {
 			isCheckedId = true
 			window.name = "parentform"
-			window.open("http://localhost:9413/BetterHip/signup/signupCheckId.do?user_id=" + user_id,"childform","width=500, height=300, left=500, top=150");
+			window.open("signupCheckId.do?user_id=" + user_id,"childform","width=500, height=300, left=500, top=150");
 		}
 		
 
@@ -126,7 +126,7 @@ const autoHyphen2 = (target) => {
 				return
 			} else {
 				isCheckedPhone = true
-				window.open("http://localhost:9413/BetterHip/signup/signupCheckPhone.do?user_phone=" + user_phone,"","width=500, height=300, left=500, top=150");
+				window.open("signupCheckPhone.do?user_phone=" + user_phone,"","width=500, height=300, left=500, top=150");
 			}
 		} 
 		

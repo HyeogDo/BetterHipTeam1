@@ -7,17 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
-<%
-session = request.getSession();
-session.setAttribute("USER_ID", "jinyoung"); 
-%>
-
-<form action="refundList.do">
-
-<input type="submit" value="확인">
-
-</form>
+<script type="text/javascript">
+			alert('리뷰 작성을 완료하였습니다.')
+			opener.parent.location.reload();
+			window.close()</script> 
 </body>
 </html>
