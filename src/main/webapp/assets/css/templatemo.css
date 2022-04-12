@@ -310,6 +310,16 @@ section .pop_container {
 
 }
 
+section.popular_title >h5{
+	padding:30px;
+}
+
+/* section.popular_title >hr{
+	width : 50%;
+	height : 5px;
+	background-color : pink;
+} */
+
 .wrap_container{
   width: 100%;
   flex-wrap: wrap;
