@@ -30,7 +30,7 @@ public class CakeOrderCartCommand implements BetterhipCommand {
 		int purchase_status = 1;
 		try {
 			MultipartRequest multi = new MultipartRequest(request, savePath, sizeLimit, "utf-8", new DefaultFileRenamePolicy());
-			String img_fileName = multi.getFilesystemName("purcahse_img");
+			String img_fileName = multi.getFilesystemName("purchase_img");
 			String img_fileFullPath = savePath + "/" + img_fileName;
 			int purchase_customize_id = Integer.parseInt(multi.getParameter("customize_id"));
 			int purchase_quantity = Integer.parseInt(multi.getParameter("purchase_quantity"));
