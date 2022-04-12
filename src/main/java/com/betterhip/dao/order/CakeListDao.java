@@ -1,6 +1,8 @@
 package com.betterhip.dao.order;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.Blob;
 import java.sql.Connection;
@@ -14,6 +16,7 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 import com.betterhip.dto.order.CakeListDto;
+import com.oreilly.servlet.MultipartRequest;
 
 public class CakeListDao {
 	//datasource 불러오기
@@ -138,16 +141,21 @@ public class CakeListDao {
 			
 		}
 		
-		public String purchase(String purchase_user_id, int purchase_cake_id, int purchase_customize_id, int purchase_quantity, int purchase_price, String purchase_text, int purchase_status) {
+		public String purchase(String purchase_user_id, int purchase_cake_id, int purchase_customize_id, int purchase_quantity, int purchase_price, String purchase_text, int purchase_status, String img_fileFullPath) {
 			String result = "RESULT_NOT_OK";
 			Connection connection = null;
 			PreparedStatement preparedStatement = null;
+			FileInputStream fis;
 			try {
 				connection = dataSource.getConnection();
 				
 				//데이터베이스 입력문
-				String query = "insert into purchase(purchase_user_id, purchase_cake_id, purchase_customize_id, purchase_quantity, purchase_price, purchase_text, purchase_status) values(?,?,?,?,?,?,?)";
+				String query = "insert into purchase(purchase_user_id, purchase_cake_id, purchase_customize_id, purchase_quantity, purchase_price, purchase_text, purchase_status, purchase_img) values(?,?,?,?,?,?,?,?)";
+				File file = new File(img_fileFullPath);
+				FileInputStream inputStream = new FileInputStream(file);
 				preparedStatement = connection.prepareStatement(query);
+				
+				
 				
 				//입력문 안에 들어갈 변수 설정
 				preparedStatement.setString(1, purchase_user_id);
@@ -157,8 +165,7 @@ public class CakeListDao {
 				preparedStatement.setInt(5, purchase_price);
 				preparedStatement.setString(6, purchase_text);
 				preparedStatement.setInt(7, purchase_status);
-			
-				
+				preparedStatement.setBinaryStream(8, (InputStream)inputStream, (int)file.length());
 				//입력 업데이트
 				preparedStatement.executeUpdate();
 				

@@ -32,10 +32,7 @@
                     <span class="bar">|</span>
                     <a href="signupForm.do"">회원가입</a>
                     <span class="bar">|</span>
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                        <span class="position-relative top-20 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
-                    </a>
+                    <a href="#!">장바구니</a>
                     <span class="bar">|</span>
                     <a href="purchaseList.do">My Page</a>
                 </div>
@@ -78,16 +75,17 @@
                         <li class="nav-item notice">
                             <a href="noticeList.do?" class="nav-link">공지사항</a>
                         </li>
-                        <li class="nav-item search">
-                                <div class="flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control border-0" id="inputSearch">
-                                        <div class="input-group-text">
-                                            <i class="fa fa-fw fa-search"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                        </li>
+<!--                        <li class="nav-item search">
+                           <div class="flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                              <div class="input-group">
+                                 <input type="text" class="form-control border-0" id="inputSearch">
+                                   <div class="input-group-text">
+                                     <i class="fa fa-fw fa-search"></i>
+                                   </div>
+                             </div>
+                          </div>
+                        </li> -->
+                       
                     </ul>
                 </div>
                 </div>
@@ -102,7 +100,9 @@
     <!--banner-->
     <div class="wrap-banner">
         <div class="background">
+
             <img src="../BetterHip/assets/img/background.jpg" alt="배경" width="100%">  <!-- 	배경이미지 가져오지 못함 -->
+
         </div>
         <div class="moving">
         </div>
@@ -115,7 +115,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>케이크큐레이션</h2>
+                        <h2>Better Hip Cake</h2>
                     </div>
                     <div class="featured__controls">
                         <ul>
@@ -212,15 +212,17 @@
     <!-- Start Categories of The Month -->
     <section class="container">
         <div class="popular_cake">
-
+			<div class="popular_title" style="padding:28px">
             <div class="row text-center pt-3">
                 <div class="col-lg-6 m-auto">
-                    <h2 class="h2">인기 추천 케이크</h2>
-                    <h5>가장 맛있는 케이크를 추천해드립니다.</h5>
+                    <h2 class="h2">인기 추천 케이크</h2><br>
+                    <hr class="col-lg-6 m-auto" style="width: 50px;height: 5px;color: hotpink; padding="10px""></hr>
+                    <br>
+                    <h4>봄봄봄 봄이왔어요🌸</h4>
                 </div>
             </div>
-
-            <div class="wrap_container">
+			</div>
+            <div class="wrap_container" style="padding-bottom:150px">
                 <div class="pop_container">
                     <div class="col-12 col-md-4 p-5 mt-3">
                         <a href="#"><img src="../BetterHip/assets/img/category_img_01.jpg" class="img-fluid"></a>

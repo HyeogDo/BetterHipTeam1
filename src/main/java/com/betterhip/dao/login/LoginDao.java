@@ -43,7 +43,6 @@ public class LoginDao {
 		String dbLeaveDate = "";    // 해당 아이디로 DB에서 받은 탈퇴일
 		String message = "";
 		String viewPage = "";
-		HttpSession session = request.getSession();
 		LoginDto  dto = null;
 
 
