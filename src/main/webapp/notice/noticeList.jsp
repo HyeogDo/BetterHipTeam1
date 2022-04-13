@@ -12,15 +12,14 @@
 	<h1>공지사항</h1>
 	<table border="1">
 		<tr>
-			<th>No.</th>
-			<th>제목</th>
-			<th>내용</th>
-			<th>작성일</th>
+			<th width="50">No.</th>
+			<th width="200">제목</th>
+			<th width="500">내용</th>
+			<th width="150">작성일</th>
 		</tr>
 		<c:forEach items="${list}" var="dto">
 			<tr>
 				<td><a href="noticeContent.do?notice_id=${dto.notice_id}">${dto.notice_id }</a></td>
-				<td>${dto.notice_id }</td>
 				<td>${dto.notice_title }</td>
 				<td>${dto.notice_content }</td>
 				<td>${dto.notice_date }</td>
@@ -32,5 +31,8 @@
 		</tr>
 		
 	</table>
+	
+	
+	
 </body>
 </html>

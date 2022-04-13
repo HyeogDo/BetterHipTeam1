@@ -13,6 +13,7 @@ public class NoticeContentCommand implements BetterhipCommand {
 	public void excute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		
+		System.out.println("jlslhjsl");
 		String notice_id = request.getParameter("notice_id");
 		NoticeDao dao = new NoticeDao();
 		NoticeDto dto = dao.noticeContent(notice_id);

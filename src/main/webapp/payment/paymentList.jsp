@@ -9,7 +9,7 @@
 	<script type="text/javascript">
 	
 	
-function imagePopup(){
+/* function imagePopup(){
 	var pop_title = "popupOpener" ; 
 	window.open("", pop_title, "width=400, height=300, left=600, top=300") ; 
 	var imageForm = document.imageForm ;
@@ -18,7 +18,7 @@ function imagePopup(){
 	imageForm.submit() ; 
 	
 	
-}
+} */
 
 
 
@@ -141,10 +141,11 @@ float: left;
 									크림 색상: ${dto_purchase_list.customize_cream_color}<br>
 									문구 : ${dto_purchase_list.purchase_text}<br>
  									픽업 날짜 : ${dto_purchase_list.purchase_pickup_date}
-									<form name="imageForm" method="get">
+							<%-- 		<form name="imageForm" method="get">
  										<input type="hidden" name="purchase_id" value="${dto_purchase_list.purchase_id}">
  										<input type="button" value="이미지 보기" onclick="imagePopup()">
-									</form>
+									</form> --%>
+									<button onclick="window.open('paymentListPopup.do?purchase_id=${dto_purchase_list.purchase_id}','window_name','width=430,height=500,location=no,status=no,scrollbars=yes');">이미지보기</button>
  									
  									
 								</td>

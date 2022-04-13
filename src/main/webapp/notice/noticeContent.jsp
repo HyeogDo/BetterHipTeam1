@@ -14,14 +14,19 @@
 		}
 	}
 </script> -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
 
 <body>
 
 	<h2>공지사항 수정</h2>
 	
-	<table border="0">
-		<form action="noticeUpdate.do" method="post">
+	<table border="1">
+		<form action="noticeUpdate.do" method="get">
+			<tr>
+				<td>번호</td>
+				<td><input type="text" name="notice_id" value="${noticeContent.notice_id }" readonly="readonly"></td>
+			</tr>
 			<tr>
 				<td>제목</td>
 				<td><input type="text" name="notice_title" size="50" value="${noticeContent.notice_title }"></td>
@@ -38,7 +43,7 @@
 				<%-- <td><input type="button" value="삭제" onclick="del(${content_view.bId})"></td> --%>
 				<td><input type="button" value="삭제" onclick="location.href='noticeDelete.do?noitce_id=${noticeContent.notice_id }'"></td>
 			</tr>
-		</form>
+	 	</form>
 	</table>
 </body>
 </html>
