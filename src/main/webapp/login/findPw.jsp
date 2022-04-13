@@ -111,7 +111,7 @@ function find() {
 						</div>
 					</li>
 					<li class="nav-item cake">
-						<a href="#!" class="nav-link">케이크 주문</a>
+						<a href="main.do" class="nav-link">케이크 주문</a>
 					</li>
 					<li class="nav-item intro">
 						<a href="#!" class="nav-link">소개</a>
@@ -133,10 +133,10 @@ function find() {
 	</div>
 		<div class="btn-area">
 		<div class="id-btn-area">
-			<button onclick="location.href='/BetterHip/login/findId.jsp'">아이디 찾기</button> 
+			<button onclick="location.href='../BetterHip/findIdPage.do'">아이디 찾기</button> 
 		</div>
 		<div class="pw-btn-area">
-			<button onclick="location.href='/BetterHip/login/findPw.jsp'">비밀번호 찾기</button><br>
+			<button onclick="location.href='../BetterHip/findPwPage.do'">비밀번호 찾기</button><br>
 		</div>
 	</div>
 	<form action="findPw.do" name="findPw">
