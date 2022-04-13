@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="../assets/css/fontawesome.min.css">
 </head>
+<<<<<<< HEAD
 
 <body>
 <div class="body_wrap">
@@ -86,16 +87,39 @@
      <!-- 공지사항 -->
 	<h1 style="margin-left: 46%;">공지사항</h1>
 	<table border="1" style="margin: 0 auto;">
+=======
+<script type="text/javascript">
+<% 
+HttpSession session2 = request.getSession();
+String USER_ID = (String) session2.getAttribute("USER_ID"); 
+%>
+
+function adminCheck() {
+	switch("<%=USER_ID%>"){
+	case "fk1119":
+		location.href="noticeFormView.do"
+		break;
+	default:
+		alert("어드민 아님")
+		break;
+	}
+}
+
+</script>
+<body>
+	<h1 style="text-align: center;">공지사항</h1>
+	<div style="text-align: center;">
+	<table border="1">
+>>>>>>> 0da84dd95a8648b93c78c404d049d6e601d12ba8
 		<tr>
-			<th>No.</th>
-			<th>제목</th>
-			<th>내용</th>
-			<th>작성일</th>
+			<th width="50">No.</th>
+			<th width="200">제목</th>
+			<th width="500">내용</th>
+			<th width="150">작성일</th>
 		</tr>
 		<c:forEach items="${list}" var="dto">
 			<tr>
 				<td><a href="noticeContent.do?notice_id=${dto.notice_id}">${dto.notice_id }</a></td>
-				<td>${dto.notice_id }</td>
 				<td>${dto.notice_title }</td>
 				<td>${dto.notice_content }</td>
 				<td>${dto.notice_date }</td>
@@ -103,10 +127,11 @@
 		</c:forEach>
 		
 		<tr>
-			<td colspan="5"><a href="../noticeForm.do">글작성</a></td>
+			<td colspan="5"><input type="button" onclick="adminCheck()" value="작성"></td>
 		</tr>
 		
 	</table>
+<<<<<<< HEAD
 <!-- Start Footer -->
     <footer class="bg-dark" id="footer">
         <div class="footer_container">

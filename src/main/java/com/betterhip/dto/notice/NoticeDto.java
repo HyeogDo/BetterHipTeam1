@@ -6,7 +6,6 @@ public class NoticeDto {
 	// No. 제목 게시자 게시일 콘텐트 카운트
 	int notice_id; 
 	String notice_title; 
-	String notice_name; 
 	Timestamp notice_date;
 	String notice_content;
 	int notice_count;
@@ -14,19 +13,33 @@ public class NoticeDto {
 	
 	
 
-	public NoticeDto(int notice_id, String notice_title, String notice_name, Timestamp notice_date,
-			String notice_content, int notice_count, String notice_user_id) {
+	
+
+	public NoticeDto(String notice_title, Timestamp notice_date, String notice_content, int notice_count,
+			String notice_user_id) {
 		super();
-		this.notice_id = notice_id;
 		this.notice_title = notice_title;
-		this.notice_name = notice_name;
 		this.notice_date = notice_date;
 		this.notice_content = notice_content;
 		this.notice_count = notice_count;
 		this.notice_user_id = notice_user_id;
 	}
-	
-	
+
+
+
+
+	public NoticeDto(int notice_id, String notice_title, Timestamp notice_date, String notice_content, int notice_count,
+			String notice_user_id) {
+		super();
+		this.notice_id = notice_id;
+		this.notice_title = notice_title;
+		this.notice_date = notice_date;
+		this.notice_content = notice_content;
+		this.notice_count = notice_count;
+		this.notice_user_id = notice_user_id;
+	}
+
+
 
 
 	public NoticeDto(int notice_id, String notice_title, Timestamp notice_date, String notice_content,
@@ -59,16 +72,6 @@ public class NoticeDto {
 
 	public void setNotice_title(String notice_title) {
 		this.notice_title = notice_title;
-	}
-
-
-	public String getNotice_name() {
-		return notice_name;
-	}
-
-
-	public void setNotice_name(String notice_name) {
-		this.notice_name = notice_name;
 	}
 
 
