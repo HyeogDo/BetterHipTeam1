@@ -137,6 +137,54 @@ function payView() {
 				 margin-top: 30px;">
 			</div>
 		</div>
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="footer">
+        <div class="footer_container">
 
+            <div class="row_footer">                        
+                <div class="w-100 bg-black py-3">
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><h5>Better Hip</h5></li>
+                        <!-- <li><a class="text-decoration-none" href="#">이용약관      |      </a>
+                        <a class="text-decoration-none" href="#">개인정보처리방침      |      </a>
+                        <a class="text-decoration-none" href="#">이메일무단수집거부      |      </a></li> -->
+                        <p class="text-center text-light">
+                            <a class="text-decoration-none" href="#">이용약관      |      </a>
+                            <a class="text-decoration-none" href="#">개인정보처리방침      |      </a>
+                            <a class="text-decoration-none" href="#">이메일무단수집거부      |      </a>
+                        </p>
+                        <li><a>통신판매신고번호:2021-서울서초-0413</a></li>
+                        <li><a>사업자등록번호: 000-00-00000 주식회사 배러힙</a></li>
+                        <li><a>주소: 서울특별시 서초구 서초동 1305 서산빌딩</a></li>
+                        <li><a>대표자: 원경호</a></li>
+                        <li><a>전화번호: 02-000-0000</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="w-100 bg-black py-3">
+            <div class="footer_2_container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">
+                            Copyright &copy; 배러힙 2022 Better Hip
+                            | Designed by <a rel="sponsored" href="https://betterhip.dothome.com" target="_blank">Betterhip</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Start Script -->
+    <script src="../BetterHip/assets/js/jquery-1.11.0.min.js"></script>
+    <script src="../BetterHip/assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="../BetterHip/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../BetterHip/assets/js/templatemo.js"></script>
+    <script src="../BetterHip/assets/js/custom.js"></script>
+    <!-- End Script -->
 </body>
 </html>
