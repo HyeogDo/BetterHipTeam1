@@ -110,7 +110,7 @@
 			<div class="container clearfix">
 			<h1 class="logo">
 				<a href="#!">
-				<img src="../assets/img/logo.png" alt="로고" width="120">
+				<img src="../BetterHip/assets/img/logo.png" alt="로고" width="120">
 				</a>
 			</h1>
 			<h1 class="logo_text">

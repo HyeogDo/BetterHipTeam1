@@ -92,8 +92,8 @@ public class CartListDao {
 					
 				}catch(Exception e) {
 					purchase_custom_img = "xxx";
-					System.out.println("custom_img : " + purchase_custom_img);
-					System.out.println("empty");
+					//System.out.println("custom_img : " + purchase_custom_img);
+					//System.out.println("empty");
 				}
 				// Test end
 				

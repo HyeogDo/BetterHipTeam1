@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>Better Hip 이용가이드</title>
 <link rel="stylesheet" href="../BetterHip/assets/css/login_find.css">
-<link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="../BetterHip/assets/img/favicon.ico">
 
 
 <link rel="stylesheet" href="../BetterHip/assets/css/bootstrap.min.css">
@@ -29,9 +29,9 @@
 		<div class="top-header">
 			<div class="container clearfix">
 			<div class="member-area">
-				<a href="#!">로그인</a>
+				<a href="loginForm.do">로그인</a>
 				<span class="bar">|</span>
-				<a href="../BetterHip/signup.do">회원가입</a>
+				<a href="signupForm.do">회원가입</a>
 				<span class="bar">|</span>
 				<a href="#!">장바구니</a>
 				<span class="bar">|</span>
@@ -43,7 +43,7 @@
 			<div class="container clearfix">
 			<h1 class="logo">
 				<a href="#!">
-				<img src="../assets/img/logo.png" alt="로고" width="120">
+				<img src="../BetterHip/assets/img/logo.png" alt="로고" width="120">
 				</a>
 			</h1>
 			<h1 class="logo_text">

@@ -144,7 +144,7 @@ String currentDate = format.format(date);
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../BetterHip/assets/css/cakeInfo.css">
-<link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="../BetterHip/assets/img/favicon.ico">
 
 
 <link rel="stylesheet" href="../BetterHip/assets/css/bootstrap.min.css">
@@ -179,7 +179,7 @@ String currentDate = format.format(date);
 			<div class="container clearfix">
 			<h1 class="logo">
 				<a href="#!">
-				<img src="../assets/img/logo.png" alt="로고" width="120">
+				<img src="../BetterHip/assets/img/logo.png" alt="로고" width="120">
 				</a>
 			</h1>
 			<h1 class="logo_text">
