@@ -1,31 +1,50 @@
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <title>Better Hip 공지사항</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>Better Hip 공지사항 리스트</title>
+	<link rel="stylesheet" href="../assets/css/login_find_pw.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
+	
+	
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/templatemo.css">
+	<link rel="stylesheet" href="../assets/css/custom.css">
+	
+	<!-- Load fonts style after rendering the layout styles -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+	<link rel="stylesheet" href="../assets/css/fontawesome.min.css">
 
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/templatemo.css">
-    <link rel="stylesheet" href="../assets/css/custom.css">
-
-    <!-- Load fonts style after rendering the layout styles -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-    <link rel="stylesheet" href="../assets/css/fontawesome.min.css">
 </head>
-<<<<<<< HEAD
+<script type="text/javascript">
+<% 
+HttpSession session2 = request.getSession();
+String USER_ID = (String) session2.getAttribute("USER_ID"); 
+%>
 
+function adminCheck() {
+   switch("<%=USER_ID%>"){
+   case "fk1119":
+      location.href="noticeFormView.do"
+      break;
+   default:
+      alert("어드민 아님")
+      break;
+   }
+}
+
+</script>
 <body>
-<div class="body_wrap">
-    <!-- Header -->
-    <div id="wrap">
-        <header>
+      <header>
             <div class="top-header">
                 <div class="container clearfix">
                 <div class="member-area">
@@ -74,65 +93,41 @@
                             <a href="introduce.do" class="nav-link">소개</a>
                         </li>
                         <li class="nav-item notice">
-                            <a href="noticeList.do?" class="nav-link">공지사항</a>
+                            <a href="noticeList.do" class="nav-link">공지사항</a>
                         </li>
                     </ul>
                 </div>
                 </div>
             </div>
         </header>
-        </div>
-        </div>
-        
-     <!-- 공지사항 -->
-	<h1 style="margin-left: 46%;">공지사항</h1>
-	<table border="1" style="margin: 0 auto;">
-=======
-<script type="text/javascript">
-<% 
-HttpSession session2 = request.getSession();
-String USER_ID = (String) session2.getAttribute("USER_ID"); 
-%>
-
-function adminCheck() {
-	switch("<%=USER_ID%>"){
-	case "fk1119":
-		location.href="noticeFormView.do"
-		break;
-	default:
-		alert("어드민 아님")
-		break;
-	}
-}
-
-</script>
-<body>
-	<h1 style="text-align: center;">공지사항</h1>
-	<div style="text-align: center;">
-	<table border="1">
->>>>>>> 0da84dd95a8648b93c78c404d049d6e601d12ba8
-		<tr>
-			<th width="50">No.</th>
-			<th width="200">제목</th>
-			<th width="500">내용</th>
-			<th width="150">작성일</th>
-		</tr>
-		<c:forEach items="${list}" var="dto">
-			<tr>
-				<td><a href="noticeContent.do?notice_id=${dto.notice_id}">${dto.notice_id }</a></td>
-				<td>${dto.notice_title }</td>
-				<td>${dto.notice_content }</td>
-				<td>${dto.notice_date }</td>
-			</tr>
-		</c:forEach>
-		
-		<tr>
-			<td colspan="5"><input type="button" onclick="adminCheck()" value="작성"></td>
-		</tr>
-		
-	</table>
-<<<<<<< HEAD
-<!-- Start Footer -->
+    <!-- Close Header -->
+   <h1 style="text-align: center; margin-left: 782px;text-align: center;">공지사항</h1>
+   <div style="margin-left: 510px; text-align: center; padding-bottom: 5%;">
+   <table border="1">
+      <tr>
+         <th width="50">No.</th>
+         <th width="200">제목</th>
+         <th width="500">내용</th>
+         <th width="150">작성일</th>
+      </tr>
+      <c:forEach items="${list}" var="dto">
+         <tr>
+            <td><a href="noticeContent.do?notice_id=${dto.notice_id}">${dto.notice_id }</a></td>
+            <td>${dto.notice_title }</td>
+            <td>${dto.notice_content }</td>
+            <td>${dto.notice_date }</td>
+         </tr>
+      </c:forEach>
+      
+      <tr>
+         <td colspan="5"><input type="button" onclick="adminCheck()" value="작성"></td>
+      </tr>
+      
+   </table>
+   
+   </div>
+   
+   <!-- Start Footer -->
     <footer class="bg-dark" id="footer">
         <div class="footer_container">
 
@@ -140,6 +135,9 @@ function adminCheck() {
                 <div class="w-100 bg-black py-3">
                     <ul class="list-unstyled text-light footer-link-list">
                         <li><h5>Better Hip</h5></li>
+                        <!-- <li><a class="text-decoration-none" href="#">이용약관      |      </a>
+                        <a class="text-decoration-none" href="#">개인정보처리방침      |      </a>
+                        <a class="text-decoration-none" href="#">이메일무단수집거부      |      </a></li> -->
                         <p class="text-center text-light">
                             <a class="text-decoration-none" href="#">이용약관      |      </a>
                             <a class="text-decoration-none" href="#">개인정보처리방침      |      </a>
@@ -178,5 +176,8 @@ function adminCheck() {
     <script src="../BetterHip/assets/js/templatemo.js"></script>
     <script src="../BetterHip/assets/js/custom.js"></script>
     <!-- End Script -->
+
+</body>
+</html>
 </body>
 </html>
