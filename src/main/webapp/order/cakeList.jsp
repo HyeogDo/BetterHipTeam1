@@ -96,11 +96,11 @@
 		<div class="top-header">
 			<div class="container clearfix">
 			<div class="member-area">
-				<a href="loginForm.do">로그인</a>
+				<a href="#!">로그인</a>
 				<span class="bar">|</span>
 				<a href="signup.do">회원가입</a>
 				<span class="bar">|</span>
-				<a href="cartList.do">장바구니</a>
+				<a href="#!">장바구니</a>
 				<span class="bar">|</span>
 				<a href="#!">My Page</a>
 			</div>
@@ -110,7 +110,7 @@
 			<div class="container clearfix">
 			<h1 class="logo">
 				<a href="#!">
-				<img src="../BetterHip/assets/img/logo.png" alt="로고" width="120">
+				<img src="../assets/img/logo.png" alt="로고" width="120">
 				</a>
 			</h1>
 			<h1 class="logo_text">
@@ -153,11 +153,11 @@
 <!-- 	레터링 케이크 리스트 -->
 		<div align="center">
 			<div align="center">
-				<h1><b>레터링 케이크</b></h1>
-				<h3>선물하고 싶은 메세지를 알려주세요. 다해줄게요.</h3>
+				<h2 style="padding-top: 3%;"><b>레터링 케이크</b></h2>
+				<h4 style="padding: 1%;">선물하고 싶은 메세지를 알려주세요. 다해줄게요.</h4>
 			</div>
 			<br>
-			<div  style="position: absolute; left: 10%; right: 10%">
+			<div  style="position: relative; width:1260px">
 				<div align="left">
 					<select onselect="sorting()" id="sorting">
 						<option value="dec">높은 가격순</option>

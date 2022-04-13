@@ -4,12 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<title>Better Hip 아이디찾기</title>
-<link rel="stylesheet" href="css/aos.css">
+
 <link rel="stylesheet" href="../BetterHip/assets/css/login_find.css">
-<link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="../BetterHip/assets/img/favicon.ico">
 
 
 <link rel="stylesheet" href="../BetterHip/assets/css/bootstrap.min.css">
@@ -85,7 +82,7 @@ function find() {
 			<div class="container clearfix">
 			<h1 class="logo">
 				<a href="#!">
-				<img src="../BetterHip/assets/img/logo.png" alt="로고" width="120">
+				<img src="../assets/img/logo.png" alt="로고" width="120">
 				</a>
 			</h1>
 			<h1 class="logo_text">
@@ -124,8 +121,6 @@ function find() {
 		</div>
 	</header>
 	</div>
-	</div>
-</div>
 
 	<div class="form_wrapper">
 	<div class="title">

@@ -144,7 +144,7 @@ String currentDate = format.format(date);
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../BetterHip/assets/css/cakeInfo.css">
-<link rel="shortcut icon" type="image/x-icon" href="../BetterHip/assets/img/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
 
 
 <link rel="stylesheet" href="../BetterHip/assets/css/bootstrap.min.css">
@@ -179,7 +179,7 @@ String currentDate = format.format(date);
 			<div class="container clearfix">
 			<h1 class="logo">
 				<a href="#!">
-				<img src="../BetterHip/assets/img/logo.png" alt="로고" width="120">
+				<img src="../assets/img/logo.png" alt="로고" width="120">
 				</a>
 			</h1>
 			<h1 class="logo_text">
@@ -192,13 +192,13 @@ String currentDate = format.format(date);
 						<div class="dropdown">
 						<ul>
 							<li>
-							<a href="../BetterHip/guideCake.do">케이크 안내</a>
+							<a href="/BetterHip/guideCake.do">케이크 안내</a>
 							</li>
 							<li>
-							<a href="../BetterHip/guidePickup.do">픽업 방법</a>
+							<a href="/BetterHip/guidePickup.do">픽업 방법</a>
 							</li>
 							<li>
-							<a href="../BetterHip/guideUse.do">이용 안내</a>
+							<a href="/BetterHip/guideUse.do">이용 안내</a>
 							</li>
 						</ul>
 						</div>
