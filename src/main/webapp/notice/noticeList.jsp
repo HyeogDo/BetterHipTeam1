@@ -179,5 +179,3 @@ function adminCheck() {
 
 </body>
 </html>
-</body>
-</html>
