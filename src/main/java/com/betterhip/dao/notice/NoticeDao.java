@@ -91,7 +91,7 @@ public class NoticeDao {
 			
 			try {
 				connection = dataSource.getConnection();
-				String query = "insert into betterhip (notice_title, notice_content, notice_date) values (?,?,now())";
+				String query = "insert into notice (notice_title, notice_content, notice_date, notice_user_id, notice_count) values (?,?,now(),'fk1119',0)";
 				preparedStatement = connection.prepareStatement(query); 
 				preparedStatement.setString(1, notice_title);
 				preparedStatement.setString(2, notice_content);
@@ -116,7 +116,7 @@ public class NoticeDao {
 	}//noticeForm 작성
 	
 	
-	public NoticeDto noticeContent(String a_notice_id) {
+	public NoticeDto noticeContent(String snotice_id) {
 		NoticeDto dto = null;
 		Connection connection = null; 
 		PreparedStatement preparedStatement = null; 
@@ -124,20 +124,21 @@ public class NoticeDao {
 		
 		try {
 			connection = dataSource.getConnection();
-			String query = "select * from betterhip where notice_id = ?";
+			String query = "select * from notice where notice_id = ?";
 			preparedStatement = connection.prepareStatement(query); 
-			preparedStatement.setInt(1, Integer.parseInt(a_notice_id));
+			preparedStatement.setInt(1, Integer.parseInt(snotice_id));
 			resultSet = preparedStatement.executeQuery();
 			
 			if(resultSet.next()) {
 				int notice_id = resultSet.getInt("notice_id");
-				String notice_name = resultSet.getString("notice_name"); 
+				String notice_user_id = resultSet.getString("notice_user_id"); 
 				String notice_title = resultSet.getString("notice_title"); 
 				String notice_content = resultSet.getString("notice_content"); 
 				Timestamp notice_date = resultSet.getTimestamp("notice_date");
 				int notice_count = resultSet.getInt("notice_count");
+				System.out.println(notice_id+notice_user_id+notice_title);
 				
-				dto = new NoticeDto(notice_id, notice_title, notice_name, notice_date, notice_content, notice_count, notice_name);
+				dto = new NoticeDto(notice_id, notice_title, notice_date, notice_content, notice_count, notice_user_id);
 			}
 			
 			
@@ -157,8 +158,9 @@ public class NoticeDao {
 		return dto;
 
 	}//noticeContent
+
 	
-	public void update(int notice_id, String notice_name, String notice_title, String notice_content) {
+	public void update(int notice_id, String notice_title, String notice_content) {
 		
 		Connection connection = null; 
 		PreparedStatement preparedStatement = null; 
@@ -166,12 +168,13 @@ public class NoticeDao {
 		
 		try {
 			connection = dataSource.getConnection();
-			String query = "update betterhip set notice_title = ?, notice_content = ? where notice_id = ?";
+			String query = "update notice set notice_title = ?, notice_content = ? where notice_id = ?";
 			preparedStatement = connection.prepareStatement(query); 
 			preparedStatement.setString(1, notice_title);
 			preparedStatement.setString(2, notice_content);
 			preparedStatement.setInt(3, notice_id);
 			
+			System.out.println("update dao!!!");
 			preparedStatement.executeUpdate();
 			
 			
@@ -192,7 +195,7 @@ public class NoticeDao {
 	 }//update
 	
 		
-		public void delete(String notice_id) {
+		public void delete(int notice_id) {
 			
 			Connection connection = null; 
 			PreparedStatement preparedStatement = null; 
@@ -200,11 +203,11 @@ public class NoticeDao {
 			
 			try {
 				connection = dataSource.getConnection();
-				String query = "delete from betterhip where notice_id = ?";
+				String query = "delete from notice where notice_id = ?";
 				preparedStatement = connection.prepareStatement(query); 
-				preparedStatement.setString(1, notice_id);
-				
+				preparedStatement.setInt(1, notice_id);
 				preparedStatement.executeUpdate();
+				System.out.println("dao delete");
 				
 			} catch (Exception e) {
 				e.printStackTrace();

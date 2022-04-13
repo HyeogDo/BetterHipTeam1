@@ -27,8 +27,10 @@ import com.betterhip.command.mypage.UserInfoDeleteCommand;
 import com.betterhip.command.mypage.UserInfoModifyCommand;
 import com.betterhip.command.mypage.UserInfoViewCommand;
 import com.betterhip.command.notice.NoticeContentCommand;
+import com.betterhip.command.notice.NoticeDeleteCommand;
 import com.betterhip.command.notice.NoticeFormCommand;
 import com.betterhip.command.notice.NoticeListCommand;
+import com.betterhip.command.notice.NoticeUpdateCommand;
 import com.betterhip.command.order.CakeChoiceCommand;
 import com.betterhip.command.order.CakeListViewCommand;
 import com.betterhip.command.order.CakeOrderCartCommand;
@@ -118,6 +120,51 @@ public class BetterhipHomeController extends HttpServlet {
 			viewPage = "guide/guideUse.jsp";
 			break;
 			
+
+		case("/write_view.do"): 	
+			viewPage = "write_view.jsp";
+			break;
+		
+			// 공지사항
+		case("/noticeList.do"):
+			command = new NoticeListCommand();
+			command.excute(request, response);
+			viewPage = "notice/noticeList.jsp";
+			break;
+			
+		case("/noticeForm.do"):
+			command = new NoticeFormCommand();
+			command.excute(request,response);
+			viewPage = "noticeList.do";
+			break;
+			
+		case("/noticeFormView.do"):
+			viewPage = "notice/noticeForm.jsp";
+			break;
+		
+		case("/noticeContent.do"):
+			command = new NoticeContentCommand();
+			command.excute(request, response);
+			viewPage = "notice/noticeContent.jsp"; 
+			break; 
+		
+		case("/noticeUpdate.do"): 
+			command = new NoticeUpdateCommand();
+			command.excute(request, response);
+			viewPage = "noticeList.do";
+			break; 
+			
+		case("/noticeDelete.do") :
+			command = new NoticeDeleteCommand();
+			command.excute(request, response);
+			viewPage = "noticeList.do";
+			break;
+			
+		case("/noticeUpdateView.do"):
+			viewPage = "notice/noticeUpdate.jsp";
+			break;
+			
+
 		case("/purchaseList.do") :
 			command = new PurchaseListCommand();
 			command.excute(request, response);
