@@ -1,6 +1,8 @@
 package com.betterhip.dao.order;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.Blob;
 import java.sql.Connection;
@@ -240,5 +242,53 @@ public String reviewInput(int purchase_id, int cake_id, String review_content, i
 	}
 	return result;
 }
+public String purchase(String purchase_user_id, int purchase_cake_id, int purchase_customize_id, int purchase_quantity, int purchase_price, String purchase_text, int purchase_status, String img_fileFullPath, String img_fileName) {
+	String result = "RESULT_NOT_OK";
+	Connection connection = null;
+	PreparedStatement preparedStatement = null;
+	FileInputStream fis;
+	try {
+		connection = dataSource.getConnection();
+		
+		//데이터베이스 입력문
+		String query = "insert into purchase(purchase_user_id, purchase_cake_id, purchase_customize_id, purchase_quantity, purchase_price, purchase_text, purchase_status, purchase_img, purchase_img_fileName) values(?,?,?,?,?,?,?,?,?)";
+		File file = new File(img_fileFullPath);
+		FileInputStream inputStream = new FileInputStream(file);
+		preparedStatement = connection.prepareStatement(query);
+		
+		
+		
+		//입력문 안에 들어갈 변수 설정
+		preparedStatement.setString(1, purchase_user_id);
+		preparedStatement.setInt(2, purchase_cake_id);
+		preparedStatement.setInt(3, purchase_customize_id);
+		preparedStatement.setInt(4, purchase_quantity);
+		preparedStatement.setInt(5, purchase_price);
+		preparedStatement.setString(6, purchase_text);
+		preparedStatement.setInt(7, purchase_status);
+		preparedStatement.setBinaryStream(8, (InputStream)inputStream, (int)file.length());
+		preparedStatement.setString(9, img_fileName);
+		//입력 업데이트
+		preparedStatement.executeUpdate();
+		
+		
+	} catch (Exception e) {
+		// TODO: handle exception
+		e.printStackTrace();
+	}finally {
+		// 닫아주기
+		try {
+			if (preparedStatement != null) preparedStatement.close();
+			if (connection != null) connection.close();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		result = "RESULT_OK";
+	}
 	
+	
+	return result;
+}
+
 }

@@ -7,58 +7,19 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%
-	//String user_id = session.getAttribute("USER_ID").toString();
-	String user_id = "peterhd";
 	
-	//페이지 나누기
-	
-	String tempPage = request.getParameter("page");
-	int cPage;
-	//현재 페이지 정하기
-	if (tempPage == null || tempPage.length() == 0) {
-		cPage = 1;
-	}
-	try{
-		cPage = Integer.parseInt(tempPage);
-	} catch(NumberFormatException e) {
-		cPage = 1;
-	}
-	
-	// 페이지 묶음들 개수(3개면 [prev] 1 2 3 [next] 로 뜨고 next 클릭하면 [prev] 4 5 6 [next] 이런식으로 뜨게)
-	int pageLength = 3;
 	// 한 페이지에 담으려는 데이터 개수
 	int len = 4;
 	// 각 페이지의 데이터 시작점
 	int start;
 	// 현재 블록
-	int currentBlock;
-	// 시작 페이지 끝 페이지
-	int startPage;
-	int endPage;
-	// 총 raw 수, 페이지 수
+	
 	int totalRows = Integer.parseInt(session.getAttribute("totalRows").toString());
 	int totalPages = totalRows % len == 0 ? totalRows/len : (totalRows / len) + 1;
 	// 총페이지수 예외처리
 	if(totalPages == 0) {
 		totalPages = 1;
 	}
-	if (cPage > totalPages) {
-		cPage = 1;
-	}
-	// 각 페이지의 데이터 시작점
-	start = (cPage - 1) * len;
-	//현재 블록 설정
-	currentBlock = cPage % pageLength == 0 ? cPage / pageLength : (cPage / pageLength) + 1;
-	
-	// 시작 페이지 끝 페이지 설정
-	startPage = (currentBlock - 1) * pageLength + 1;
-	endPage = startPage + pageLength - 1;
-	
-	// 총 페이지 숫자를 넘어가면 끝 페이지를 마지막 페이지 숫자로 지정
-	if(endPage > totalPages) {
-		endPage = totalPages;
-	}
-	
 %>
 <!DOCTYPE html>
 <html>
