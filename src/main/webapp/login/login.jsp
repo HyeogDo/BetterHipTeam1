@@ -243,7 +243,7 @@ function kakaoLogout() {
 		</form>
 			<div class="kakao-btn-area">
 				<button type="button" onclick="kakaoLogin()" value="카카오 로그인">카카오 로그인</button>
-				<button type="button" onclick="kakaoLogout()" value="카카오 로그아웃">카카오 로그아웃</button>
+			
 			</div>
 			<div class="signupForm-btn-area">
 				<div class="login__check--left mr-3">
