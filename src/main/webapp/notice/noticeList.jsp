@@ -8,8 +8,27 @@
 <meta charset="UTF-8">
 <title>공지사항 리스트</title>
 </head>
+<script type="text/javascript">
+<% 
+HttpSession session2 = request.getSession();
+String USER_ID = (String) session2.getAttribute("USER_ID"); 
+%>
+
+function adminCheck() {
+	switch("<%=USER_ID%>"){
+	case "fk1119":
+		location.href="noticeFormView.do"
+		break;
+	default:
+		alert("어드민 아님")
+		break;
+	}
+}
+
+</script>
 <body>
-	<h1>공지사항</h1>
+	<h1 style="text-align: center;">공지사항</h1>
+	<div style="text-align: center;">
 	<table border="1">
 		<tr>
 			<th width="50">No.</th>
@@ -27,12 +46,13 @@
 		</c:forEach>
 		
 		<tr>
-			<td colspan="5"><a href="../noticeForm.do">글작성</a></td>
+			<td colspan="5"><input type="button" onclick="adminCheck()" value="작성"></td>
 		</tr>
 		
 	</table>
 	
 	
 	
+	</div>
 </body>
 </html>

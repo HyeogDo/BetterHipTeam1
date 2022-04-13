@@ -91,7 +91,7 @@ public class NoticeDao {
 			
 			try {
 				connection = dataSource.getConnection();
-				String query = "insert into betterhip (notice_title, notice_content, notice_date) values (?,?,now())";
+				String query = "insert into notice (notice_title, notice_content, notice_date, notice_user_id, notice_count) values (?,?,now(),'fk1119',0)";
 				preparedStatement = connection.prepareStatement(query); 
 				preparedStatement.setString(1, notice_title);
 				preparedStatement.setString(2, notice_content);
@@ -195,7 +195,7 @@ public class NoticeDao {
 	 }//update
 	
 		
-		public void delete(String notice_id) {
+		public void delete(int notice_id) {
 			
 			Connection connection = null; 
 			PreparedStatement preparedStatement = null; 
@@ -205,9 +205,9 @@ public class NoticeDao {
 				connection = dataSource.getConnection();
 				String query = "delete from notice where notice_id = ?";
 				preparedStatement = connection.prepareStatement(query); 
-				preparedStatement.setString(1, notice_id);
-				
+				preparedStatement.setInt(1, notice_id);
 				preparedStatement.executeUpdate();
+				System.out.println("dao delete");
 				
 			} catch (Exception e) {
 				e.printStackTrace();

@@ -133,6 +133,10 @@ public class BetterhipHomeController extends HttpServlet {
 		case("/noticeForm.do"):
 			command = new NoticeFormCommand();
 			command.excute(request,response);
+			viewPage = "noticeList.do";
+			break;
+			
+		case("/noticeFormView.do"):
 			viewPage = "notice/noticeForm.jsp";
 			break;
 		
@@ -154,6 +158,9 @@ public class BetterhipHomeController extends HttpServlet {
 			viewPage = "noticeList.do";
 			break;
 			
+		case("/noticeUpdateView.do"):
+			viewPage = "notice/noticeUpdate.jsp";
+			break;
 			
 		// 	
 		case("/purchaseList.do") :

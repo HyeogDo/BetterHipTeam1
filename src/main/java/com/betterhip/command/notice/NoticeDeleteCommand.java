@@ -12,7 +12,8 @@ public class NoticeDeleteCommand implements BetterhipCommand {
 	public void excute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		
-		String notice_id = request.getParameter("notice_id");
+		System.out.println("noticeDeleteCommand");
+		int notice_id = Integer.parseInt(request.getParameter("notice_id"));
 		NoticeDao dao = new NoticeDao();
 		dao.delete(notice_id);
 	}
