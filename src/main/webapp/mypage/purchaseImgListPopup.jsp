@@ -12,7 +12,7 @@
 
 	<c:choose>
 		<c:when test="${Purchase_Img.purchase_img_base64Image eq 'NO IMAGE'}">
-			<img src="./mypage/mypage_image/noimg.jpg" width = "100" height="100">
+			<img src="../BetterHip/mypage/mypage_image/noimg.jpg" width = "100" height="100">
 		</c:when>
 		<c:otherwise>
 			<img src="data:purchase_img/png;base64, ${Purchase_Img.purchase_img_base64Image }" width = "100" height="100">
