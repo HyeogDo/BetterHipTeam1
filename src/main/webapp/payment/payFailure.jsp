@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Better Hip 회원가입</title>
+<title>Better Hip 결제실패</title>
 <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
 
 
@@ -100,12 +100,13 @@ function goShopping() {
 		<div id="mid_left">
 		</div>
 		<div id="mid_content" style="display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 200px;"">
+	    flex-direction: column;
+	    justify-content: center;
+	    align-items: center;
+	    width: 100%;
+	    padding: 200px;"">
 			<div style="text-align: center;">
+				<h1>!</h1>
 				<h1>결제실패</h1>
 			</div>
 			<div style="width: 100%; text-align: center;">
@@ -124,13 +125,6 @@ function goShopping() {
 				 transition:.5s;margin-top: 30px;">
 			</div>
 		</div>
-		<div id="mid_right">
-		</div>
-	</div>
-	<div id="side_right"></div>
-	<div id="bottom"></div>
-
-
 
 <!-- Start Footer -->
     <footer class="bg-dark" id="footer">
