@@ -32,7 +32,7 @@
 			<div class="member-area">
 				<a href="loginForm.do">로그인</a>
 				<span class="bar">|</span>
-				<a href="../BetterHip/signup.do">회원가입</a>
+				<a href="signupForm.do">회원가입</a>
 				<span class="bar">|</span>
 				<a href="#!">장바구니</a>
 				<span class="bar">|</span>
@@ -69,7 +69,7 @@
 						</div>
 					</li>
 					<li class="nav-item cake">
-						<a href="cakeListView.do" class="nav-link">케이크 주문</a>
+						<a href="main.do" class="nav-link">케이크 주문</a>
 					</li>
 					<li class="nav-item intro">
 						<a href="#!" class="nav-link">소개</a>
