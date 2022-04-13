@@ -75,17 +75,7 @@
                         <li class="nav-item notice">
                             <a href="noticeList.do" class="nav-link">공지사항</a>
                         </li>
-<!--                        <li class="nav-item search">
-                           <div class="flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
-                              <div class="input-group">
-                                 <input type="text" class="form-control border-0" id="inputSearch">
-                                   <div class="input-group-text">
-                                     <i class="fa fa-fw fa-search"></i>
-                                   </div>
-                             </div>
-                          </div>
-                        </li> -->
-                       
+
                     </ul>
                 </div>
                 </div>
@@ -93,7 +83,7 @@
         </header>
         </div>
         </div>
-    </div>
+
 
     <!-- Close Header -->
 
@@ -131,73 +121,73 @@
             <div class="wrapitem">
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/category_img_02.jpg" >
+                        <img class="item_img" src="../assets/img/cake_img_01.jpg" >
                         <div class="item_img_text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
+                            <h6><a href="#">아빠 생신 축하 케이크</a></h6>
+                            <h5>35,000원</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/category_img_02.jpg" >
+                        <img class="item_img" src="../assets/img/cake_img_02.jpg" >
                         <div class="item_img_text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
+                            <h6><a href="#">서른이 왔어요 케이크</a></h6>
+                            <h5>30,000원</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/category_img_02.jpg" >
+                        <img class="item_img" src="../assets/img/cake_img_03.jpg" >
                         <div class="item_img_text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
+                            <h6><a href="#">함께해 케이크</a></h6>
+                            <h5>45,000원</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/category_img_02.jpg" >
+                        <img class="item_img" src="../assets/img/cake_img_04.jpg" >
                         <div class="item_img_text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
+                            <h6><a href="#">전역 축하 케이크</a></h6>
+                            <h5>25,000원</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/category_img_02.jpg" >
+                        <img class="item_img" src="../assets/img/cake_img_05.jpg" >
                         <div class="item_img_text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
+                            <h6><a href="#">응원 메세지 케이크</a></h6>
+                            <h5>45,000원</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/category_img_02.jpg" >
+                        <img class="item_img" src="../assets/img/cake_img_06.jpg" >
                         <div class="item_img_text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
+                            <h6><a href="#">우리사이 100일 케이크</a></h6>
+                            <h5>55,000</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/category_img_02.jpg" >
+                        <img class="item_img" src="../assets/img/cake_img_07.jpg" >
                         <div class="item_img_text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
+                            <h6><a href="#">1주년 기념 케이크</a></h6>
+                            <h5>40,000원</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/category_img_02.jpg" >
+                        <img class="item_img" src="../assets/img/cake_img_08.jpg" >
                         <div class="item_img_text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
+                            <h6><a href="#">품절남녀 케이크</a></h6>
+                            <h5>55,000원</h5>
                         </div>
                     </div>
                 </div>
@@ -231,32 +221,32 @@
                 </div>
                 <div class="pop_container">
                     <div class="col-12 col-md-4 p-5 mt-3">
-                        <a href="#"><img src="../assets/img/category_img_01.jpg" class="img-fluid"></a>
-                        <h4 class="h5 text-center mt-3 mb-3">해피데이 곰돌이 케이크</h4>
+                        <a href="#"><img src="../assets/img/category_img_02.jpg" class="img-fluid"></a>
+                        <h4 class="h5 text-center mt-3 mb-3">행복해 케이크</h4>
                     </div>
                 </div>
                 <div class="pop_container">
                     <div class="col-12 col-md-4 p-5 mt-3">
-                        <a href="#"><img src="../assets/img/category_img_01.jpg" class="img-fluid"></a>
-                        <h4 class="h5 text-center mt-3 mb-3">해피데이 곰돌이 케이크</h4>
+                        <a href="#"><img src="../assets/img/category_img_03.jpg" class="img-fluid"></a>
+                        <h4 class="h5 text-center mt-3 mb-3">꽃길만 걸어요 케이크</h4>
                     </div>
                 </div>
                 <div class="pop_container">
                     <div class="col-12 col-md-4 p-5 mt-3">
-                        <a href="#"><img src="../assets/img/category_img_01.jpg" class="img-fluid"></a>
-                        <h4 class="h5 text-center mt-3 mb-3">해피데이 곰돌이 케이크</h4>
+                        <a href="#"><img src="../assets/img/category_img_04.jpg" class="img-fluid"></a>
+                        <h4 class="h5 text-center mt-3 mb-3">장미꽃 케이크</h4>
                     </div>
                 </div>
                 <div class="pop_container">
                     <div class="col-12 col-md-4 p-5 mt-3">
-                        <a href="#"><img src="../assets/img/category_img_01.jpg" class="img-fluid"></a>
-                        <h4 class="h5 text-center mt-3 mb-3">해피데이 곰돌이 케이크</h4>
+                        <a href="#"><img src="../assets/img/category_img_05.jpg" class="img-fluid"></a>
+                        <h4 class="h5 text-center mt-3 mb-3">프리지아 봄 케이크</h4>
                     </div>
                 </div>
                 <div class="pop_container">
                     <div class="col-12 col-md-4 p-5 mt-3">
-                        <a href="#"><img src="../assets/img/category_img_01.jpg" class="img-fluid"></a>
-                        <h4 class="h5 text-center mt-3 mb-3">해피데이 곰돌이 케이크</h4>
+                        <a href="#"><img src="../assets/img/category_img_06.jpg" class="img-fluid"></a>
+                        <h4 class="h5 text-center mt-3 mb-3">심플베스트 케이크</h4>
                     </div>
                 </div>
             </div>

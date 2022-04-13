@@ -38,67 +38,63 @@ Date date = new Date();
 String currentDate = format.format(date);
 %>
 
-
-<!-- header -->
-<div id="wrap">
-	<header>
-		<div class="top-header">
-			<div class="container clearfix">
-			<div class="member-area">
-				<a href="#!">로그인</a>
-				<span class="bar">|</span>
-				<a href="../BetterHip/signup.do">회원가입</a>
-				<span class="bar">|</span>
-				<a href="#!">장바구니</a>
-				<span class="bar">|</span>
-				<a href="#!">My Page</a>
-			</div>
-			</div>
-		</div>
-		<div class="main-header">
-			<div class="container clearfix">
-			<h1 class="logo">
-				<a href="#!">
-				<img src="../assets/img/logo.png" alt="로고" width="120">
-				</a>
-			</h1>
-			<h1 class="logo_text">
-				<a href="main.do">Better Hip</a>
-			</h1>
-			<div class="gnb">
-				<ul class="clearfix">
-					<li class="nav-item info">
-						<a href="#!" class="nav-link">이용안내</a>
-						<div class="dropdown">
-						<ul>
-							<li>
-							<a href="#!">케이크 안내</a>
-							</li>
-							<li>
-							<a href="#!">픽업 방법</a>
-							</li>
-							<li>
-							<a href="#!">이용 안내</a>
-							</li>
-						</ul>
-						</div>
-					</li>
-					<li class="nav-item cake">
-						<a href="#!" class="nav-link">케이크 주문</a>
-					</li>
-					<li class="nav-item intro">
-						<a href="#!" class="nav-link">소개</a>
-					</li>
-					<li class="nav-item notice">
-						<a href="#!" class="nav-link">공지사항</a>
-					</li>
-				</ul>
-			</div>
-			</div>
-		</div>
-	</header>
-	</div>
-<!-- header -->
+       <header>
+            <div class="top-header">
+                <div class="container clearfix">
+                <div class="member-area">
+                    <a href="loginForm.do">로그인</a>
+                    <span class="bar">|</span>
+                    <a href="signupForm.do">회원가입</a>
+                    <span class="bar">|</span>
+                    <a href="cartList.do">장바구니</a>
+                    <span class="bar">|</span>
+                    <a href="purchaseList.do">My Page</a>
+                </div>
+                </div>
+            </div>
+            <div class="main-header">
+                <div class="container clearfix">
+                <h1 class="logo">
+                    <a href="main.do">
+                    <img src="../assets/img/logo.png" alt="로고" width="120">
+                    </a>
+                </h1>
+                <h1 class="logo_text">
+                    <a href="main.do">Better Hip</a>
+                </h1>
+                <div class="gnb">
+                    <ul class="clearfix">
+                        <li class="nav-item info">
+                            <a href="guideCake.do" class="nav-link">이용안내</a>
+                            <div class="dropdown">
+                            <ul>
+                                <li>
+                                <a href="guideCake.do">케이크 안내</a>
+                                </li>
+                                <li>
+                                <a href="guidePickup.do">픽업 방법</a>
+                                </li>
+                                <li>
+                                <a href="guideUse.do">이용 안내</a>
+                                </li>
+                            </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item cake">
+                            <a href="cakeListView.do" class="nav-link">케이크 주문</a>
+                        </li>
+                        <li class="nav-item intro">
+                            <a href="introduce.do" class="nav-link">소개</a>
+                        </li>
+                        <li class="nav-item notice">
+                            <a href="noticeList.do" class="nav-link">공지사항</a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </header>
+    <!-- Close Header -->
 
 
 <!--사이드 마이페이지 메뉴-->
@@ -222,7 +218,7 @@ String currentDate = format.format(date);
 
             </div>
         </div>
-        <div class="w-100 bg-black">
+        <div class="w-100 bg-black py-3">
             <div class="footer_2_container">
                 <div class="row pt-2">
                     <div class="col-12">
@@ -238,13 +234,13 @@ String currentDate = format.format(date);
     </footer>
     <!-- End Footer -->
 
-<!-- Start Script -->
-<script src="assets/js/jquery-1.11.0.min.js"></script>
-<script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
-<script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/templatemo.js"></script>
-<script src="assets/js/custom.js"></script>
-<!-- End Script -->
+    <!-- Start Script -->
+    <script src="../BetterHip/assets/js/jquery-1.11.0.min.js"></script>
+    <script src="../BetterHip/assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="../BetterHip/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../BetterHip/assets/js/templatemo.js"></script>
+    <script src="../BetterHip/assets/js/custom.js"></script>
+    <!-- End Script -->
 
 </body>
 </html>
