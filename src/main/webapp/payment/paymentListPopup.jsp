@@ -1,14 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
- pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+ <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>이미지 보기</title>
-
-</head> 
+<title>첨부이미지 팝업</title>
+</head>
 <body>
- <!-- cake_img purchase_img로 수정 필요 -->
-<img src="data:purchase_img/png;base64, ${purchase_img}" width = "150" height="200">
-</body> 
+
+
+	<c:choose>
+		<c:when test="${Purchase_Img.purchase_img_base64Image eq 'NO IMAGE'}">
+			<img src="./mypage/mypage_image/noimg.jpg" width = "100" height="100">
+		</c:when>
+		<c:otherwise>
+			<img src="data:purchase_img/png;base64, ${Purchase_Img.purchase_img_base64Image }" width = "100" height="100">
+		</c:otherwise>
+	</c:choose>
+
+
+</body>
 </html>
