@@ -9,15 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <title>Better hip</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../BetterHip/assets/img/favicon.ico">
 
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/templatemo.css">
-    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../BetterHip/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../BetterHip/assets/css/templatemo.css">
+    <link rel="stylesheet" href="../BetterHip/assets/css/custom.css">
 
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-    <link rel="stylesheet" href="../assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../BetterHip/assets/css/fontawesome.min.css">
 </head>
 
 <body>
@@ -42,7 +42,7 @@
                 <div class="container clearfix">
                 <h1 class="logo">
                     <a href="main.do">
-                    <img src="../assets/img/logo.png" alt="로고" width="120">
+                    <img src="../BetterHip/assets/img/logo.png" alt="로고" width="120">
                     </a>
                 </h1>
                 <h1 class="logo_text">
@@ -91,7 +91,7 @@
     <div class="wrap-banner">
         <div class="background">
 
-            <img src="../assets/img/background.jpg" alt="배경" width="100%">  <!-- 	배경이미지 가져오지 못함 -->
+            <img src="../BetterHip/assets/img/background.jpg" alt="배경" width="100%">  <!-- 	배경이미지 가져오지 못함 -->
 
         </div>
         <div class="moving">
@@ -121,7 +121,9 @@
             <div class="wrapitem">
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/cake_img_01.jpg" >
+
+                        <img class="item_img" src="..../BetterHip/assets/img/cake_img_01.jpg" >
+
                         <div class="item_img_text">
                             <h6><a href="#">아빠 생신 축하 케이크</a></h6>
                             <h5>35,000원</h5>
@@ -130,7 +132,9 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/cake_img_02.jpg" >
+
+                        <img class="item_img" src="..../BetterHip/assets/img/cake_img_02.jpg" >
+
                         <div class="item_img_text">
                             <h6><a href="#">서른이 왔어요 케이크</a></h6>
                             <h5>30,000원</h5>
@@ -139,7 +143,9 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/cake_img_03.jpg" >
+=
+                        <img class="item_img" src="..../BetterHip/assets/img/cake_img_03.jpg" >
+
                         <div class="item_img_text">
                             <h6><a href="#">함께해 케이크</a></h6>
                             <h5>45,000원</h5>
@@ -148,7 +154,9 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/cake_img_04.jpg" >
+
+                        <img class="item_img" src="..../BetterHip/assets/img/cake_img_04.jpg" >
+
                         <div class="item_img_text">
                             <h6><a href="#">전역 축하 케이크</a></h6>
                             <h5>25,000원</h5>
@@ -157,7 +165,9 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/cake_img_05.jpg" >
+
+                        <img class="item_img" src="..../BetterHip/assets/img/cake_img_05.jpg" >
+
                         <div class="item_img_text">
                             <h6><a href="#">응원 메세지 케이크</a></h6>
                             <h5>45,000원</h5>
@@ -166,7 +176,9 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/cake_img_06.jpg" >
+
+                        <img class="item_img" src="..../BetterHip/assets/img/cake_img_06.jpg" >
+
                         <div class="item_img_text">
                             <h6><a href="#">우리사이 100일 케이크</a></h6>
                             <h5>55,000</h5>
@@ -175,7 +187,9 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/cake_img_07.jpg" >
+
+                        <img class="item_img" src="..../BetterHip/assets/img/cake_img_07.jpg" >
+
                         <div class="item_img_text">
                             <h6><a href="#">1주년 기념 케이크</a></h6>
                             <h5>40,000원</h5>
@@ -184,7 +198,9 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix">
                     <div class="item">
-                        <img class="item_img" src="../assets/img/cake_img_08.jpg" >
+
+                        <img class="item_img" src="..../BetterHip/assets/img/cake_img_08.jpg" >
+
                         <div class="item_img_text">
                             <h6><a href="#">품절남녀 케이크</a></h6>
                             <h5>55,000원</h5>
@@ -215,38 +231,48 @@
             <div class="wrap_container" style="padding-bottom:150px">
                 <div class="pop_container">
                     <div class="col-12 col-md-4 p-5 mt-3">
-                        <a href="#"><img src="../assets/img/category_img_01.jpg" class="img-fluid"></a>
+                        <a href="#"><img src="../BetterHip/assets/img/category_img_01.jpg" class="img-fluid"></a>
                         <h4 class="h5 text-center mt-3 mb-3">해피데이 곰돌이 케이크</h4>
                     </div>
                 </div>
                 <div class="pop_container">
                     <div class="col-12 col-md-4 p-5 mt-3">
-                        <a href="#"><img src="../assets/img/category_img_02.jpg" class="img-fluid"></a>
+
+                        <a href="#"><img src="..../BetterHip/assets/img/category_img_02.jpg" class="img-fluid"></a>
                         <h4 class="h5 text-center mt-3 mb-3">행복해 케이크</h4>
+
                     </div>
                 </div>
                 <div class="pop_container">
                     <div class="col-12 col-md-4 p-5 mt-3">
-                        <a href="#"><img src="../assets/img/category_img_03.jpg" class="img-fluid"></a>
+
+                        <a href="#"><img src="..../BetterHip/assets/img/category_img_03.jpg" class="img-fluid"></a>
                         <h4 class="h5 text-center mt-3 mb-3">꽃길만 걸어요 케이크</h4>
+
                     </div>
                 </div>
                 <div class="pop_container">
                     <div class="col-12 col-md-4 p-5 mt-3">
-                        <a href="#"><img src="../assets/img/category_img_04.jpg" class="img-fluid"></a>
+
+                        <a href="#"><img src="..../BetterHip/assets/img/category_img_04.jpg" class="img-fluid"></a>
                         <h4 class="h5 text-center mt-3 mb-3">장미꽃 케이크</h4>
+
                     </div>
                 </div>
                 <div class="pop_container">
                     <div class="col-12 col-md-4 p-5 mt-3">
-                        <a href="#"><img src="../assets/img/category_img_05.jpg" class="img-fluid"></a>
+
+                        <a href="#"><img src="..../BetterHip/assets/img/category_img_05.jpg" class="img-fluid"></a>
                         <h4 class="h5 text-center mt-3 mb-3">프리지아 봄 케이크</h4>
+
                     </div>
                 </div>
                 <div class="pop_container">
                     <div class="col-12 col-md-4 p-5 mt-3">
-                        <a href="#"><img src="../assets/img/category_img_06.jpg" class="img-fluid"></a>
+
+                        <a href="#"><img src="..../BetterHip/assets/img/category_img_06.jpg" class="img-fluid"></a>
                         <h4 class="h5 text-center mt-3 mb-3">심플베스트 케이크</h4>
+
                     </div>
                 </div>
             </div>

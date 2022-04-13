@@ -8,14 +8,14 @@
 <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
 
 
-<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="../assets/css/templatemo.css">
-<link rel="stylesheet" href="../assets/css/custom.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/templatemo.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/custom.css">
 
 <!-- Load fonts style after rendering the layout styles -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-<link rel="stylesheet" href="../assets/css/fontawesome.min.css">
-<link rel="stylesheet" href="../assets/css/signupForm.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/signupForm.css">
 
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -43,7 +43,7 @@
 			<div class="container clearfix">
 			<h1 class="logo">
 				<a href="#!">
-				<img src="../assets/img/logo.png" alt="로고" width="120">
+				<img src="../BetterHip/assets/img/logo.png" alt="로고" width="120">
 				</a>
 			</h1>
 			<h1 class="logo_text">
@@ -68,7 +68,7 @@
 						</div>
 					</li>
 					<li class="nav-item cake">
-						<a href="#!" class="nav-link">케이크 주문</a>
+						<a href="main.do" class="nav-link">케이크 주문</a>
 					</li>
 					<li class="nav-item intro">
 						<a href="#!" class="nav-link">소개</a>
@@ -106,7 +106,7 @@ function payView() {
 	    padding: 200px;"">
 			<div style="text-align: center;">
 				<h1></h1>
-				<img src="../assets/img/check-circle.png" style="width:50px;">
+				<img src="../BetterHip/assets/img/check-circle.png" style="width:50px;">
 				<h1>결제성공</h1>
 			</div>
 			<div style="width: 100%; text-align: center;">

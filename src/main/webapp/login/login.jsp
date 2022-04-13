@@ -159,7 +159,7 @@ function kakaoLogout() {
 			<div class="member-area">
 				<a href="#!">로그인</a>
 				<span class="bar">|</span>
-				<a href="../BetterHip/signupForm.do">회원가입</a>
+				<a href="signupForm.do">회원가입</a>
 				<span class="bar">|</span>
 				<a href="#!">장바구니</a>
 				<span class="bar">|</span>
@@ -196,7 +196,7 @@ function kakaoLogout() {
 						</div>
 					</li>
 					<li class="nav-item cake">
-						<a href="cakeListView.do" class="nav-link">케이크 주문</a>
+						<a href="main.do" class="nav-link">케이크 주문</a>
 					</li>
 					<li class="nav-item intro">
 						<a href="#!" class="nav-link">소개</a>
@@ -243,7 +243,7 @@ function kakaoLogout() {
 		</form>
 			<div class="kakao-btn-area">
 				<button type="button" onclick="kakaoLogin()" value="카카오 로그인">카카오 로그인</button>
-				<button type="button" onclick="kakaoLogout()" value="카카오 로그아웃">카카오 로그아웃</button>
+			
 			</div>
 			<div class="signupForm-btn-area">
 				<div class="login__check--left mr-3">
