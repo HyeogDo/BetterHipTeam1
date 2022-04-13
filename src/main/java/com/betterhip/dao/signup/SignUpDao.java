@@ -32,14 +32,17 @@ public class SignUpDao {
 		}
 		
 		//데이터베이스에 입력하는 함수
-		public void signup(String user_id, int user_pw, String user_name, String user_email, String user_phone, String user_postcode, String user_address, String user_address_detail, boolean user_marketing) {
+		public void signup(String user_id, int user_pw, String user_name, String user_email, String user_phone,
+				String user_postcode, String user_address, String user_address_detail, boolean user_marketing) {
 			Connection connection = null;
 			PreparedStatement preparedStatement = null;
 			try {
 				connection = dataSource.getConnection();
 				
 				//데이터베이스 입력문
-				String query = "insert into user(user_id, user_pw, user_name, user_email, user_phone, user_postcode, user_address, user_address_detail, user_marketing, user_joindate) values(?,?,?,?,?,?,?,?,?,now())";
+				String query = "insert into user(user_id, user_pw, user_name, user_email, user_phone, user_postcode, "
+						+ "user_address, user_address_detail, user_marketing, user_joindate)"
+						+ " values(?,?,?,?,?,?,?,?,?,now())";
 				preparedStatement = connection.prepareStatement(query);
 				
 				//입력문 안에 들어갈 변수 설정
