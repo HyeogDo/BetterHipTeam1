@@ -5,8 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>Better Hip 결제리스트</title>
 <link rel="stylesheet" href="../assets/css/login_find_pw.css">
 <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
@@ -53,11 +53,7 @@ return false;
 }
 </script>
 
-</style>
-<head>
-<meta charset="UTF-8">
-<title>배러힙 주문하기</title>
-</head>
+
 <body>
 <!-- header -->
 <div id="wrap">
@@ -120,12 +116,6 @@ return false;
 	</div>
 <!-- header -->
 
-
-	<div id="top" style="text-align: center;"></div>
-	<div id="side_left"></div>
-	<div id="mid_area">
-		<div id="mid_left">
-		</div>
 		<div id="mid_content" style="margin-left: 434px">
 							<div style="text-align: center;">
 				<h1 style="margin-left: 325px;">주문하기</h1>
@@ -237,12 +227,7 @@ return false;
 			
 				</form>
 		</div>
-		<div id="mid_right">
 
-		</div>
-	</div>
-	<div id="side_right"></div>
-	<div id="bottom"></div>
 
 
 <!-- Start Footer -->
