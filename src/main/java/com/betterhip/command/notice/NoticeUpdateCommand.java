@@ -17,7 +17,7 @@ public class NoticeUpdateCommand implements BetterhipCommand {
 		String notice_content = request.getParameter("notice_content");
 		
 		NoticeDao dao = new NoticeDao();
-		dao.update(notice_id, notice_content, notice_title, notice_content);
+		dao.update(notice_id, notice_title, notice_content);
 	}
 
 }
