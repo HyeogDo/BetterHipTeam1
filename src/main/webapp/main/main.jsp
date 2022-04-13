@@ -73,7 +73,7 @@
                             <a href="introduce.do" class="nav-link">소개</a>
                         </li>
                         <li class="nav-item notice">
-                            <a href="noticeList.do?" class="nav-link">공지사항</a>
+                            <a href="noticeList.do" class="nav-link">공지사항</a>
                         </li>
 <!--                        <li class="nav-item search">
                            <div class="flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
