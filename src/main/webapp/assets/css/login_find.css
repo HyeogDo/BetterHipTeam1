@@ -218,6 +218,31 @@ body, ul, li, p, a, label, input, div {
 	margin: 1rem 0;
 }
 
+/* 아이디 찾기 */
+.form_wrapper-printId {
+    text-align: center;
+    width: 600px;
+    position: relative;
+    margin: -1px auto 0;
+}
+
+/* 아이디를 찾고 로그인페이지로 가는 버튼 */
+.login-btn-area button{
+	width: 100%; height:60px;
+	background: #4F75D8;
+	color: #fff;
+	font-size: 20px;
+	font-weight:bold;
+	border: none;
+	border-radius: 5px;
+	cursor:pointer;
+	transition:.5s;
+	margin-bottom:90px;
+}
+.printId-content {
+	padding:10%;
+}
+
 .findId-button button{
 	font-family: 'Nanum Gothic', sans-serif;
 	width: 100%;
@@ -331,6 +356,20 @@ body, ul, li, p, a, label, input, div {
 	border: none;
     
 }
+
+.option {
+	color: #444;
+ 	background-color: #fff;
+
+ 	padding: 0.6em 1.4em 0.5em 0.8em;
+ 	margin: 0;
+
+ 	border: 1px solid #4F75D8;
+ 	border-radius: 0.5em;
+ 	box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+}
+
+
 
 
 /* Footer */

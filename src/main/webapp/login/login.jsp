@@ -159,7 +159,7 @@ function kakaoLogout() {
 			<div class="member-area">
 				<a href="#!">로그인</a>
 				<span class="bar">|</span>
-				<a href="../BetterHip/signup.do">회원가입</a>
+				<a href="../BetterHip/signupForm.do">회원가입</a>
 				<span class="bar">|</span>
 				<a href="#!">장바구니</a>
 				<span class="bar">|</span>
@@ -184,19 +184,19 @@ function kakaoLogout() {
 						<div class="dropdown">
 						<ul>
 							<li>
-							<a href="#!">케이크 안내</a>
+							<a href="guideCake.do">케이크 안내</a>
 							</li>
 							<li>
-							<a href="#!">픽업 방법</a>
+							<a href="guidePickup.do">픽업 방법</a>
 							</li>
 							<li>
-							<a href="#!">이용 안내</a>
+							<a href="guideUse.do">이용 안내</a>
 							</li>
 						</ul>
 						</div>
 					</li>
 					<li class="nav-item cake">
-						<a href="#!" class="nav-link">케이크 주문</a>
+						<a href="cakeListView.do" class="nav-link">케이크 주문</a>
 					</li>
 					<li class="nav-item intro">
 						<a href="#!" class="nav-link">소개</a>
@@ -219,7 +219,7 @@ function kakaoLogout() {
 		<div class="logo" style="text-align:center">
 		</div>
 		<h1>Login</h1>
-		<form name="frm" method="get" action="login.do?" onsubmit="return false;">
+		<form name="frm" method="post" action="login.do?" onsubmit="return false;">
 			<div class ="int-area">
 				<input type="text" name="user_id" id="id"
 				autocomplete="off" required>
@@ -251,10 +251,10 @@ function kakaoLogout() {
 				회원가입</a>
 				</div>
 				<div class="login__check--right">
-				<a href="../findIdPage.do" style="font-family: 'Nanum Gothic', sans-serif;">
+				<a href="../BetterHip/findIdPage.do" style="font-family: 'Nanum Gothic', sans-serif;">
 				아이디찾기</a>
 				<span class="bar">|</span>
-				<a href="../findPwPage.do" style="font-family: 'Nanum Gothic', sans-serif;">
+				<a href="../BetterHip/findPwPage.do" style="font-family: 'Nanum Gothic', sans-serif;">
 				비밀번호 찾기</a>
 				</div>
 			</div>
