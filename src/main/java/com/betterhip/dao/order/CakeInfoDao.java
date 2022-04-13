@@ -89,7 +89,8 @@ public class CakeInfoDao {
 				inputStream.close();
 				outputStream.close();
 				
-				CakeInfoDto cakeInfoDto = new CakeInfoDto(cake_name, cake_saleprice, cake_status, base64Image, customize_id, customize_taste, customize_size, customize_cream_type, customize_cream_color, customize_saleprice);
+				CakeInfoDto cakeInfoDto = new CakeInfoDto(cake_name, cake_saleprice, cake_status, base64Image, customize_id, customize_taste, 
+						customize_size, customize_cream_type, customize_cream_color, customize_saleprice);
 				dtos.add(cakeInfoDto);
 			}
 			
@@ -122,7 +123,8 @@ public ArrayList<CakeReviewListDto> reviewList(String user_id, int cake_id) {
 		
 		try {
 			connection = dataSource.getConnection();
-			String query = " select r.review_id, r.review_content, r.review_date, r.review_star, p.purchase_user_id  from review r, purchase p where (r.review_purchase_id = p.purchase_id) && (p.purchase_cake_id = ?)";
+			String query = " select r.review_id, r.review_content, r.review_date, r.review_star, p.purchase_user_id  from review r, purchase p"
+					+ " where (r.review_purchase_id = p.purchase_id) && (p.purchase_cake_id = ?)";
 			preparedStatement = connection.prepareStatement(query);
 			
 			preparedStatement.setInt(1, cake_id);
@@ -242,7 +244,8 @@ public String reviewInput(int purchase_id, int cake_id, String review_content, i
 	}
 	return result;
 }
-public String purchase(String purchase_user_id, int purchase_cake_id, int purchase_customize_id, int purchase_quantity, int purchase_price, String purchase_text, int purchase_status, String img_fileFullPath, String img_fileName) {
+public String purchase(String purchase_user_id, int purchase_cake_id, int purchase_customize_id, int purchase_quantity, int purchase_price,
+		String purchase_text, int purchase_status, String img_fileFullPath, String img_fileName) {
 	String result = "RESULT_NOT_OK";
 	Connection connection = null;
 	PreparedStatement preparedStatement = null;
@@ -251,7 +254,9 @@ public String purchase(String purchase_user_id, int purchase_cake_id, int purcha
 		connection = dataSource.getConnection();
 		
 		//데이터베이스 입력문
-		String query = "insert into purchase(purchase_user_id, purchase_cake_id, purchase_customize_id, purchase_quantity, purchase_price, purchase_text, purchase_status, purchase_img, purchase_img_fileName) values(?,?,?,?,?,?,?,?,?)";
+		String query = "insert into purchase(purchase_user_id, purchase_cake_id, purchase_customize_id, purchase_quantity, purchase_price, purchase_text,"
+				+ " purchase_status, purchase_img, purchase_img_fileName)"
+				+ " values(?,?,?,?,?,?,?,?,?)";
 		File file = new File(img_fileFullPath);
 		FileInputStream inputStream = new FileInputStream(file);
 		preparedStatement = connection.prepareStatement(query);

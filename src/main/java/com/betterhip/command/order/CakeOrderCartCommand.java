@@ -40,7 +40,8 @@ public class CakeOrderCartCommand implements BetterhipCommand {
 			String purchase_text = multi.getParameter("purchase_text");
 			
 			CakeInfoDao dao = new CakeInfoDao();
-			String result = dao.purchase(purchase_user_id, purchase_cake_id, purchase_customize_id, purchase_quantity, purchase_price, purchase_text, purchase_status, img_fileFullPath, img_fileName);
+			String result = dao.purchase(purchase_user_id, purchase_cake_id, purchase_customize_id, purchase_quantity, purchase_price,
+					purchase_text, purchase_status, img_fileFullPath, img_fileName);
 			System.out.println(result);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
