@@ -8,7 +8,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>Better Hip 로그인</title>
-<link rel="stylesheet" href="css/aos.css">
 <link rel="stylesheet" href="../BetterHip/assets/css/login.css">
 <link rel="shortcut icon" type="image/x-icon" href="../BetterHip/assets/img/favicon.ico">
 
@@ -220,7 +219,7 @@ function kakaoLogout() {
 		<div class="logo" style="text-align:center">
 		</div>
 		<h1>Login</h1>
-		<form name="frm" method="get" action="login.do?" onsubmit="return false;">
+		<form name="frm" method="post" action="login.do?" onsubmit="return false;">
 			<div class ="int-area">
 				<input type="text" name="user_id" id="id"
 				autocomplete="off" required>
@@ -252,10 +251,10 @@ function kakaoLogout() {
 				회원가입</a>
 				</div>
 				<div class="login__check--right">
-				<a href="../findIdPage.do" style="font-family: 'Nanum Gothic', sans-serif;">
+				<a href="../BetterHip/findIdPage.do" style="font-family: 'Nanum Gothic', sans-serif;">
 				아이디찾기</a>
 				<span class="bar">|</span>
-				<a href="../findPwPage.do" style="font-family: 'Nanum Gothic', sans-serif;">
+				<a href="../BetterHip/findPwPage.do" style="font-family: 'Nanum Gothic', sans-serif;">
 				비밀번호 찾기</a>
 				</div>
 			</div>

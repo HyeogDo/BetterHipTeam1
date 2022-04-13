@@ -150,21 +150,46 @@ header .nav-item-search {
 
 
 /*form*/
-.signupResult-content >img{
-	margin-top: 138px;
+.signupResult-content{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 200px;
+}
+.signupResult-content > img{
     width: 59px;
-    margin-left: 48.5%;
 }
-.signupResult-content >h1{
-    text-align: center;
-    width: 100%;
-
-}
-
 .form-wrap {
+	font-family: 'Nanum Gothic', sans-serif;
     position: relative;
     /* left: 40%; */
     margin: 100px;
+}
+
+/* 메인타이틀 */
+.main-title >b{
+	color: #4F75D8;
+	font-size: 30px;
+	font-weight:700;
+}
+
+.signup-form input{
+	font-family: 'Nanum Gothic', sans-serif;
+	width: 100%;
+	padding: 15px 10px 15px;
+	background-color: transparent;
+	border: 1px solid #CCCCCC;
+	font-size: 15px; color: #4F75D8;
+	outline: none;
+	margin: 1rem 0;
+}
+
+
+.signupForm-wrap{
+	padding-top: 108px;
+    padding-left: 40%;
 }
 
 .signup-title >td{
@@ -200,23 +225,21 @@ header .nav-item-search {
 }
 
 .buttonsignup {
-	width: 200px
-}
-
-.buttonsignup {
-	border-radius: 5px
-}
-
-.buttonsignup {
-	background-color: #535353;
-}
-
-.buttonsignup {
+    width: 314px;
+    height: 59px;
+	border-radius: 5px;
+	background-color: #4F75D8;
 	align-self: center;
+	border:none;
+	color:#fff;
 }
 
 .buttonsignup:hover {
-	background-color: #A9A9A9;
+	border: 1px solid;
+	border-color: #4F75D8;
+	background-color:#fff;
+	color: #4F75D8;
+	transition: all .3s ease;
 }
 
 /* General */
@@ -240,51 +263,84 @@ header .nav-item-search {
 }
 
 /* Footer */
-#tempaltemo_footer a { 
-    color: #dcdde1;    
-    font-family:'Nanum Gothic', sans-serif;
-    font-size: 13px;
+#footer {
+  width:100%;
 }
-#tempaltemo_footer ul.footer-link-list { padding:5px;}
-#tempaltemo_footer ul.footer-link-list li { padding-top: 0px;}
-#tempaltemo_footer ul.footer-link-list li a.text-decoration-none{
-    float: left;
+#footer a { 
+  color: #dcdde1;
+  font-family:'Nanum Gothic', sans-serif;
+  font-size: 13px;
 }
-#tempaltemo_footer ul.footer-link-list li span.bar{
+#footer ul.footer-link-list { padding:5px;}
+#footer ul.footer-link-list li { 
+  padding-top: 0px;
+  text-align: center;
+}
+#footer ul.footer-link-list li a.text-decoration-none{
+  text-align: center;
+}
+#footer ul.footer-link-list li span.bar{
     float:left;
 }
-#tempaltemo_footer ul.footer-icons li {
-    width: 2.6em;
-    height: 2.6em;
-    line-height: 2.6em;
+#footer ul.footer-icons li {
+  width: 2.6em;
+  height: 2.6em;
+  line-height: 2.6em;
 }
+#footer ul.footer-icons li:hover {
+  background-color: #cfd6e1;
+  transition: .5s;
+}
+#footer ul.footer-icons li:hover i {
+  color: #212934;
+  transition: .5s;
+}
+
+#footer .footer_2_container{
+  text-align: center;
+}
+
+
+
 
 .product-wap .h3, .product-wap li, .product-wap i, .product-wap p {
-    font-size: 9px !important;
+  font-size: 9px !important;
 }
 .product-wap .product-color-dot {
-    width: 6px;
-    height: 6px;
+  width: 6px;
+  height: 6px;
 }
 
+.wrapitem{
+  overflow: auto;
+}
+.wrapitem::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.wrapitem > div{
+  float : left;
+  padding: 1%;;
+}
 @media (min-width: 576px) {
-    .tempaltemo-carousel .h1 { font-size: 1em !important;}
+  .tempaltemo-carousel .h1 { font-size: 1em !important;}
 }
 
 /*// Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
-#templatemo_main_nav .navbar-nav {max-width: 450px;}
+  #templatemo_main_nav .navbar-nav {max-width: 450px;}
 }
 
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
-#templatemo_main_nav .navbar-nav {max-width: 550px;}
-#template-mo-zay-hero-carousel .carousel-item {min-height: 30rem !important;}
-.product-wap .h3, .product-wap li, .product-wap i, .product-wap p {font-size: 18px !important;}
-.product-wap .product-color-dot {
+  #templatemo_main_nav .navbar-nav {max-width: 550px;}
+  #template-mo-zay-hero-carousel .carousel-item {min-height: 30rem !important;}
+  .product-wap .h3, .product-wap li, .product-wap i, .product-wap p {font-size: 18px !important;}
+  .product-wap .product-color-dot {
     width: 12px;
     height: 12px;
-}
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
