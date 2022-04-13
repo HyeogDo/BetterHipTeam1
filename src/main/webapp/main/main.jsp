@@ -32,7 +32,7 @@
                     <span class="bar">|</span>
                     <a href="signupForm.do">회원가입</a>
                     <span class="bar">|</span>
-                    <a href="#!">장바구니</a>
+                    <a href="cartList.do">장바구니</a>
                     <span class="bar">|</span>
                     <a href="purchaseList.do">My Page</a>
                 </div>

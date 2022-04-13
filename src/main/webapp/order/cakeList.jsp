@@ -7,58 +7,19 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%
-	//String user_id = session.getAttribute("USER_ID").toString();
-	String user_id = "peterhd";
 	
-	//페이지 나누기
-	
-	String tempPage = request.getParameter("page");
-	int cPage;
-	//현재 페이지 정하기
-	if (tempPage == null || tempPage.length() == 0) {
-		cPage = 1;
-	}
-	try{
-		cPage = Integer.parseInt(tempPage);
-	} catch(NumberFormatException e) {
-		cPage = 1;
-	}
-	
-	// 페이지 묶음들 개수(3개면 [prev] 1 2 3 [next] 로 뜨고 next 클릭하면 [prev] 4 5 6 [next] 이런식으로 뜨게)
-	int pageLength = 3;
 	// 한 페이지에 담으려는 데이터 개수
 	int len = 4;
 	// 각 페이지의 데이터 시작점
 	int start;
 	// 현재 블록
-	int currentBlock;
-	// 시작 페이지 끝 페이지
-	int startPage;
-	int endPage;
-	// 총 raw 수, 페이지 수
+	
 	int totalRows = Integer.parseInt(session.getAttribute("totalRows").toString());
 	int totalPages = totalRows % len == 0 ? totalRows/len : (totalRows / len) + 1;
 	// 총페이지수 예외처리
 	if(totalPages == 0) {
 		totalPages = 1;
 	}
-	if (cPage > totalPages) {
-		cPage = 1;
-	}
-	// 각 페이지의 데이터 시작점
-	start = (cPage - 1) * len;
-	//현재 블록 설정
-	currentBlock = cPage % pageLength == 0 ? cPage / pageLength : (cPage / pageLength) + 1;
-	
-	// 시작 페이지 끝 페이지 설정
-	startPage = (currentBlock - 1) * pageLength + 1;
-	endPage = startPage + pageLength - 1;
-	
-	// 총 페이지 숫자를 넘어가면 끝 페이지를 마지막 페이지 숫자로 지정
-	if(endPage > totalPages) {
-		endPage = totalPages;
-	}
-	
 %>
 <!DOCTYPE html>
 <html>
@@ -69,16 +30,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
 <link rel="stylesheet" href="../BetterHip/assets/css/login_find.css">
-<link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="../BetterHip/assets/img/favicon.ico">
 
 
-<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="../assets/css/templatemo.css">
-<link rel="stylesheet" href="../assets/css/custom.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/templatemo.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/custom.css">
 
 <!-- Load fonts style after rendering the layout styles -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-<link rel="stylesheet" href="../assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/fontawesome.min.css">
 
 <title>Better Hip 케이크 리스트</title>
 <script type="text/javascript">
@@ -98,7 +59,7 @@
 			<div class="member-area">
 				<a href="#!">로그인</a>
 				<span class="bar">|</span>
-				<a href="../BetterHip/signup.do">회원가입</a>
+				<a href="signup.do">회원가입</a>
 				<span class="bar">|</span>
 				<a href="#!">장바구니</a>
 				<span class="bar">|</span>
@@ -110,7 +71,7 @@
 			<div class="container clearfix">
 			<h1 class="logo">
 				<a href="#!">
-				<img src="../assets/img/logo.png" alt="로고" width="120">
+				<img src="../BetterHip/assets/img/logo.png" alt="로고" width="120">
 				</a>
 			</h1>
 			<h1 class="logo_text">
@@ -188,7 +149,7 @@
 				</div>
 				<% for (int i = 0; i < totalPages; i++) {
 						start = len*i;
-					%><a href="../cakeListView.do?start=<%=start %>"><%=i + 1 %></a> <%
+					%><a href="cakeListView.do?start=<%=start %>"><%=i + 1 %></a> <%
 					}	
 				%>
 				
