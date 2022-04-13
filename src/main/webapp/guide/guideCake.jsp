@@ -85,7 +85,7 @@
 	</div>
 <!-- header -->
 
-<h1 style="text-align: center;">케이크 안내</h1>
+<h1 style="margin-left: 778px;text-align: center;">케이크 안내</h1>
 <br>
 <br>
 <p style="text-align: center;">
