@@ -30,7 +30,7 @@
                 <div class="member-area">
                     <a href="loginForm.do">로그인</a>
                     <span class="bar">|</span>
-                    <a href="signupForm.do"">회원가입</a>
+                    <a href="signupForm.do">회원가입</a>
                     <span class="bar">|</span>
                     <a href="cartList.do">장바구니</a>
                     <span class="bar">|</span>

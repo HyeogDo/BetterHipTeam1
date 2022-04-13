@@ -188,7 +188,7 @@
 				</div>
 				<% for (int i = 0; i < totalPages; i++) {
 						start = len*i;
-					%><a href="../cakeListView.do?start=<%=start %>"><%=i + 1 %></a> <%
+					%><a href="cakeListView.do?start=<%=start %>"><%=i + 1 %></a> <%
 					}	
 				%>
 				

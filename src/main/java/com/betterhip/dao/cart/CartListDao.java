@@ -34,6 +34,8 @@ public class CartListDao {
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;	
 		
+		System.out.println("CartList in");
+		
 		try {
 			String query = "select p.purchase_id, p.purchase_quantity, p.purchase_price, p.purchase_pickup_date, p.purchase_img, p.purchase_cake_id, c.cake_name, "
 					+ "c.cake_img, p.purchase_text, o.customize_size, o.customize_taste, o.customize_cream_type, o.customize_cream_color "
