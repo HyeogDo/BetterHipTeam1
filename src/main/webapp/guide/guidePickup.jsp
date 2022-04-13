@@ -8,17 +8,17 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>Better Hip 이용가이드</title>
-<link rel="stylesheet" href="../assets/css/login_find_pw.css">
-<link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
+<link rel="stylesheet" href="../BetterHip/assets/css/login_find_pw.css">
+<link rel="shortcut icon" type="image/x-icon" href="../BetterHip/assets/img/favicon.ico">
 
 
-<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="../assets/css/templatemo.css">
-<link rel="stylesheet" href="../assets/css/custom.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/templatemo.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/custom.css">
 
 <!-- Load fonts style after rendering the layout styles -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-<link rel="stylesheet" href="../assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/fontawesome.min.css">
 
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -32,7 +32,7 @@
 			<div class="member-area">
 				<a href="#!">로그인</a>
 				<span class="bar">|</span>
-				<a href="../BetterHip/signup.do">회원가입</a>
+				<a href="signupForm.do">회원가입</a>
 				<span class="bar">|</span>
 				<a href="#!">장바구니</a>
 				<span class="bar">|</span>
@@ -44,7 +44,7 @@
 			<div class="container clearfix">
 			<h1 class="logo">
 				<a href="#!">
-				<img src="../assets/img/logo.png" alt="로고" width="120">
+				<img src="../BetterHip/assets/img/logo.png" alt="로고" width="120">
 				</a>
 			</h1>
 			<h1 class="logo_text">
@@ -57,13 +57,13 @@
 						<div class="dropdown">
 						<ul>
 							<li>
-							<a href="#!">케이크 안내</a>
+							<a href="guideCake.do">케이크 안내</a>
 							</li>
 							<li>
-							<a href="#!">픽업 방법</a>
+							<a href="guidePickup.do">픽업 방법</a>
 							</li>
 							<li>
-							<a href="#!">이용 안내</a>
+							<a href="guideUse.do">이용 안내</a>
 							</li>
 						</ul>
 						</div>

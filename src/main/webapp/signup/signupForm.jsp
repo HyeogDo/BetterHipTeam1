@@ -295,7 +295,7 @@ const autoHyphen2 = (target) => {
 		} else {
 			isCheckedId = true
 			window.name = "parentform"
-			window.open("signupCheckId.do?user_id=" + user_id,"childform","width=500, height=300, left=500, top=150");
+			window.open("../BetterHip/signupCheckId.do?user_id=" + user_id,"childform","width=500, height=300, left=500, top=150");
 		}
 		
 

@@ -75,7 +75,7 @@
 				</a>
 			</h1>
 			<h1 class="logo_text">
-				<a href="cakeListView.do">Better Hip</a>
+				<a href="main.do">Better Hip</a>
 			</h1>
 			<div class="gnb">
 				<ul class="clearfix">
@@ -96,7 +96,7 @@
 						</div>
 					</li>
 					<li class="nav-item cake">
-						<a href="#!" class="nav-link">케이크 주문</a>
+						<a href="main.doß" class="nav-link">케이크 주문</a>
 					</li>
 					<li class="nav-item intro">
 						<a href="#!" class="nav-link">소개</a>
