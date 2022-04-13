@@ -25,8 +25,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
-<!-- 메인 -->
-<body>
+
     <!-- Header -->
 <div id="wrap">
 	<header>
@@ -86,6 +85,7 @@
 		</div>
 	</header>
 	</div>
+
 
 <script type="text/javascript">
 
@@ -174,7 +174,7 @@ String currentDate = format.format(date);
 					<td rowspan="2"><img src="data:cake_img/png;base64, ${dto.cake_img_base64Image }" width = "100" height="100"></td>
 					<td>${dto.cake_name }</td>
 					<td rowspan="2">${dto.purchase_quantity }</td>
-					<td rowspan="2">${dto.purchase_price }</td>
+					<td rowspan="2">${dto.purchase_price }원</td>
 					<td rowspan="2">${dto.purchase_status }</td>
 					<td rowspan="2">${dto.purchase_pickup_date }</td>
 					<td rowspan="2">

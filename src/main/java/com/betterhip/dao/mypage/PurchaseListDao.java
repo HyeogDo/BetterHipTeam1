@@ -94,8 +94,8 @@ public class PurchaseListDao {
 				inputStream.close();
 				outputStream.close();
 			
-				//주문 상태 문구 지정하기 
 				
+				//주문 상태 문구 지정하기 
 				switch(purchase_status) {
 				
 				case("3") : 

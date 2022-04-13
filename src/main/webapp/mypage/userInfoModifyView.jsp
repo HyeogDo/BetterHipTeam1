@@ -90,7 +90,7 @@ const autoHyphen2 = (target) => {
 <script type="text/javascript">
 	function checkPhone() {
 		var regExpPhone = /^\d{3}-\d{3,4}-\d{4}$/
-		var form = document.signupForm
+		var form = document.userInfoModifyForm
 		
 		// 핸드폰 번호 확인
 		var user_phone = form.user_phone.value
@@ -104,7 +104,7 @@ const autoHyphen2 = (target) => {
 				return
 			} else {
 				isCheckedPhone = true
-				window.open("http://localhost:9413/BetterHip/signup/signupCheckPhone.do?user_phone=" + user_phone,"","width=500, height=300, left=500, top=150");
+				window.open("signupCheckPhone.do?user_phone=" + user_phone,"","width=500, height=300, left=500, top=150");
 			}
 		} 
 		
@@ -139,7 +139,7 @@ const autoHyphen2 = (target) => {
 		}
 		
 		
-		// 비밀번호 확인(정보수정은 필수 아님 - 주석처리) 
+		// 비밀번호 확인(정보수정에서 필수로 하지 않을 거기 때문에 주석처리) 
 /* 		var new_user_pw = form.new_user_pw.value
 		var new_user_pw_re = form.new_user_pw_re.value
 		 if(new_user_pw == "") {
@@ -184,11 +184,11 @@ const autoHyphen2 = (target) => {
 			return
 		}
 		
- 		/* // 핸드폰 번호 중복체크 확인 여부
+ 		// 핸드폰 번호 중복체크 확인 여부
 		if(isCheckedPhone == false) {
 			alert("핸드폰 번호 중복체크를 해주세요")
 			return
-		}  */
+		} 
 		
 		
 		/* 위 유효성 검사 모두 통과 후 수정 완료 ALERT */
