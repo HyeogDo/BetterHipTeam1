@@ -18,6 +18,7 @@ import com.betterhip.command.login.FindPwCommand;
 import com.betterhip.command.login.LoginCommand;
 import com.betterhip.command.main.CakeAdCommand;
 import com.betterhip.command.mypage.PurchaseCancelCommand;
+import com.betterhip.command.mypage.PurchaseImgListPopupCommand;
 import com.betterhip.command.mypage.PurchaseListCommand;
 import com.betterhip.command.mypage.PurchaseQueryListCommand;
 import com.betterhip.command.mypage.RefundListCommand;
@@ -118,12 +119,18 @@ public class BetterhipHomeController extends HttpServlet {
 			command.excute(request, response);
 			viewPage = "mypage/purchaseList.jsp";
 			break;
-			
+		
 		case("/purchaseQueryList.do") :
 			command = new PurchaseQueryListCommand();
 			command.excute(request, response);
 			viewPage = "mypage/purchaseList.jsp";
 			break;
+		
+		case("/purchaseImgListPopup.do") :
+			command = new PurchaseImgListPopupCommand();
+			command.excute(request,response); 
+			viewPage = "mypage/purchaseImgListPopup.jsp";
+			break; 
 			
 		case("/purchaseCancel.do") :
 			command = new PurchaseCancelCommand();

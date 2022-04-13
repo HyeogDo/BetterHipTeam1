@@ -115,7 +115,10 @@ String currentDate = format.format(date);
 				</tr>
 				<tr>
 					<td>옵션: ${dto.cake_option }<br> 
-						레터링: ${dto.purchase_text }</td>
+						레터링: ${dto.purchase_text }&nbsp;
+						<button onclick = "window.open('purchaseImgListPopup.do?purchase_id=${dto.purchase_id}','window_name', 'width=430, height=500, location=no, status=no, scrollbars = yes');">
+						첨부이미지</button>
+					</td>
 				</tr>
 			
 			</c:forEach>
