@@ -18,6 +18,7 @@ import com.betterhip.command.login.FindPwCommand;
 import com.betterhip.command.login.LoginCommand;
 import com.betterhip.command.main.CakeAdCommand;
 import com.betterhip.command.mypage.PurchaseCancelCommand;
+import com.betterhip.command.mypage.PurchaseImgListPopupCommand;
 import com.betterhip.command.mypage.PurchaseListCommand;
 import com.betterhip.command.mypage.PurchaseQueryListCommand;
 import com.betterhip.command.mypage.RefundListCommand;
@@ -81,7 +82,7 @@ public class BetterhipHomeController extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		
 		HttpSession session = request.getSession();
-	
+		
 		String viewPage = null;
 		BetterhipCommand command = null;
 		
@@ -117,55 +118,23 @@ public class BetterhipHomeController extends HttpServlet {
 			viewPage = "guide/guideUse.jsp";
 			break;
 			
-		case("/write_view.do"): 	
-			viewPage = "write_view.jsp";
-			break;
-		
-			// 공지사항
-		case("/main/noticeList.do"):
-			command = new NoticeListCommand();
-			command.excute(request, response);
-			viewPage = "../notice/noticeList.jsp";
-			break;
-			
-		case("/noticeForm.do"):
-			command = new NoticeFormCommand();
-			command.excute(request,response);
-			viewPage = "/notice/noticeForm.jsp";
-			break;
-		
-		case("/noticeContent.do"):
-			command = new NoticeContentCommand();
-			command.excute(request, response);
-			viewPage = "../notice/noticeContent.jsp"; 
-			break; 
-		
-		case("/noticeUpdate.do"): 
-			command = new NoticeContentCommand();
-			command.excute(request, response);
-			viewPage = "noticeList.do";
-			break; 
-			
-		case("/noticeDelete.do") :
-			command = new PurchaseListCommand();
-			command.excute(request, response);
-			viewPage = "noticeList.do";
-			break;
-			
-			
-		// 	
 		case("/purchaseList.do") :
 			command = new PurchaseListCommand();
 			command.excute(request, response);
 			viewPage = "mypage/purchaseList.jsp";
-			break;			
-
-
+			break;
+		
 		case("/purchaseQueryList.do") :
 			command = new PurchaseQueryListCommand();
 			command.excute(request, response);
 			viewPage = "mypage/purchaseList.jsp";
 			break;
+		
+		case("/purchaseImgListPopup.do") :
+			command = new PurchaseImgListPopupCommand();
+			command.excute(request,response); 
+			viewPage = "mypage/purchaseImgListPopup.jsp";
+			break; 
 			
 		case("/purchaseCancel.do") :
 			command = new PurchaseCancelCommand();
