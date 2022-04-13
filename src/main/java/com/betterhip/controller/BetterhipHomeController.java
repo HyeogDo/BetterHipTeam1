@@ -187,7 +187,6 @@ public class BetterhipHomeController extends HttpServlet {
 			
 		case("/cakeChoice.do") :
 			session.setAttribute("CAKE_ID", request.getParameter("cake_id"));
-			session.setAttribute("USER_ID", "hong");
 			command = new CakeChoiceCommand();
 			command.excute(request, response);
 			viewPage = "/order/cakeInfo.jsp";
