@@ -6,17 +6,17 @@
 <meta charset="UTF-8">
 <title>Better Hip 회원가입</title>
 <link rel="stylesheet" href="css/aos.css">
-<link rel="stylesheet" href="../assets/css/signupForm.css">
-<link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
+<link rel="stylesheet" href="../BetterHip/assets/css/signupForm.css">
+<link rel="shortcut icon" type="image/x-icon" href="../BetterHip/assets/img/favicon.ico">
 
 
-<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="../assets/css/templatemo.css">
-<link rel="stylesheet" href="../assets/css/custom.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/templatemo.css">
+<link rel="stylesheet" href="../BetterHip/assets/css/custom.css">
 
 <!-- Load fonts style after rendering the layout styles -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-<link rel="stylesheet" href="../assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="..//BetterHipassets/css/fontawesome.min.css">
 
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -30,7 +30,7 @@
 		<div class="top-header">
 			<div class="container clearfix">
 			<div class="member-area">
-				<a href="#!">로그인</a>
+				<a href="loginForm.do">로그인</a>
 				<span class="bar">|</span>
 				<a href="../BetterHip/signup.do">회원가입</a>
 				<span class="bar">|</span>
@@ -44,7 +44,7 @@
 			<div class="container clearfix">
 			<h1 class="logo">
 				<a href="#!">
-				<img src="../assets/img/logo.png" alt="로고" width="120">
+				<img src="../BetterHip/assets/img/logo.png" alt="로고" width="120">
 				</a>
 			</h1>
 			<h1 class="logo_text">
@@ -69,7 +69,7 @@
 						</div>
 					</li>
 					<li class="nav-item cake">
-						<a href="#!" class="nav-link">케이크 주문</a>
+						<a href="cakeListView.do" class="nav-link">케이크 주문</a>
 					</li>
 					<li class="nav-item intro">
 						<a href="#!" class="nav-link">소개</a>
@@ -83,66 +83,70 @@
 		</div>
 	</header>
 	</div>
-        </header>
-        </div>
         
-	<div style="position: absolute; left: 40%">
+	<div class="signupForm-wrap">
 		<!-- 회원 가입 form -->
 		<form action="signup.do" name="signupForm" method="get">
-			<table>
+			<table class="signup-form">
 				<tr>
-					<td align="center" colspan="2"><b>BETTER HIP</b></td>
+					<td class="main-title" align="center" colspan="2"><b>BETTER HIP</b></td>
 				</tr>
 				<tr>
-					<td align="center" colspan="2"><b>회원 가입</b></td>
+					<td class="main-title" align="center" colspan="2"><b>회원 가입</b></td>
 				</tr>
 				<tr>
-					<td>아이디</td>
+					<td style="font-size:20px">아이디</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="user_id" size="30"> 
-					<input type="button" size="20" value="중복확인" onclick="checkId()"></td>
+					<div class="id-input-button">
+						<td><input type="text" name="user_id" size="30" style="width: 320px;"> 
+						<input type="button" size="20" value="중복확인" onclick="checkId()" style="width:120px;"></td>
+					</div>
 				</tr>
 				<tr>
-					<td>비밀번호</td>
+					<td style="font-size:20px">비밀번호</td>
 				</tr>
 				<tr>
-					<td colspan="2"><input placeholder="비밀번호는 숫자로 5~10자만 입력해주세요!!" 
+					<td colspan="3"><input placeholder="비밀번호는 숫자로 5~10자만 입력해주세요!!" 
 					type="password" name="user_pw" size="41" id="pw" onkeyup="checkPw()" onchange="checkPwRe()" maxlength="10"></td>
-					<td><span id="checking"></span></td>
 				</tr>
 				<tr>
-					<td>비밀번호 재확인</td>
+					<td colspan="3"><span id="checking"></span></td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="password" name="user_pw_re" size="41" id="pw2" onkeyup="checkPwRe()"></td>
-					<td><span id="check"></span></td>
+					<td style="font-size:20px">비밀번호 재확인</td>
 				</tr>
 				<tr>
-					<td>이름</td>
+					<td colspan="3"><input type="password" name="user_pw_re" size="41" id="pw2" onkeyup="checkPwRe()"></td>
+				</tr>
+				<tr>
+					<td colspan="3"><span id="check"></span></td>
+				</tr>
+				<tr>
+					<td style="font-size:20px">이름</td>
 				</tr>
 				<tr>
 					<td colspan="2"><input type="text" name="user_name" size="41"></td>
 				</tr>
 				<tr>
-					<td>이메일</td>
+					<td style="font-size:20px">이메일</td>
 				</tr>
 				<tr>
 					<td colspan="2"><input type="text" name="user_email" size="41"></td>
 				</tr>
 				<tr>
-					<td>휴대폰 번호</td>
+					<td style="font-size:20px">휴대폰 번호</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="user_phone" oninput="autoHyphen2(this)" maxlength="13"placeholder="ex) 010-6603-0058"> 
-					<input type="button" size="20" value="중복확인" onclick="checkPhone()"></td>
+					<td><input type="text" name="user_phone" oninput="autoHyphen2(this)" maxlength="13"placeholder="ex) 010-6603-0058"  style="width: 320px;"> 
+					<input type="button" size="20" value="중복확인" onclick="checkPhone()" style="width:120px;"></td>
 				</tr>
 				<tr>
-					<td>주소</td>
+					<td style="font-size:20px">주소</td>
 				</tr>
 				<tr>
-					<td><input type="text" onclick="sample6_execDaumPostcode()" readonly="readonly" id="sample6_postcode" name="postcode">
-						<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호"><br>
+					<td><input type="text" onclick="sample6_execDaumPostcode()" readonly="readonly" id="sample6_postcode" name="postcode"  style="width: 320px;">
+						<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호"  style="width:120px;"><br>
 						<input type="text" onclick="sample6_execDaumPostcode()" readonly="readonly" id="sample6_address" size="41" placeholder="기본주소" name="address1"><br>
 						<input type="text" id="sample6_detailAddress" size="41" placeholder="상세주소 입력" name="address2"></td>
 				</tr>
@@ -150,41 +154,43 @@
 			</table>
 			<br>
 			<!-- 약관 동의 -->
-			<table>
+			<table style="width: 444px;">
 				<tr>
-					<td colspan="2" align="left">서비스 약관 동의</td>
-					<td><input type="checkbox" name="selectall" value="selectall"
+					<td colspan="4" align="left" style="font-size:20px">서비스 약관 동의</td>
+				</tr>
+				<tr></tr>
+				<tr>
+					<td ><input type="checkbox" name="selectall" value="selectall"
 						onclick="selectAll(this)"><b>모두 동의합니다.</b><br></td>
 				</tr>
 				<tr>
-					<td colspan="3"><hr></td>
+					<td><hr></td>
 				</tr>
 				<tr>
-					<td colspan="2" align="left">이용약관(필수)</td>
+					<td colspan="4" align="left">이용약관(필수)</td>
 					<td align="right"><input type="checkbox" name="check"
 						value="option_1" onclick="checkSelectAll(this)">동의<br></td>
 				</tr>
 				<tr>
-					<td colspan="2" align="left">개인 정보 동의(필수)</td>
+					<td colspan="4" align="left">개인 정보 동의(필수)</td>
 					<td align="right"><input type="checkbox" name="check"
 						value="option_2" onclick="checkSelectAll(this)">동의<br></td>
 				</tr>
 				<tr>
-					<td colspan="2" align="left">마케팅 안내 동의(선택)</td>
+					<td colspan="4" align="left">마케팅 안내 동의(선택)</td>
 					<td align="right"><input type="checkbox" name="check"
 						value="option_3" onclick="checkSelectAll(this)">동의<br></td>
 				</tr>
 				<tr>
 					<!-- 이동하는 버튼  -->
-					<td align="center" colspan="2">
-
+				<!-- 	<td align="center" colspan="3">
 						<input type="button" value="회원 가입" name="btnSubmit" onclick="signup()" class="buttonsignup">
-
-					</td>
+					</td> -->
 				</tr>
 			</table>
 			<br>
 		</form>
+				<input type="button" value="회원 가입" name="btnSubmit" onclick="signup()" class="buttonsignup" style="width: 444px; margin: 50px 0 90px;">
 	</div>
 	
 	<!-- Start Footer -->

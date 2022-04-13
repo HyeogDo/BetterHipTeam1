@@ -36,6 +36,18 @@
 		window.history.go(-1)
 	
 	}
+	
+	 function fnImgPop(url){
+		  var img=new Image();
+		  img.src=url;
+		  var img_width=img.width;
+		  var win_width=img.width+25;
+		  var img_height=img.height;
+		  var win=img.height+30;
+		  var OpenWindow=window.open('','_blank', 'width='+img_width+', height='+img_height+', menubars=no, scrollbars=auto');
+		  OpenWindow.document.write("<style>body{margin:0px;}</style><img src='"+url+"' width='"+win_width+"'>");
+		 }
+	
 </script>
 
 <body>
@@ -85,12 +97,29 @@
 						<c:forEach var="item" items="${CartList}">
 							<tr>
 							   <td width="30"><input type="checkbox" name="chk" value="${item.purchase_id}">
-							   <td width="200" align="center"><a href="cakeChoice.do?cake_id=${item.purchase_cake_id }"><img src="data:cake_img/png;base64, ${item.purchase_cake_img }" width="150" height="150"></a></td>
-							   <td width="950" align="left"><h3><c:out value = "${item.purchase_cake_name }"/></h3><br>
+							   <td width="200" align="center"><a href="cakeChoice.do?cake_id=${item.purchase_cake_id }">
+							   <img src="data:cake_img/png;base64, ${item.purchase_cake_img }" width="150" height="150"></a></td>
+							   <td width="600" align="left"><h3><c:out value = "${item.purchase_cake_name }"/></h3><br>
 							    	옵션 : ${item.purchase_custom_size}&nbsp;${item.purchase_custom_taste}&nbsp;${item.purchase_custom_cream_type}
 									&nbsp;${item.purchase_custom_cream_color}&nbsp;&nbsp;픽업일 : ${item.purchase_pickup_date}<br>
-									문구 : ${item.purchase_text}
-							   </td>
+									문구 : ${item.purchase_text}<br><br>
+						
+									
+								<c:set var="null_check" value="${item.purchase_custom_img}"/>	
+								<c:choose>
+									<c:when test="${null_check eq 'xxx' }">
+									  <td align="center" width="350"></td>
+									</c:when>
+									<c:otherwise>
+									   <td align="center" width="350">
+									   <img id="imgControll" name="imgControll" src="data:cake_img/png;base64, ${null_check }" width="90" height="90"  onclick="fnImgPop(this.src)"></td>
+									</c:otherwise>
+								
+								</c:choose>
+
+				
+								
+
 							   <td align="center" width="100">${item.purchase_quantity }</td>
 							   <td align="center" width="100">${item.purchase_price }</td>				   					
 							</tr>   

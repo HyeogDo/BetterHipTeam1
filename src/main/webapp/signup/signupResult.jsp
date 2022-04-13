@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <title>Better Hip 회원가입</title>
 <link rel="stylesheet" href="css/aos.css">
-<link rel="stylesheet" href="../assets/css/signupForm.css">
 <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
 
 
@@ -17,6 +16,7 @@
 <!-- Load fonts style after rendering the layout styles -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
 <link rel="stylesheet" href="../assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="../assets/css/signupForm.css">
 
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -84,8 +84,8 @@
 	</header>
 	</div>
 		<div class="signupResult-content">
-			<!-- <img src="../assets/img/check-circle.png"> -->
-        <h1 style="text-align: center; width: 100%; padding: 300px;">성공!</h1>
+		<img src="../assets/img/check-circle.png"> 
+        <h1>성공!</h1>
 		</div>
         <!-- Start Footer -->
 <footer class="bg-dark" id="footer">

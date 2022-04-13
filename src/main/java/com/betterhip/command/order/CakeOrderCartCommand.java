@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import com.betterhip.command.BetterhipCommand;
+import com.betterhip.dao.order.CakeInfoDao;
 import com.betterhip.dao.order.CakeListDao;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -38,8 +39,8 @@ public class CakeOrderCartCommand implements BetterhipCommand {
 			int purchase_price = Integer.parseInt(multi.getParameter("cake_saleprice"));
 			String purchase_text = multi.getParameter("purchase_text");
 			
-			CakeListDao dao = new CakeListDao();
-			String result = dao.purchase(purchase_user_id, purchase_cake_id, purchase_customize_id, purchase_quantity, purchase_price, purchase_text, purchase_status, img_fileFullPath);
+			CakeInfoDao dao = new CakeInfoDao();
+			String result = dao.purchase(purchase_user_id, purchase_cake_id, purchase_customize_id, purchase_quantity, purchase_price, purchase_text, purchase_status, img_fileFullPath, img_fileName);
 			System.out.println(result);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
