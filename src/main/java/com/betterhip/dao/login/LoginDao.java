@@ -4,7 +4,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
+
+import com.betterhip.dto.login.LoginDto;
 
 
 
@@ -29,34 +34,43 @@ public class LoginDao {
 	// -1 : 비밀번호 틀림
 	// -2 : 탈퇴회원
 	//  0 : DB 연결안됨
-	// -3 : 카카오를 사용하여 가입하지 않음
+	// -3 : 카카오를 사용하여 가입하지 않았거나 이메일 동의를 하지않
 	
-	public int Login(String user_id, String user_pw, String loginMethod) {
+	public LoginDto Login(String user_id, String user_pw, String loginMethod, HttpServletRequest request, HttpServletResponse response ) {
 		
-		int result = 0; 			// 아이디, 비밀번호 확인결과 리턴
+		int loginCheck = 0; 			// 아이디, 비밀번호 확인결과 리턴
 		String dbPassword = "";     // 해당 아이디로 DB에서 받은 패스워드
 		String dbLeaveDate = "";    // 해당 아이디로 DB에서 받은 탈퇴일
+		String message = "";
+		String viewPage = "";
+		LoginDto  dto = null;
 
 
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;		
 		
+		
+		// DB 접속하여 회원여부 확
 		try {		
 			// 카카오 로그인
 			if(loginMethod.equals("kakao")) {
-				connection = dataSource.getConnection();		
-				String query = "select count(user_id) from user where user_id = '" + user_id + "'";
-				preparedStatement = connection.prepareStatement(query);
-				resultSet = preparedStatement.executeQuery();
-			
-				if(resultSet.next()) {
-					if(resultSet.getInt(1) > 0) {
-						result = 2;
-					}else {
-						result = -3;
-					}
+				
+				// 이메일 동의하지 않은 카카오 로그인일 경우 
+				if(user_id.equals("undefined")) {				
+					loginCheck = -3;
+					
+				}else {					
+				// 이메일 동의 카카오 로그인 	
+					connection = dataSource.getConnection();		
+					String query = "select count(user_id) from user where user_id = '" + user_id + "'";
+					preparedStatement = connection.prepareStatement(query);
+					resultSet = preparedStatement.executeQuery();
+					
+					
+					loginCheck = resultSet.next() == true ? (resultSet.getInt(1) > 0 ? 2 : -3) : -3;
 				}
+					
 			}else {
 			// 일반 로그인						
 				// 입력한 아이디로 비밀번호 조회	
@@ -67,31 +81,19 @@ public class LoginDao {
 				resultSet = preparedStatement.executeQuery();
 				
 				
-				if(resultSet.next()) {  // 입력한 아이디의 비밀번호가 있을 경우
+				if(resultSet.next()) {
 					dbPassword = resultSet.getString("user_pw"); // DB에서 받은 비밀번호
 					dbLeaveDate = resultSet.getString("user_leavedate");
 					
-					if(dbLeaveDate == null) { 
-						// 탈퇴회원이 아닌경우
-						
-						// 비밀번호가 맞으면
-						if(dbPassword.equals(user_pw)) {
-							// 인증성공
-							result = 2; 						
-						}else {
-							// 비밀번호가 틀리면
-							result = -1; 
-						}									
-					}else { 
-						// 탈퇴회원 - 비밀번호 확인하지 않음
-						result = -2;				}
-				}else { 
-					// 해당 아이디가 없는 경우
-					result =  1;				
-				}
-			} // 일반 로그인
+					loginCheck = dbLeaveDate == null ? (dbPassword.equals(user_pw) == true ? 2 : -1) : -2;
+				} else {
+					loginCheck = 1;
+					
+				}				
+				
+			}
 		}catch (Exception e) {
-			return 0; // DB 연결실패
+			loginCheck = 0; // DB 연결실패
 		}finally {
 			try {
 				if(resultSet != null) resultSet.close();
@@ -102,7 +104,44 @@ public class LoginDao {
 			}
 		} // Login - try
 		
-		return result;
+		
+		// DB 확인결과 리턴정보 생성 
+		switch(loginCheck) {
+		case 2 :
+			message = "success";
+			viewPage = "main.do";
+			break;
+			
+		case 1 :
+			message = "아이디가 틀렸습니다";
+			viewPage = "login/login.jsp";
+			break;
+		
+		case 0 : 
+			message = "데이터베이스 연결에 실패하였습니다";
+			viewPage = "login/login.jsp";
+			break;
+			
+		case -1 :
+			message = "비밀번호가 틀렸습니다";
+			viewPage = "login/login.jsp";
+			break;
+			
+		case -2 :
+			message = "탈퇴회원 입니다 재가입 해주세요";
+			viewPage = "login/login.jsp";
+			break;
+			
+		case -3 :
+			message = "가입하지 않았거나 이메일 동의를 하지 않으셨습니다";
+			viewPage = "login/login.jsp";
+			break;
+		}
+
+	
+		dto = new LoginDto(message, viewPage);		
+		
+		return dto;
 		
 	} // Login
 

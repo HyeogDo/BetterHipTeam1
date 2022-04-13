@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Angkor&family=Fredoka+One&family=Modak&family=Nanum+Gothic:wght@800&display=swap');
+/* font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Nanum Gothic', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700;800&family=Walter+Turncoat&display=swap');
+
+* { 
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+#wrap {
+    min-width: 700px;
+}
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+.container {
+    width: 1920px;
+    margin: 0 auto;
+}
+header{
+    position: sticky; 
+    top:0;
+}
+header .top-header {
+    background: #D5E3EE;
+    height: 50px;
+
+}
+header .top-header .member-area {
+    float: right;
+}
+/* 로그인 ~마이페이지 텍스트*/
+header .top-header .member-area a {
+    color: #4F75D8;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 50px;
+    padding: 16px;
+    font-weight:700;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+header .top-header .member-area a:hover{
+    color: #4F75D8;
+    transition: all .3s ease;
+}
+
+/* 로그인 ~마이페이지 칸나누기*/
+header .top-header .member-area span.bar {
+    color: #4F75D8;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/*이용안내 ~ 공지사항 네비영역*/
+header .main-header {
+    background: #D5E3EE;
+    height: 80px;
+    border-bottom: 1px solid #4F75D8;
+}
+/*로고*/
+header .main-header h1.logo {
+    font-style: none;
+    position: absolute;
+    padding-top: -50px;
+    margin-top: -45px;
+}
+header .main-header h1.logo_text {
+    position: absolute;
+    padding-top: 30px;
+    padding-left: 120px;
+    margin-top: -37px;
+}
+header .main-header .gnb {
+    float: right;
+}
+header .main-header .gnb > ul {
+    float: left;
+}
+header .main-header .gnb ul li.nav-item {
+    float: left;
+}
+/* 네비게이션 의 v파란색 박스의 글씨 영역 */
+header .main-header .gnb ul li.nav-item a.nav-link {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #4F75D8;
+    padding: 28px;
+    display: block;
+    transition: all .3s ease;
+}
+/* 파란색 박스 영역 */
+header .main-header .gnb ul li.nav-item:hover a.nav-link {
+    color: #f6f5ef;
+    background: #4F75D8;
+}
+header .main-header {
+    position: relative;
+}
+/*파란색 띠 영역*/
+li.nav-item .dropdown{
+    position: absolute;
+    background: #4F75D8;
+    left: 0;
+    right: 0;
+    display: none;
+    z-index: 1000;
+}
+li.nav-item:hover .dropdown {
+    display: block;
+    transition: all .3s ease;
+}
+/* 드롭다운 파란색 글씨 영역 */
+header .main-header .gnb ul li.nav-item .dropdown > ul{
+    width: 700px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+
+header .main-header .gnb ul li.nav-item .dropdown > ul > li{
+    width: 30%;
+    float: left;
+    text-align: center;
+}
+
+/*주황색 텍스트 영역*/
+header .main-header .gnb ul li.nav-item .dropdown > ul > li > a {
+    color: #fff;
+    font-size: 17px;
+    font-family:'Nanum Gothic', sans-serif;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    display: block;
+}
+header .main-header .gnb ul li.nav-item .dropdown > ul > li > ul li a {
+    color: #999;
+    font-size: 20px;
+}
+
+
+header .nav-item-search {
+    border-color: #D5E3EE;
+}
+
+
+/*form*/
+.signupResult-content{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 200px;
+}
+.signupResult-content > img{
+    width: 59px;
+}
+.form-wrap {
+	font-family: 'Nanum Gothic', sans-serif;
+    position: relative;
+    /* left: 40%; */
+    margin: 100px;
+}
+
+/* 메인타이틀 */
+.main-title >b{
+	color: #4F75D8;
+	font-size: 30px;
+	font-weight:700;
+}
+
+.signup-form input{
+	font-family: 'Nanum Gothic', sans-serif;
+	width: 100%;
+	padding: 15px 10px 15px;
+	background-color: transparent;
+	border: 1px solid #CCCCCC;
+	font-size: 15px; color: #4F75D8;
+	outline: none;
+	margin: 1rem 0;
+}
+
+
+.signupForm-wrap{
+	padding-top: 108px;
+    padding-left: 40%;
+}
+
+.signup-title >td{
+    color:#4F75D8;
+}
+.signupForm input{
+	font-family: 'Nanum Gothic', sans-serif;
+	width: 100%;
+	padding: 20px 10px 20px;
+	background-color: transparent;
+	border: 1px solid #CCCCCC;
+	font-size: 20px; color: #4F75D8;
+	outline: none;
+	margin: 1rem 0;
+}
+
+
+
+.button {
+	background-color: blue;
+	border: none;
+	color: white;
+	padding: 15px 30px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	display: block;
+}
+
+.buttonsignup {
+    width: 314px;
+    height: 59px;
+	border-radius: 5px;
+	background-color: #4F75D8;
+	align-self: center;
+	border:none;
+	color:#fff;
+}
+
+.buttonsignup:hover {
+	border: 1px solid;
+	border-color: #4F75D8;
+	background-color:#fff;
+	color: #4F75D8;
+	transition: all .3s ease;
+}
+
+/* General */
+
+.text-warning {  color: #ede861 !important;}
+.text-muted { color: #bcbcbc !important;}
+.text-success { color: #59ab6e !important;}
+.text-light { color: #cfd6e1 !important;}
+.bg-dark { color : #fff !important;}
+.bg-light { background-color: #e9eef5 !important;}
+.bg-black { background-color: #98bbd6 !important;}
+.bg-success { background-color: #59ab6e !important;}
+.btn-success {
+    background-color: #59ab6e !important;
+    border-color: #56ae6c !important;
+}
+.pagination .page-link:hover {color: #000;}
+.pagination .page-link:hover, .pagination .page-link.active {
+    background-color: #69bb7e;
+    color: #fff;
+}
+
+/* Footer */
+#footer {
+  width:100%;
+}
+#footer a { 
+  color: #dcdde1;
+  font-family:'Nanum Gothic', sans-serif;
+  font-size: 13px;
+}
+#footer ul.footer-link-list { padding:5px;}
+#footer ul.footer-link-list li { 
+  padding-top: 0px;
+  text-align: center;
+}
+#footer ul.footer-link-list li a.text-decoration-none{
+  text-align: center;
+}
+#footer ul.footer-link-list li span.bar{
+    float:left;
+}
+#footer ul.footer-icons li {
+  width: 2.6em;
+  height: 2.6em;
+  line-height: 2.6em;
+}
+#footer ul.footer-icons li:hover {
+  background-color: #cfd6e1;
+  transition: .5s;
+}
+#footer ul.footer-icons li:hover i {
+  color: #212934;
+  transition: .5s;
+}
+
+#footer .footer_2_container{
+  text-align: center;
+}
+
+
+
+
+.product-wap .h3, .product-wap li, .product-wap i, .product-wap p {
+  font-size: 9px !important;
+}
+.product-wap .product-color-dot {
+  width: 6px;
+  height: 6px;
+}
+
+.wrapitem{
+  overflow: auto;
+}
+.wrapitem::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.wrapitem > div{
+  float : left;
+  padding: 1%;;
+}
+@media (min-width: 576px) {
+  .tempaltemo-carousel .h1 { font-size: 1em !important;}
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  #templatemo_main_nav .navbar-nav {max-width: 450px;}
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  #templatemo_main_nav .navbar-nav {max-width: 550px;}
+  #template-mo-zay-hero-carousel .carousel-item {min-height: 30rem !important;}
+  .product-wap .h3, .product-wap li, .product-wap i, .product-wap p {font-size: 18px !important;}
+  .product-wap .product-color-dot {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1700px) {}

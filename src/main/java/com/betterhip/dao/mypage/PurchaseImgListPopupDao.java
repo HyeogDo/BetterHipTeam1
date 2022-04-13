@@ -120,27 +120,5 @@ public class PurchaseImgListPopupDao {
 		
 	}//purchaseImgList() 
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-}//PurchaseImgListDao 
+}
+
