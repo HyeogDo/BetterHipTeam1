@@ -204,7 +204,7 @@ String currentDate = format.format(date);
 						</div>
 					</li>
 					<li class="nav-item cake">
-						<a href="cakeListView.do" class="nav-link">케이크 주문</a>
+						<a href="main.do" class="nav-link">케이크 주문</a>
 					</li>
 					<li class="nav-item intro">
 						<a href="#!" class="nav-link">소개</a>

@@ -315,22 +315,22 @@ public class BetterhipHomeController extends HttpServlet {
 			viewPage = "signup/signupForm.jsp";
 			break;
 		
-		case("/signup/signup.do") :
+		case("/signup.do") :
 			command = new SignUpCommand();
 			command.excute(request, response);
-			viewPage = "signupResult.jsp";
+			viewPage = "signup/signupResult.jsp";
 			break;
 		
-		case("/signup/signupCheckId.do") :
+		case("/signupCheckId.do") :
 			command = new SignUpCheckIdCommand();
 			command.excute(request, response);
-			viewPage = "signupCheckIdResult.jsp";
+			viewPage = "signup/signupCheckIdResult.jsp";
 			break;
 
-		case("/signup/signupCheckPhone.do") :
+		case("/signupCheckPhone.do") :
 			command = new SignUpCheckPhoneCommand();
 			command.excute(request, response);
-			viewPage = "signupCheckPhoneResult.jsp";
+			viewPage = "signup/signupCheckPhoneResult.jsp";
 			break;
 		
 		case("/loginForm.do") :
