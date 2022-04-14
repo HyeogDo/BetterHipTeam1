@@ -10,14 +10,15 @@
 <body>
 
 
-	<c:choose>
+<%-- 	<c:choose>
 		<c:when test="${Purchase_Img.purchase_img_base64Image eq 'NO IMAGE'}">
 			<img src="./mypage/mypage_image/noimg.jpg" width = "100" height="100">
 		</c:when>
 		<c:otherwise>
 			<img src="data:purchase_img/png;base64, ${Purchase_Img.purchase_img_base64Image }" width = "100" height="100">
 		</c:otherwise>
-	</c:choose>
+	</c:choose> --%>
+<img src="data:purchase_img/png;base64, ${purchase_img}" width = "150" height="200">
 
 
 </body>
