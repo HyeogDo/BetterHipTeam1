@@ -25,7 +25,7 @@ public class CakeOrderCartCommand implements BetterhipCommand {
 
 		
 
-		String savePath = "C:\\Users\\khdo\\eclipse-workspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\BetterHip\\assets\\img";
+		String savePath = "/Volumes/Data/eicas/TeamProject/BetterHip/src/main/webapp/assets/img";
 		System.out.println(savePath);
 		int sizeLimit = 1024*1024*15;
 
@@ -38,10 +38,14 @@ public class CakeOrderCartCommand implements BetterhipCommand {
 			int purchase_quantity = Integer.parseInt(multi.getParameter("purchase_quantity"));
 			int purchase_price = Integer.parseInt(multi.getParameter("cake_saleprice"));
 			String purchase_text = multi.getParameter("purchase_text");
+			String purchase_date = multi.getParameter("cake_pickupDate").toString();
+			System.out.println("purchase_date commnad :" + purchase_date);
 			
 			CakeInfoDao dao = new CakeInfoDao();
+
 			String result = dao.purchase(purchase_user_id, purchase_cake_id, purchase_customize_id, purchase_quantity, purchase_price,
 					purchase_text, purchase_status, img_fileFullPath, img_fileName);
+
 			System.out.println(result);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
